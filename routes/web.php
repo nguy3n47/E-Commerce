@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Client;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/login', function () {
-    return view('../Auth/SignInSignUp');
-});
+
+Route::get('/login', 'Client\LoginContronller@create');
+Route::post('/login', 'Client\LoginContronller@store');

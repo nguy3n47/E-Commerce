@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,25 +7,25 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
     <link rel="stylesheet" type="text/css" href="../public/client/css/SignInSignUp.css">
 </head>
-
 <body>
     <div class="container" id="container">
         <div class="form-container ">
-            <form action="#" class="sign-up-container form">
+            <form action="../public/login/" method="POST" class="sign-up-container form">
+                @csrf
                 <h1 class="title">Sign Up</h1>
                 <div class="input-field">
                     <i class="fas fa-envelope"></i>
-                    <input type="Email" placeholder="Email" />
+                    <input type="Email" name="email" placeholder="Email" />
                 </div>
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
-                    <input type="password" placeholder="Password" />
+                    <input type="password" name="password" placeholder="Password" />
                 </div>
                 <div class="input-field">
                     <i class="fas fa-check-circle"></i>
-                    <input type="password" placeholder="Confirm Password" />
+                    <input type="password" name="password" placeholder="Confirm Password" />
                 </div>
-                <button>Sign Up</button>
+                <button type="submit">Sign Up</button>
                 <p class="social-text">Or sign up with social platforms</p>
                 <div class="social-container">
                     <a href="https://www.facebook.com/" class="social" target="_blank">
@@ -72,8 +71,6 @@
                         <i class="fab fa-linkedin-in"></i>
                     </a>
                 </div>
-
-
             </form>
         </div>
 
