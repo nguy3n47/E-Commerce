@@ -15,8 +15,8 @@
             <form action="#" class="sign-up-container form">
                 <h1 class="title">Sign Up</h1>
                 <div class="input-field">
-                    <i class="fas fa-user"></i>
-                    <input type="text" placeholder="Username" />
+                    <i class="fas fa-envelope"></i>
+                    <input type="Email" placeholder="Email" />
                 </div>
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
@@ -48,8 +48,8 @@
             <form action="#" class="sign-in-container form">
                 <h1 class="title">Sign in</h1>
                 <div class="input-field">
-                    <i class="fas fa-user"></i>
-                    <input type="text" placeholder="Username" />
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="Email" />
                 </div>
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
@@ -79,8 +79,6 @@
 
         <div class="overlay-container">
             <div class="overlay" class="form-box">
-
-
                 <div class="overlay-panel overlay-left">
                     <button class="ghost" id="signIn">Sign In</button>
                     <h1>New here?</h1>
