@@ -28,45 +28,46 @@
     <!--Main Navigation-->
     <header>
 
+        <div class="container-fluid black">
+            <div class="container ">
 
-        <!--Navbar-->
-        <nav class="navbar navbar-expand-lg navbar-dark  light-blue accent-3 ">
-            <div class="container">
-
-
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><img src="../images/image_welcome/logoshop.png" width="40" height="40" alt=""></i> Thế giới công nghệ</span>
+                <nav class="navbar navbar-expand-lg navbar-dark">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><img src="../images/image_welcome/logoshop.png" width="35" height="35" alt=""><b> Thế giới công nghệ</b></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="nav-item mt-1">
+                            <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i> Giỏ hàng
+                            
                         </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-laptop"></i> Laptop</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-tablet-alt"></i> Máy tính bảng</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-headphones-alt"></i> Phụ kiện</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="far fa-clock"></i> Đồng hồ thời trang</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-desktop"></i> PC, Máy in</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Máy cũ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Sim, Card</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Trả góp, Điện nước</a>
-                    </li>
-                </ul>
+                        </li>
+                        <li class="nav-item nav-bhx">
+                            <a class="nav-link" href="#"><i class="fas fa-circle"></i>
+                                <img src="../images/image_welcome/logo-bhx.png" width="100" height="30"alt="">
+                                <b  style="display:inline-block;vertical-align:middle;margin-left:2px;color:yellow">
+                                    <span style="font-weight:normal;">giảm</span>
+                                    " đến 50% +"
+                                    <br>
+                                    "5 lần Freeship"
+                                </b>
+                            </a>
 
+                        </li>
+
+                        <nav class="navbar navbar-dark ">
+                            <form class="form-inline my-2 my-lg-0 ml-auto">
+                                <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                                <button class="btn btn-outline-white btn-md my-2 my-sm-0 ml-3" type="submit">Search</button>
+                            </form>
+                        </nav>
+
+                    </ul>
+                </nav>
             </div>
-        </nav>
+        </div>
+
         <!--/.Navbar-->
 
         <nav class="navbar navbar-expand-lg navbar-dark  light-blue accent-3 ">

@@ -6,6 +6,10 @@ header {
     z-index: 1;
 }
 
+.nav-bhx {
+    margin-top: -5px;
+}
+
 @media only screen and (max-width: 1200px) {
     .fas,
     .far {
