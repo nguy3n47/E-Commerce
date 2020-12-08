@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign In & Sign Up</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
-    <link rel="stylesheet" href="../../css/SignInSignUp.css">
+    <link rel="stylesheet" type="text/css" href="../public/client/css/SignInSignUp.css">
 </head>
 
 <body>
@@ -15,8 +15,8 @@
             <form action="#" class="sign-up-container form">
                 <h1 class="title">Sign Up</h1>
                 <div class="input-field">
-                    <i class="fas fa-user"></i>
-                    <input type="text" placeholder="Username" />
+                    <i class="fas fa-envelope"></i>
+                    <input type="Email" placeholder="Email" />
                 </div>
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
@@ -48,8 +48,8 @@
             <form action="#" class="sign-in-container form">
                 <h1 class="title">Sign in</h1>
                 <div class="input-field">
-                    <i class="fas fa-user"></i>
-                    <input type="text" placeholder="Username" />
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="Email" />
                 </div>
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
@@ -79,26 +79,22 @@
 
         <div class="overlay-container">
             <div class="overlay" class="form-box">
-
-
                 <div class="overlay-panel overlay-left">
                     <button class="ghost" id="signIn">Sign In</button>
                     <h1>New here?</h1>
                     <p>Sign up and discover great amount of new opportunities!</p>
-                    <img src="../../images/undraw_mobile_login_ikmv.svg" alt="">
+                    <img src="../public/client/images/undraw_mobile_login_ikmv.svg" alt="">
                 </div>
 
                 <div class="overlay-panel overlay-right">
                     <button class="ghost" id="signUp">Sign Up</button>
                     <h1>One of us?</h1>
                     <p>If you already has an account, just sign in. We've missed you!</p>
-                    <img src="../../images/undraw_Access_account_re_8spm.svg" alt="">
+                    <img src="../public/client/images/undraw_Access_account_re_8spm.svg" alt="">
                 </div>
             </div>
         </div>
     </div>
-
-    <script type="text/javascript" src="../../js/SignInSignUp.js"></script>
+    <script type="text/javascript" src="../public/client/js/SignInSignUp.js"></script>
 </body>
-
 </html>

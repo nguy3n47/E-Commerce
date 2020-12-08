@@ -1,9 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
-@font-face {
-    font-family: "Roboto";
-    src: '../fonts/Roboto/Roboto-Regular.ttf';
-}
-
 * {
     box-sizing: border-box;
 }
@@ -15,7 +10,7 @@ body {
     align-items: center;
     flex-direction: column;
     font-family: "Poppins", sans-serif;
-    min-height: 97vh !important;
+    min-height: 635px;
 }
 
 .title {
@@ -124,17 +119,6 @@ button.ghost:hover::before {
     height: 100%;
 }
 
-form {
-    background-color: #5995fd;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 0 50px;
-    height: 100%;
-    text-align: center;
-}
-
 .form {
     background-color: #FFFFFF;
     display: flex;
@@ -226,6 +210,7 @@ input {
 .right-panel-active .sign-in-container {
     left: 105%;
     opacity: 0;
+    display: none;
     animation: show1 .6s ease-in-out;
 }
 
@@ -239,6 +224,7 @@ input {
 }
 
 .right-panel-active .sign-up-container {
+    display: flex;
     left: 45%;
     opacity: 1;
     z-index: 1;
@@ -275,15 +261,6 @@ input {
     }
 }
 
-.form-box {
-    width: 40%;
-    height: 100%;
-    position: absolute;
-    margin: 1% auto;
-    background: #fff;
-    overflow: hidden;
-}
-
 .overlay-container {
     position: absolute;
     top: 0;
@@ -297,6 +274,7 @@ input {
 
 .container.right-panel-active .overlay-container {
     transform: translateX(0%);
+    display: block;
 }
 
 .overlay {
@@ -313,6 +291,7 @@ input {
 
 .container.right-panel-active .overlay {
     transform: translateX(50%);
+    display: flex;
 }
 
 .overlay-panel {
@@ -339,32 +318,13 @@ input {
     height: 50%;
 }
 
-#main-left ul li {
-    border: 1px solid #7b7f74;
-    background: none;
-    padding: 10px;
-    cursor: pointer;
-    font-family: monospace;
-    margin: 10px;
-    text-align: center;
-    position: relative;
-    border-radius: 100px;
-}
-
-#main-left ul li a {
-    color: #bf8187;
-}
-
-#main-left ul li a:hover {
-    color: white;
-}
-
 .overlay-left {
     transform: translateX(-20%);
 }
 
 .container.right-panel-active .overlay-left {
     transform: translateX(0);
+    display: flex;
 }
 
 .overlay-right {
@@ -374,6 +334,7 @@ input {
 
 .container.right-panel-active .overlay-right {
     transform: translateX(20%);
+    display: none;
 }
 
 .social-container {
@@ -411,4 +372,189 @@ input {
 .social:hover {
     color: #4481eb;
     border-color: #4481eb;
+}
+
+@media (max-width: 570px) {
+    body {
+        background: #fff;
+        display: block;
+        justify-content: none;
+        align-items: none;
+        flex-direction: row;
+        font-family: "Poppins", sans-serif;
+        min-height: 600px;
+    }
+    input {
+        background-color: #eee;
+        border: none;
+        padding: 8px 11px;
+        margin: 8px 0;
+        width: 100%;
+        border-radius: 8px;
+    }
+    .input-field {
+        max-width: 570px;
+        width: 100%;
+        background-color: #f0f0f0;
+        margin: 6px 0;
+        height: 50px;
+        border-radius: 55px;
+        display: grid;
+        grid-template-columns: 15% 85%;
+        padding: 0 0.4rem;
+        position: relative;
+    }
+    .input-field i {
+        text-align: center;
+        line-height: 55px;
+        color: #acacac;
+        transition: 0.5s;
+        font-size: .8rem;
+    }
+    .input-field input {
+        background: none;
+        outline: none;
+        border: none;
+        line-height: 1;
+        font-weight: 600;
+        font-size: .8rem;
+        color: #333;
+    }
+    .input-field input::placeholder {
+        color: #aaa;
+        font-weight: 500;
+    }
+    .container {
+        background-color: #fff;
+        border-radius: 0px;
+        box-shadow: none;
+        position: relative;
+        overflow: hidden;
+        width: 500px;
+        max-width: 570px;
+        min-height: 800px;
+    }
+    .form-container {
+        display: inline;
+        width: 500px;
+        max-width: 0px;
+        position: relative;
+        transition: all 0.6s ease-in-out;
+    }
+    .sign-in-container {
+        margin-top: -400px;
+        top: 0%;
+        left: 0%;
+        width: 400px;
+        z-index: 2;
+        opacity: 1;
+        position: relative;
+        transition: left .6s ease-in;
+    }
+    .right-panel-active .sign-in-container {
+        left: 0%;
+        opacity: 0;
+        display: none;
+        animation: show1 .6s ease-in-out;
+    }
+    .sign-up-container {
+        left: 0%;
+        width: 80%;
+        opacity: 0;
+        z-index: 1;
+        position: relative;
+        transition: left .6s ease-in;
+    }
+    .right-panel-active .sign-up-container {
+        left: 0%;
+        opacity: 1;
+        z-index: 1;
+        animation: show2 .6s ease-in;
+    }
+    @keyframes show1 {
+        0% {
+            opacity: 0.2;
+            z-index: 2;
+        }
+        50% {
+            opacity: 0.6;
+            z-index: 1;
+        }
+        100% {
+            opacity: 0;
+            z-index: 0;
+        }
+    }
+    @keyframes show2 {
+        0% {
+            opacity: 0.2;
+            z-index: 0;
+        }
+        50% {
+            opacity: 0.6;
+            z-index: 1;
+        }
+        100% {
+            opacity: 1;
+            z-index: 2;
+        }
+    }
+    .overlay-container {
+        position: relative;
+        top: 0%;
+        left: 0%;
+        width: 100%;
+        height: 400px;
+        overflow: hidden;
+        transition: transform 0.6s ease-in-out;
+        z-index: 100;
+    }
+    .container.right-panel-active .overlay-container {
+        transform: translateX(0%);
+        display: block;
+    }
+    .overlay {
+        background: #FFFFFF;
+        color: #4481eb;
+        position: relative;
+        left: -100%;
+        height: 100%;
+        width: 200%;
+        transform: translateX(0);
+        position: relative;
+        transition: transform 0.6s ease-in-out;
+    }
+    .container.right-panel-active .overlay {
+        transform: translateX(50%);
+        display: flex;
+    }
+    .overlay-panel {
+        background-color: #5995fd;
+        border-radius: 10px 10px 0 0;
+        position: absolute;
+        justify-items: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column-reverse;
+        padding: 0 30px;
+        text-align: center;
+        top: 20px;
+        padding-top: 40px;
+        height: 100%;
+        width: 50%;
+        transform: translateX(0);
+        transition: transform 0.6s ease-in-out;
+    }
+    button.ghost {
+        margin: 30px auto;
+        border: 1px solid #fff;
+        color: #fff;
+    }
+    .overlay-panel p {
+        font-size: 14px;
+    }
+    .overlay-panel h1 {
+        margin: -20px auto;
+    }
 }
