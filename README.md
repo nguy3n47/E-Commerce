@@ -9,6 +9,6 @@
 
 
 ---------
-<p composer install >
+<p> composer install </p>
 <p cp .env.example .env >
-<p php artisan key:generate >
+<p> php artisan key:generate </p>
