@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forgot Password</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
-    <link rel="stylesheet" href="forgot.css" />
+    <link rel="stylesheet" href="../public/client/css/forgot.css" />
 </head>
 
 <body>
@@ -16,9 +16,9 @@
                 <h1 class="title">Enter code</h1>
                 <div class="input-field">
                     <i class="fas fa-code"></i>
-                    <input type="text" placeholder="Enter here" />
+                    <input type="text" name="code" placeholder="Enter here" />
                 </div>
-                <button>Send</button>
+                <button type="submit">Send</button>
             </form>
         </div>
 

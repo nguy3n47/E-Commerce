@@ -56,7 +56,7 @@
                     <i class="fas fa-lock"></i>
                     <input type="password" placeholder="Password" />
                 </div>
-                <a href="#">Forgot your password?</a>
+                <a href="./forgotPass">Forgot your password?</a>
                 <button>Sign In</button>
                 <p class="social-text">Or login using other social platforms</p>
                 <div class="social-container">

@@ -6,19 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forgot Password</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
-    <link rel="stylesheet" href="forgot.css" />
+    <link rel="stylesheet" href="../public/client/css/forgot.css" />
 </head>
 
 <body>
     <div class="container" id="container">
         <div class="form-container ">
-            <form action="#" class="forgot-container form">
+            <form action="" method="POST" class="forgot-container form">
+                @csrf
                 <h1 class="title">Forgot Password</h1>
                 <div class="input-field">
                     <i class="fas fa-envelope"></i>
-                    <input type="email" placeholder="Email" />
+                    <input type="email" name="email" placeholder="Email" />
                 </div>
-                <button>Send</button>
+                <button type="submit">Send</button>
             </form>
         </div>
 
@@ -28,7 +29,7 @@
                     <button class="ghost" id="signIn"><i class="fas fa-arrow-left"></i></button>
                     <h1>Don't worry!</h1>
                     <p>We'll help you!</p>
-                    <img src="./images/undraw_mobile_login_ikmv.svg" alt="">
+                    <img src=".././images/undraw_mobile_login_ikmv.svg" alt="">
                 </div>
 
             </div>

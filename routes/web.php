@@ -21,3 +21,10 @@ Route::get('/', function () {
 
 Route::get('/login', 'Client\LoginContronller@create');
 Route::post('/login', 'Client\LoginContronller@store');
+
+// forgot password
+Route::get('/forgotPass', 'Client\forgotPassword@getForgotPassword');
+Route::post('/forgotPass', 'Client\forgotPassword@postForgotPassword');
+
+// entercode
+//Route::get('/enterCode', 'Client\forgotPassword@getEnterCode');
