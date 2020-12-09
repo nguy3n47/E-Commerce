@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Client;
 
 use App\Models\Users;
 use App\Http\Controllers\Controller;
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 
 class LoginContronller extends Controller
@@ -38,10 +39,15 @@ class LoginContronller extends Controller
     public function store(Request $request)
     {
         //
-        $user = new Users;
-        $user->email = $request->email;
-        $user->password = $request->password;
+        $user = new Users();
+
+
+        $user->id = "2";
+        $user->username = "v";
+        $user->password = bcrypt($request->password);
+        $user->email =  $request->email;
         $user->save();
+        //dd($user);
         return redirect()->action('Client\LoginContronller@create');
     }
 

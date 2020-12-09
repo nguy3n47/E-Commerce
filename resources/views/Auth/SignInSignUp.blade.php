@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +8,11 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
     <link rel="stylesheet" type="text/css" href="../public/client/css/SignInSignUp.css">
 </head>
+
 <body>
     <div class="container" id="container">
         <div class="form-container ">
-            <form action="../public/login/" method="POST" class="sign-up-container form">
+            <form action="" method="POST" class="sign-up-container form">
                 @csrf
                 <h1 class="title">Sign Up</h1>
                 <div class="input-field">
@@ -94,4 +96,5 @@
     </div>
     <script type="text/javascript" src="../public/client/js/SignInSignUp.js"></script>
 </body>
+
 </html>
