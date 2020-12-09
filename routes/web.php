@@ -26,5 +26,9 @@ Route::post('/login', 'Client\LoginContronller@store');
 Route::get('/forgotPass', 'Client\forgotPassword@getForgotPassword');
 Route::post('/forgotPass', 'Client\forgotPassword@postForgotPassword');
 
+//
+Route::get('/testSendMail', 'Client\SendMailController@create');
+Route::post('/testSendMail', 'Client\SendMailController@sendCodeResetPassword');
+
 // entercode
 //Route::get('/enterCode', 'Client\forgotPassword@getEnterCode');
