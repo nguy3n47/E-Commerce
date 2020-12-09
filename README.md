@@ -9,6 +9,6 @@
 
 
 ---------
-composer install
-cp .env.example .env
-php artisan key:generate
+<p composer install >
+<p cp .env.example .env >
+<p php artisan key:generate >
