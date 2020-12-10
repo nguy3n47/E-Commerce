@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enter Password</title>
+    <title>Reset Password</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
     <link rel="stylesheet" href="../public/client/css/forgot.css" />
 </head>
@@ -13,12 +13,16 @@
     <div class="container" id="container">
         <div class="form-container ">
             <form action="#" class="forgot-container form">
-                <h1 class="title">Enter code</h1>
+                <h1 class="title">Reset Password</h1>
                 <div class="input-field">
-                    <i class="fas fa-code"></i>
-                    <input type="text" name="code" placeholder="Enter here" />
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="New Password" />
                 </div>
-                <button type="submit">Send</button>
+                <div class="input-field">
+                    <i class="fas fa-check-circle"></i>
+                    <input type="password" placeholder="Confirm Password" />
+                </div>
+                <button>Reset</button>
             </form>
         </div>
 
@@ -26,9 +30,9 @@
             <div class="overlay">
                 <div class="overlay-panel overlay-left">
                     <button class="ghost" id="signIn"><i class="fas fa-arrow-left"></i></button>
-                    <h1>Don't worry!</h1>
-                    <p>We'll help you!</p>
-                    <img src="../public/client/images/undraw_two_factor_authentication_namy.svg" alt="">
+                    <h1>Welcome back!</h1>
+                    <p>Now, please enter your password to get started!</p>
+                    <img src="../public/client/images/undraw_order_confirmed_aaw7.svg" alt="">
                 </div>
 
             </div>
