@@ -29,7 +29,7 @@
                     <button class="ghost" id="signIn"><i class="fas fa-arrow-left"></i></button>
                     <h1>Don't worry!</h1>
                     <p>We'll help you!</p>
-                    <img src=".././images/undraw_mobile_login_ikmv.svg" alt="">
+                    <img src="../public/client/images/undraw_Questions_re_1fy7.svg" alt="">
                 </div>
 
             </div>

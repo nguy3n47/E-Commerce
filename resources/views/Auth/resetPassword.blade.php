@@ -12,6 +12,7 @@
 <body>
     <div class="container" id="container">
         <div class="form-container ">
+<<<<<<< HEAD
             <form action="" method="POST" class="forgot-container form">
                 @csrf
                 <h1 class="title">Reset Password</h1>
@@ -24,6 +25,19 @@
                     <input type="password" name="pass2" placeholder="Confirm Password" />
                 </div>
                 <button type="submit">Reset</button>
+=======
+            <form action="#" class="forgot-container form">
+                <h1 class="title">Reset Password</h1>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="New Password" />
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-check-circle"></i>
+                    <input type="password" placeholder="Confirm Password" />
+                </div>
+                <button>Reset</button>
+>>>>>>> 98dcd720058e1a687b2092f7de1297a25f2497df
             </form>
         </div>
 
@@ -41,4 +55,8 @@
     </div>
 </body>
 
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> 98dcd720058e1a687b2092f7de1297a25f2497df

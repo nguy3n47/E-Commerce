@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forgot Password</title>
+    <title>Enter Password</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
     <link rel="stylesheet" href="../public/client/css/forgot.css" />
 </head>
@@ -29,7 +29,7 @@
                     <button class="ghost" id="signIn"><i class="fas fa-arrow-left"></i></button>
                     <h1>Don't worry!</h1>
                     <p>We'll help you!</p>
-                    <img src="./images/undraw_mobile_login_ikmv.svg" alt="">
+                    <img src="../public/client/images/undraw_two_factor_authentication_namy.svg" alt="">
                 </div>
 
             </div>
