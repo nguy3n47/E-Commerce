@@ -13,8 +13,8 @@ return [
     |
     */
 
-    'default' => env('MAIL_MAILER', 'mailgun'),
-
+    //'default' => env('MAIL_MAILER', 'mailgun'),
+    //'default' => env('MAIL_DRIVER', 'smtp'),
     /*
     |--------------------------------------------------------------------------
     | Mailer Configurations
@@ -32,14 +32,19 @@ return [
     |            "postmark", "log", "array"
     |
     */
-    'gmail' => [
-        'transport' => 'smtp',
-        'host' => 'smtp.gmail.com',
-        'port' => 465,
-        'encryption' => 'ssl',
-        'username' => 'ducga0790999@gmail.com',
-        'password' => 'Ducga0388554199',
+    'driver'     => env('MAIL_DRIVER', 'smtp'),
+    'host'       => env('MAIL_HOST', 'smtp.gmail.com'),
+    'port'       => env('MAIL_PORT', 587),
+    'from' => [
+        'address' => env('MAIL_FROM_ADDRESS', 'ducga0790999@gmail.com'),
+        'name' => env('MAIL_FROM_NAME', 'Đức'),
     ],
+    'encryption' => env('MAIL_ENCRYPTION', 'tls'),
+    'username'   => env('MAIL_USERNAME', 'ducga0790999@gmail.com'),
+    'password'   => env('MAIL_PASSWORD', 'Ducga0388554199'),
+    'sendmail'   => '/usr/sbin/sendmail -bs',
+
+
 
 
     'mailers' => [
@@ -53,7 +58,7 @@ return [
             'timeout' => null,
             'auth_mode' => null,
         ],
-        'driver' => 'sendmail',
+        'driver' => 'smtp',
 
         'ses' => [
             'transport' => 'ses',
@@ -103,11 +108,6 @@ return [
             'verify_peer' => false,
             'verify_peer_name' => false,
         ],
-    ],
-
-    'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'ducga0790999@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'Đức'),
     ],
 
     /*

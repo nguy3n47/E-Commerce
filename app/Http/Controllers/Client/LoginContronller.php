@@ -42,12 +42,11 @@ class LoginContronller extends Controller
         $user = new Users();
 
 
-        $user->id = "2";
+        $user->id = "3";
         $user->username = "v";
         $user->password = bcrypt($request->password);
         $user->email =  $request->email;
         $user->save();
-        //dd($user);
         return redirect()->action('Client\LoginContronller@create');
     }
 

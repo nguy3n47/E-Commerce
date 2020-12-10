@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '5f97a8f343f70c60df921580b93a7ffdd0043c4a',
+    'reference' => 'e4b785c2a6d1decf32ad47a9491d7c86cd84e7f1',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -19,6 +19,16 @@
       array (
       ),
       'reference' => '8d8f88b3b3830916be94292c1fbce84433efb1aa',
+    ),
+    'barryvdh/laravel-async-queue' => 
+    array (
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
+      'aliases' => 
+      array (
+        0 => '0.7.x-dev',
+      ),
+      'reference' => '2ec069792a1005e150647fcaaed271968ca5ea66',
     ),
     'brick/math' => 
     array (
@@ -445,7 +455,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '5f97a8f343f70c60df921580b93a7ffdd0043c4a',
+      'reference' => 'e4b785c2a6d1decf32ad47a9491d7c86cd84e7f1',
     ),
     'laravel/tinker' => 
     array (
@@ -547,6 +557,15 @@
       array (
       ),
       'reference' => '7c2b95589bf81e274e61e47f7672a1b2c3e06eaa',
+    ),
+    'ognjen/laravel-async-mail' => 
+    array (
+      'pretty_version' => 'v2.0.0',
+      'version' => '2.0.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'e3b6f206b598671324257868bbd9a9f758e0d191',
     ),
     'opis/closure' => 
     array (
@@ -960,6 +979,15 @@
       ),
       'reference' => 'c6c1022351a901512170118436c764e473f6de8c',
     ),
+    'spatie/async' => 
+    array (
+      'pretty_version' => '1.5.2',
+      'version' => '1.5.2.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'e410c38a93b93589dfd8046b4b93cdaa6a9b7de2',
+    ),
     'swiftmailer/swiftmailer' => 
     array (
       'pretty_version' => 'v6.2.4',
@@ -1261,6 +1289,15 @@
       array (
       ),
       'reference' => '80953678b19901e5165c56752d087fc11526017c',
+    ),
+    'vxm/laravel-async' => 
+    array (
+      'pretty_version' => '2.0.3',
+      'version' => '2.0.3.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '9f8be749043e11015e720b243f14ea6f741642f5',
     ),
     'webmozart/assert' => 
     array (
