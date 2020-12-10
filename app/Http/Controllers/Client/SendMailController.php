@@ -41,15 +41,15 @@ class SendMailController extends Controller
     }
 
     public function generateRandomString($length)
-{
-  $characters = '0123456789';
-  $charactersLength = strlen($characters);
-  $randomString = '';
-  for ($i = 0; $i < $length; $i++) {
-    $randomString .= $characters[rand(0, $charactersLength - 1)];
-  }
-  return $randomString;
-}
+    {
+      $characters = '0123456789';
+      $charactersLength = strlen($characters);
+      $randomString = '';
+      for ($i = 0; $i < $length; $i++) {
+        $randomString .= $characters[rand(0, $charactersLength - 1)];
+      }
+      return $randomString;
+    }
 
     public function sendCodeResetPassword(Request $request){
         $email = $request->email;
@@ -60,7 +60,6 @@ class SendMailController extends Controller
 
     public function create()
     {
-        //
         return view('../Auth/forgotPass');
     }
 }

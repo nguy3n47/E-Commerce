@@ -4,12 +4,10 @@ namespace App\Http\Controllers\Client;
 
 use App\Models\Users;
 use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 
-class LoginContronller extends Controller
+class RegisterController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -38,27 +36,44 @@ class LoginContronller extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    
+    public function random($length){
+        $base = 1;
+        $characters = '0123456789';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        }
+      return $base.$randomString;
+    }
+    
     public function store(Request $request)
     {
         //
+        $u = DB::table('users')->get();
+        $base = 1;
+        $user = new Users();
+        $user->id = $this->random(9-strlen($base));
+        $user->password = bcrypt($request->password);
+        $user->email =  $request->email;
+        foreach ($u as $i) {
+            if($user->email == $i->email) // Email da ton tai
+            {
+                // do something
+                echo 'Email da ton tai';
+                return;
+            }
+            if($i->id == $user->id){
+                $user->id = $this->random(9-strlen($base));
+            }
+        }
+        //dd($user);
+        $user->save();
+        echo 'Dang ky thanh cong!';
+        //return redirect()->action('Client\LoginContronller@create');
     }
 
-    // login
-    public function loginUser(Request $request){
-	    $email = $request->email;
-        $password = $request->password;
-        $user = DB::table('users')
-                    ->where('email', '=', $email)
-                    ->first();
-        if (!$user) {
-            return response()->json(['success'=>false, 'message' => 'Tai khoan khong ton tai!']);
-        }
-        if (!Hash::check($password, $user->password)) {
-            return response()->json(['success'=>false, 'message' => 'Mat khau khong chinh xac!']);
-        }
-            return response()->json(['success'=>true,'message'=>'Dang nhap thanh cong!', 'data' => $user]);
-    }
-    
     /**
      * Display the specified resource.
      *

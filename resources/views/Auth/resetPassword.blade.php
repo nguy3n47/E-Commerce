@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
     <link rel="stylesheet" href="../public/client/css/forgot.css" />
 </head>
-
 <body>
     <div class="container" id="container">
         <div class="form-container ">
@@ -34,10 +33,8 @@
                     <p>Now, please enter your password to get started!</p>
                     <img src="../public/client/images/undraw_order_confirmed_aaw7.svg" alt="">
                 </div>
-
             </div>
         </div>
     </div>
 </body>
-
 </html>

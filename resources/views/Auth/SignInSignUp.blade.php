@@ -46,18 +46,19 @@
             </form>
         </div>
         <div class="form-container ">
-            <form action="#" class="sign-in-container form">
+            <form action="" method="POST" class="sign-in-container form">
+                @csrf
                 <h1 class="title">Sign in</h1>
                 <div class="input-field">
                     <i class="fas fa-envelope"></i>
-                    <input type="email" placeholder="Email" />
+                    <input type="email" name="email" placeholder="Email" />
                 </div>
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
-                    <input type="password" placeholder="Password" />
+                    <input type="password" name="password" placeholder="Password" />
                 </div>
                 <a href="./forgotPass">Forgot your password?</a>
-                <button>Sign In</button>
+                <button type="submit">Sign In</button>
                 <p class="social-text">Or login using other social platforms</p>
                 <div class="social-container">
                     <a href="https://www.facebook.com/" class="social" target="_blank">

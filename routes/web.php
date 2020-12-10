@@ -18,15 +18,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+// login
 Route::get('/login', 'Client\LoginContronller@create');
-Route::post('/login', 'Client\LoginContronller@store');
+Route::post('/login', 'Client\LoginContronller@loginUser');
+
+// register
+Route::get('/register', 'Client\RegisterController@create');
+Route::post('/register', 'Client\RegisterController@store');
 
 // forgot password
 Route::get('/forgotPass', 'Client\forgotPassword@getForgotPassword');
 Route::post('/forgotPass', 'Client\forgotPassword@postForgotPassword');
 
-//
+// send email
 Route::get('/testSendMail', 'Client\SendMailController@create');
 Route::post('/testSendMail', 'Client\SendMailController@sendCodeResetPassword');
 
