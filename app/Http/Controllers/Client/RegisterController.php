@@ -47,6 +47,17 @@ class RegisterController extends Controller
         }
       return $base.$randomString;
     }
+
+    public function generateRandomCode($length)
+    {
+      $characters = '0123456789';
+      $charactersLength = strlen($characters);
+      $randomString = '';
+      for ($i = 0; $i < $length; $i++) {
+        $randomString .= $characters[rand(0, $charactersLength - 1)];
+      }
+      return $randomString;
+    }
     
     public function store(Request $request)
     {
@@ -57,6 +68,7 @@ class RegisterController extends Controller
         $user->id = $this->random(9-strlen($base));
         $user->password = bcrypt($request->password);
         $user->email =  $request->email;
+        $user->codeActive = $this->generateRandomCode(6);
         foreach ($u as $i) {
             if($user->email == $i->email) // Email da ton tai
             {
