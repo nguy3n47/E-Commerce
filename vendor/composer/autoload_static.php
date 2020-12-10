@@ -4,11 +4,7 @@
 
 namespace Composer\Autoload;
 
-<<<<<<< HEAD
-class ComposerStaticInit43b4fd96258decf520eba737bbdd21f1
-=======
-class ComposerStaticInit3a2d1b779193bc905c819836c0b43bdf
->>>>>>> 98dcd720058e1a687b2092f7de1297a25f2497df
+class ComposerStaticInit8a88d4054c53661c34cba311ec913577
 {
     public static $files = array (
         'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
@@ -38,8 +34,8 @@ class ComposerStaticInit3a2d1b779193bc905c819836c0b43bdf
         '8825ede83f2f289127722d4e842cf7e8' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/bootstrap.php',
         '9cdd7b9056abc3081735233ba9dd9c7f' => __DIR__ . '/..' . '/facade/flare-client-php/src/helpers.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
-        'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
         '7dd996d98a91d095f100c75e0b9e2391' => __DIR__ . '/..' . '/spatie/async/src/helpers.php',
+        'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
         'ed962a97bd972bc82007176b647d4e36' => __DIR__ . '/..' . '/facade/ignition/src/helpers.php',
     );
 
@@ -548,6 +544,7 @@ class ComposerStaticInit3a2d1b779193bc905c819836c0b43bdf
         'App\\Http\\Controllers\\Client\\LoginContronller' => __DIR__ . '/../..' . '/app/Http/Controllers/Client/LoginContronller.php',
         'App\\Http\\Controllers\\Client\\SendMailController' => __DIR__ . '/../..' . '/app/Http/Controllers/Client/SendMailController.php',
         'App\\Http\\Controllers\\Client\\forgotPassword' => __DIR__ . '/../..' . '/app/Http/Controllers/Client/forgotPassword.php',
+        'App\\Http\\Controllers\\Client\\updatePassword' => __DIR__ . '/../..' . '/app/Http/Controllers/Client/updatePassword.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
@@ -5193,17 +5190,10 @@ class ComposerStaticInit3a2d1b779193bc905c819836c0b43bdf
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-<<<<<<< HEAD
-            $loader->prefixLengthsPsr4 = ComposerStaticInit43b4fd96258decf520eba737bbdd21f1::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit43b4fd96258decf520eba737bbdd21f1::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit43b4fd96258decf520eba737bbdd21f1::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit43b4fd96258decf520eba737bbdd21f1::$classMap;
-=======
-            $loader->prefixLengthsPsr4 = ComposerStaticInit3a2d1b779193bc905c819836c0b43bdf::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit3a2d1b779193bc905c819836c0b43bdf::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit3a2d1b779193bc905c819836c0b43bdf::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit3a2d1b779193bc905c819836c0b43bdf::$classMap;
->>>>>>> 98dcd720058e1a687b2092f7de1297a25f2497df
+            $loader->prefixLengthsPsr4 = ComposerStaticInit8a88d4054c53661c34cba311ec913577::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit8a88d4054c53661c34cba311ec913577::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit8a88d4054c53661c34cba311ec913577::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit8a88d4054c53661c34cba311ec913577::$classMap;
 
         }, null, ClassLoader::class);
     }
