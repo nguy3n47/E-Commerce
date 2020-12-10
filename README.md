@@ -10,5 +10,6 @@
 
 ---------
 <p> composer install </p>
+<p> composer dump-autoload </p>
 <p> cp .env.example .env </p>
 <p> php artisan key:generate </p>
