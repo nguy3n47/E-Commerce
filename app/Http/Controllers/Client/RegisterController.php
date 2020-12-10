@@ -38,24 +38,12 @@ class RegisterController extends Controller
      */
     
     public function random($length){
-        $base = 1;
         $characters = '0123456789';
         $charactersLength = strlen($characters);
         $randomString = '';
         for ($i = 0; $i < $length; $i++) {
             $randomString .= $characters[rand(0, $charactersLength - 1)];
         }
-      return $base.$randomString;
-    }
-
-    public function generateRandomCode($length)
-    {
-      $characters = '0123456789';
-      $charactersLength = strlen($characters);
-      $randomString = '';
-      for ($i = 0; $i < $length; $i++) {
-        $randomString .= $characters[rand(0, $charactersLength - 1)];
-      }
       return $randomString;
     }
     
@@ -65,10 +53,10 @@ class RegisterController extends Controller
         $u = DB::table('users')->get();
         $base = 1;
         $user = new Users();
-        $user->id = $this->random(9-strlen($base));
+        $user->id = $base.$this->random(9-strlen($base));
         $user->password = bcrypt($request->password);
         $user->email =  $request->email;
-        $user->codeActive = $this->generateRandomCode(6);
+        $user->codeActive = $this->random(6);
         foreach ($u as $i) {
             if($user->email == $i->email) // Email da ton tai
             {

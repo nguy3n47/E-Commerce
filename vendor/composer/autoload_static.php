@@ -4,11 +4,7 @@
 
 namespace Composer\Autoload;
 
-<<<<<<< HEAD
-class ComposerStaticInit64f6988b5c83aaaed6ed16f3b232866d
-=======
-class ComposerStaticInit8a88d4054c53661c34cba311ec913577
->>>>>>> d30f5a6f86d1fd599fc3a8f0a1314bc543f4133a
+class ComposerStaticInitec7f5184565a06a901c418cf3dec91f5
 {
     public static $files = array (
         'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
@@ -546,6 +542,7 @@ class ComposerStaticInit8a88d4054c53661c34cba311ec913577
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Client\\LoginContronller' => __DIR__ . '/../..' . '/app/Http/Controllers/Client/LoginContronller.php',
+        'App\\Http\\Controllers\\Client\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Client/RegisterController.php',
         'App\\Http\\Controllers\\Client\\SendMailController' => __DIR__ . '/../..' . '/app/Http/Controllers/Client/SendMailController.php',
         'App\\Http\\Controllers\\Client\\forgotPassword' => __DIR__ . '/../..' . '/app/Http/Controllers/Client/forgotPassword.php',
         'App\\Http\\Controllers\\Client\\updatePassword' => __DIR__ . '/../..' . '/app/Http/Controllers/Client/updatePassword.php',
@@ -5194,17 +5191,10 @@ class ComposerStaticInit8a88d4054c53661c34cba311ec913577
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-<<<<<<< HEAD
-            $loader->prefixLengthsPsr4 = ComposerStaticInit64f6988b5c83aaaed6ed16f3b232866d::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit64f6988b5c83aaaed6ed16f3b232866d::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit64f6988b5c83aaaed6ed16f3b232866d::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit64f6988b5c83aaaed6ed16f3b232866d::$classMap;
-=======
-            $loader->prefixLengthsPsr4 = ComposerStaticInit8a88d4054c53661c34cba311ec913577::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit8a88d4054c53661c34cba311ec913577::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit8a88d4054c53661c34cba311ec913577::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit8a88d4054c53661c34cba311ec913577::$classMap;
->>>>>>> d30f5a6f86d1fd599fc3a8f0a1314bc543f4133a
+            $loader->prefixLengthsPsr4 = ComposerStaticInitec7f5184565a06a901c418cf3dec91f5::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitec7f5184565a06a901c418cf3dec91f5::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitec7f5184565a06a901c418cf3dec91f5::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInitec7f5184565a06a901c418cf3dec91f5::$classMap;
 
         }, null, ClassLoader::class);
     }
