@@ -41,6 +41,18 @@ class LoginContronller extends Controller
     public function store(Request $request)
     {
         //
+<<<<<<< HEAD
+=======
+        $user = new Users();
+
+
+        $user->id = "3";
+        $user->username = "v";
+        $user->password = bcrypt($request->password);
+        $user->email =  $request->email;
+        $user->save();
+        return redirect()->action('Client\LoginContronller@create');
+>>>>>>> d30f5a6f86d1fd599fc3a8f0a1314bc543f4133a
     }
 
     // login

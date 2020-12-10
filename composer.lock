@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "10bc07df801ed4a02c37d67c044f0695",
+    "content-hash": "62b838856371ebb4168a424cebebd418",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -61,6 +61,66 @@
                 "source": "https://github.com/asm89/stack-cors/tree/v2.0.2"
             },
             "time": "2020-10-29T16:03:21+00:00"
+        },
+        {
+            "name": "barryvdh/laravel-async-queue",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/barryvdh/laravel-async-queue.git",
+                "reference": "2ec069792a1005e150647fcaaed271968ca5ea66"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/barryvdh/laravel-async-queue/zipball/2ec069792a1005e150647fcaaed271968ca5ea66",
+                "reference": "2ec069792a1005e150647fcaaed271968ca5ea66",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/console": "^5.5|^6|^7|^8",
+                "illuminate/support": "^5.5|^6|^7|^8",
+                "php": ">=7",
+                "symfony/process": "^3.2|^4|^5"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.7-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Barryvdh\\Queue\\AsyncServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Barryvdh\\Queue\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Barry vd. Heuvel",
+                    "email": "barryvdh@gmail.com"
+                }
+            ],
+            "description": "Async Queue Driver for Laravel (Push to background)",
+            "keywords": [
+                "async",
+                "background",
+                "laravel",
+                "queue"
+            ],
+            "support": {
+                "issues": "https://github.com/barryvdh/laravel-async-queue/issues",
+                "source": "https://github.com/barryvdh/laravel-async-queue/tree/master"
+            },
+            "time": "2020-09-12T16:37:00+00:00"
         },
         {
             "name": "brick/math",
@@ -1623,6 +1683,53 @@
             "time": "2020-12-03T17:45:45+00:00"
         },
         {
+            "name": "ognjen/laravel-async-mail",
+            "version": "v2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ognjen-petrovic/laravel-async-mail.git",
+                "reference": "e3b6f206b598671324257868bbd9a9f758e0d191"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ognjen-petrovic/laravel-async-mail/zipball/e3b6f206b598671324257868bbd9a9f758e0d191",
+                "reference": "e3b6f206b598671324257868bbd9a9f758e0d191",
+                "shasum": ""
+            },
+            "require": {
+                "ognjen/laravel-async-mail": "v2.0.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Ognjen\\Laravel\\AsyncMailProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Ognjen\\Laravel\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ognjen Petrovic",
+                    "email": "ognjen.petrovic2@gmail.com"
+                }
+            ],
+            "description": "Send async mails from Laravel",
+            "support": {
+                "issues": "https://github.com/ognjen-petrovic/laravel-async-mail/issues",
+                "source": "https://github.com/ognjen-petrovic/laravel-async-mail/tree/v2.0.0"
+            },
+            "time": "2020-09-25T17:18:52+00:00"
+        },
+        {
             "name": "opis/closure",
             "version": "3.6.1",
             "source": {
@@ -2425,6 +2532,73 @@
                 }
             ],
             "time": "2020-08-18T17:17:46+00:00"
+        },
+        {
+            "name": "spatie/async",
+            "version": "1.5.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/async.git",
+                "reference": "e410c38a93b93589dfd8046b4b93cdaa6a9b7de2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/async/zipball/e410c38a93b93589dfd8046b4b93cdaa6a9b7de2",
+                "reference": "e410c38a93b93589dfd8046b4b93cdaa6a9b7de2",
+                "shasum": ""
+            },
+            "require": {
+                "opis/closure": "^3.4.2",
+                "php": "^7.1 || ^8.0",
+                "symfony/process": "^3.3 || ^4.0 || ^5.0"
+            },
+            "require-dev": {
+                "larapack/dd": "^1.1",
+                "phpunit/phpunit": "^7.5 || ^8.0 || ^9.0",
+                "symfony/stopwatch": "^4.0 || ^5.0"
+            },
+            "suggest": {
+                "ext-pcntl": "Required to use async processes",
+                "ext-posix": "Required to use async processes"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Spatie\\Async\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Brent Roose",
+                    "email": "brent@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Asynchronous and parallel PHP with the PCNTL extension",
+            "homepage": "https://github.com/spatie/async",
+            "keywords": [
+                "async",
+                "spatie"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/async/issues",
+                "source": "https://github.com/spatie/async/tree/1.5.2"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-11-20T06:05:35+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -4876,6 +5050,69 @@
                 }
             ],
             "time": "2020-11-12T00:07:28+00:00"
+        },
+        {
+            "name": "vxm/laravel-async",
+            "version": "2.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vuongxuongminh/laravel-async.git",
+                "reference": "9f8be749043e11015e720b243f14ea6f741642f5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vuongxuongminh/laravel-async/zipball/9f8be749043e11015e720b243f14ea6f741642f5",
+                "reference": "9f8be749043e11015e720b243f14ea6f741642f5",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^5.8 || ^6.0 || ^7.0 || ^8.0",
+                "php": "^7.2",
+                "spatie/async": "^1.4.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^3.8 || ^4.0 || ^5.0 || ^6.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                },
+                "laravel": {
+                    "aliases": {
+                        "Async": "VXM\\Async\\AsyncFacade"
+                    },
+                    "providers": [
+                        "VXM\\Async\\AsyncServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "VXM\\Async\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vuong Xuong Minh",
+                    "email": "vuongxuongminh@gmail.com"
+                }
+            ],
+            "description": "Provide an easy way to run code asynchronously for Laravel",
+            "homepage": "https://github.com/vuongxuongminh/laravel-async",
+            "keywords": [
+                "laravel-async",
+                "vxm"
+            ],
+            "support": {
+                "issues": "https://github.com/vuongxuongminh/laravel-async/issues",
+                "source": "https://github.com/vuongxuongminh/laravel-async/tree/2.0.3"
+            },
+            "time": "2020-10-18T05:24:16+00:00"
         },
         {
             "name": "webmozart/assert",

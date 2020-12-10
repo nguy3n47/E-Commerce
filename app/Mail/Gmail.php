@@ -6,10 +6,12 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Foundation\Bus\Dispatchable;
 
 class Gmail extends Mailable
 {
-    use Queueable, SerializesModels;
+    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
     public $details;
 
@@ -31,8 +33,8 @@ class Gmail extends Mailable
      */
     public function build()
     {
-        return $this->subject('Mail from ItSolutionStuff.com')
+        return $this->subject('Reset Password')
             ->view('emails.myTestMail')
-            ->from('ducga0790999@gmail.com');
+            ->from('ducga0790999@gmail.com', 'Apple Store');
     }
 }

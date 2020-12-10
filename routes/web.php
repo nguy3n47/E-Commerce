@@ -35,4 +35,8 @@ Route::get('/testSendMail', 'Client\SendMailController@create');
 Route::post('/testSendMail', 'Client\SendMailController@sendCodeResetPassword');
 
 // entercode
-//Route::get('/enterCode', 'Client\forgotPassword@getEnterCode');
+Route::get('/enterCode', 'Client\forgotPassword@getEnterCode');
+Route::post('/enterCode', 'Client\forgotPassword@postEnterCode');
+
+Route::get('/confirmPass', 'Client\updatePassword@getconfirmPass');
+Route::post('/confirmPass', 'Client\updatePassword@postconfirmPass');

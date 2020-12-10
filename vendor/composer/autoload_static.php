@@ -4,7 +4,11 @@
 
 namespace Composer\Autoload;
 
+<<<<<<< HEAD
 class ComposerStaticInit64f6988b5c83aaaed6ed16f3b232866d
+=======
+class ComposerStaticInit8a88d4054c53661c34cba311ec913577
+>>>>>>> d30f5a6f86d1fd599fc3a8f0a1314bc543f4133a
 {
     public static $files = array (
         'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
@@ -23,9 +27,9 @@ class ComposerStaticInit64f6988b5c83aaaed6ed16f3b232866d
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
+        '538ca81a9a966a6716601ecf48f4eaef' => __DIR__ . '/..' . '/opis/closure/functions.php',
         'a1105708a18b76903365ca1c4aa61b02' => __DIR__ . '/..' . '/symfony/translation/Resources/functions.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
-        '538ca81a9a966a6716601ecf48f4eaef' => __DIR__ . '/..' . '/opis/closure/functions.php',
         'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
         '265b4faa2b3a9766332744949e83bf97' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Collections/helpers.php',
         'c7a3c339e7e14b60e06a2d7fcce9476b' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Events/functions.php',
@@ -34,6 +38,7 @@ class ComposerStaticInit64f6988b5c83aaaed6ed16f3b232866d
         '8825ede83f2f289127722d4e842cf7e8' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/bootstrap.php',
         '9cdd7b9056abc3081735233ba9dd9c7f' => __DIR__ . '/..' . '/facade/flare-client-php/src/helpers.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
+        '7dd996d98a91d095f100c75e0b9e2391' => __DIR__ . '/..' . '/spatie/async/src/helpers.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
         'ed962a97bd972bc82007176b647d4e36' => __DIR__ . '/..' . '/facade/ignition/src/helpers.php',
     );
@@ -55,6 +60,10 @@ class ComposerStaticInit64f6988b5c83aaaed6ed16f3b232866d
         array (
             'Whoops\\' => 7,
             'Webmozart\\Assert\\' => 17,
+        ),
+        'V' => 
+        array (
+            'VXM\\Async\\' => 10,
         ),
         'T' => 
         array (
@@ -89,6 +98,7 @@ class ComposerStaticInit64f6988b5c83aaaed6ed16f3b232866d
             'Symfony\\Component\\ErrorHandler\\' => 31,
             'Symfony\\Component\\CssSelector\\' => 30,
             'Symfony\\Component\\Console\\' => 26,
+            'Spatie\\Async\\' => 13,
         ),
         'R' => 
         array (
@@ -112,6 +122,7 @@ class ComposerStaticInit64f6988b5c83aaaed6ed16f3b232866d
         'O' => 
         array (
             'Opis\\Closure\\' => 13,
+            'Ognjen\\Laravel\\' => 15,
         ),
         'N' => 
         array (
@@ -171,6 +182,7 @@ class ComposerStaticInit64f6988b5c83aaaed6ed16f3b232866d
         'B' => 
         array (
             'Brick\\Math\\' => 11,
+            'Barryvdh\\Queue\\' => 15,
         ),
         'A' => 
         array (
@@ -201,6 +213,10 @@ class ComposerStaticInit64f6988b5c83aaaed6ed16f3b232866d
         'Webmozart\\Assert\\' => 
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
+        ),
+        'VXM\\Async\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/vxm/laravel-async/src',
         ),
         'TijsVerkoyen\\CssToInlineStyles\\' => 
         array (
@@ -314,6 +330,10 @@ class ComposerStaticInit64f6988b5c83aaaed6ed16f3b232866d
         array (
             0 => __DIR__ . '/..' . '/symfony/console',
         ),
+        'Spatie\\Async\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/spatie/async/src',
+        ),
         'Ramsey\\Uuid\\' => 
         array (
             0 => __DIR__ . '/..' . '/ramsey/uuid/src',
@@ -369,6 +389,10 @@ class ComposerStaticInit64f6988b5c83aaaed6ed16f3b232866d
         'Opis\\Closure\\' => 
         array (
             0 => __DIR__ . '/..' . '/opis/closure/src',
+        ),
+        'Ognjen\\Laravel\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/ognjen/laravel-async-mail/src',
         ),
         'NunoMaduro\\Collision\\' => 
         array (
@@ -487,6 +511,10 @@ class ComposerStaticInit64f6988b5c83aaaed6ed16f3b232866d
         array (
             0 => __DIR__ . '/..' . '/brick/math/src',
         ),
+        'Barryvdh\\Queue\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/barryvdh/laravel-async-queue/src',
+        ),
         'Asm89\\Stack\\' => 
         array (
             0 => __DIR__ . '/..' . '/asm89/stack-cors/src',
@@ -520,6 +548,7 @@ class ComposerStaticInit64f6988b5c83aaaed6ed16f3b232866d
         'App\\Http\\Controllers\\Client\\LoginContronller' => __DIR__ . '/../..' . '/app/Http/Controllers/Client/LoginContronller.php',
         'App\\Http\\Controllers\\Client\\SendMailController' => __DIR__ . '/../..' . '/app/Http/Controllers/Client/SendMailController.php',
         'App\\Http\\Controllers\\Client\\forgotPassword' => __DIR__ . '/../..' . '/app/Http/Controllers/Client/forgotPassword.php',
+        'App\\Http\\Controllers\\Client\\updatePassword' => __DIR__ . '/../..' . '/app/Http/Controllers/Client/updatePassword.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
@@ -540,6 +569,10 @@ class ComposerStaticInit64f6988b5c83aaaed6ed16f3b232866d
         'Asm89\\Stack\\Cors' => __DIR__ . '/..' . '/asm89/stack-cors/src/Cors.php',
         'Asm89\\Stack\\CorsService' => __DIR__ . '/..' . '/asm89/stack-cors/src/CorsService.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
+        'Barryvdh\\Queue\\AsyncQueue' => __DIR__ . '/..' . '/barryvdh/laravel-async-queue/src/AsyncQueue.php',
+        'Barryvdh\\Queue\\AsyncServiceProvider' => __DIR__ . '/..' . '/barryvdh/laravel-async-queue/src/AsyncServiceProvider.php',
+        'Barryvdh\\Queue\\Connectors\\AsyncConnector' => __DIR__ . '/..' . '/barryvdh/laravel-async-queue/src/Connectors/AsyncConnector.php',
+        'Barryvdh\\Queue\\Console\\AsyncCommand' => __DIR__ . '/..' . '/barryvdh/laravel-async-queue/src/Console/AsyncCommand.php',
         'Brick\\Math\\BigDecimal' => __DIR__ . '/..' . '/brick/math/src/BigDecimal.php',
         'Brick\\Math\\BigInteger' => __DIR__ . '/..' . '/brick/math/src/BigInteger.php',
         'Brick\\Math\\BigNumber' => __DIR__ . '/..' . '/brick/math/src/BigNumber.php',
@@ -3003,6 +3036,9 @@ class ComposerStaticInit64f6988b5c83aaaed6ed16f3b232866d
         'NunoMaduro\\Collision\\Provider' => __DIR__ . '/..' . '/nunomaduro/collision/src/Provider.php',
         'NunoMaduro\\Collision\\SolutionsRepositories\\NullSolutionsRepository' => __DIR__ . '/..' . '/nunomaduro/collision/src/SolutionsRepositories/NullSolutionsRepository.php',
         'NunoMaduro\\Collision\\Writer' => __DIR__ . '/..' . '/nunomaduro/collision/src/Writer.php',
+        'Ognjen\\Laravel\\AsyncMail' => __DIR__ . '/..' . '/ognjen/laravel-async-mail/src/AsyncMail.php',
+        'Ognjen\\Laravel\\AsyncMailProvider' => __DIR__ . '/..' . '/ognjen/laravel-async-mail/src/AsyncMailProvider.php',
+        'Ognjen\\Laravel\\Console\\Commands\\AsyncMailCommand' => __DIR__ . '/..' . '/ognjen/laravel-async-mail/src/Console/Commands/AsyncMailCommand.php',
         'Opis\\Closure\\Analyzer' => __DIR__ . '/..' . '/opis/closure/src/Analyzer.php',
         'Opis\\Closure\\ClosureContext' => __DIR__ . '/..' . '/opis/closure/src/ClosureContext.php',
         'Opis\\Closure\\ClosureScope' => __DIR__ . '/..' . '/opis/closure/src/ClosureScope.php',
@@ -4274,6 +4310,17 @@ class ComposerStaticInit64f6988b5c83aaaed6ed16f3b232866d
         'SebastianBergmann\\Type\\UnknownType' => __DIR__ . '/..' . '/sebastian/type/src/UnknownType.php',
         'SebastianBergmann\\Type\\VoidType' => __DIR__ . '/..' . '/sebastian/type/src/VoidType.php',
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
+        'Spatie\\Async\\Output\\ParallelError' => __DIR__ . '/..' . '/spatie/async/src/Output/ParallelError.php',
+        'Spatie\\Async\\Output\\ParallelException' => __DIR__ . '/..' . '/spatie/async/src/Output/ParallelException.php',
+        'Spatie\\Async\\Output\\SerializableException' => __DIR__ . '/..' . '/spatie/async/src/Output/SerializableException.php',
+        'Spatie\\Async\\Pool' => __DIR__ . '/..' . '/spatie/async/src/Pool.php',
+        'Spatie\\Async\\PoolStatus' => __DIR__ . '/..' . '/spatie/async/src/PoolStatus.php',
+        'Spatie\\Async\\Process\\ParallelProcess' => __DIR__ . '/..' . '/spatie/async/src/Process/ParallelProcess.php',
+        'Spatie\\Async\\Process\\ProcessCallbacks' => __DIR__ . '/..' . '/spatie/async/src/Process/ProcessCallbacks.php',
+        'Spatie\\Async\\Process\\Runnable' => __DIR__ . '/..' . '/spatie/async/src/Process/Runnable.php',
+        'Spatie\\Async\\Process\\SynchronousProcess' => __DIR__ . '/..' . '/spatie/async/src/Process/SynchronousProcess.php',
+        'Spatie\\Async\\Runtime\\ParentRuntime' => __DIR__ . '/..' . '/spatie/async/src/Runtime/ParentRuntime.php',
+        'Spatie\\Async\\Task' => __DIR__ . '/..' . '/spatie/async/src/Task.php',
         'Stringable' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
         'Symfony\\Component\\Console\\Application' => __DIR__ . '/..' . '/symfony/console/Application.php',
         'Symfony\\Component\\Console\\Color' => __DIR__ . '/..' . '/symfony/console/Color.php',
@@ -5032,6 +5079,13 @@ class ComposerStaticInit64f6988b5c83aaaed6ed16f3b232866d
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Processor' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Processor.php',
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Rule' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Rule.php',
         'UnhandledMatchError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php',
+        'VXM\\Async\\Async' => __DIR__ . '/..' . '/vxm/laravel-async/src/Async.php',
+        'VXM\\Async\\AsyncFacade' => __DIR__ . '/..' . '/vxm/laravel-async/src/AsyncFacade.php',
+        'VXM\\Async\\AsyncServiceProvider' => __DIR__ . '/..' . '/vxm/laravel-async/src/AsyncServiceProvider.php',
+        'VXM\\Async\\Commands\\JobMakeCommand' => __DIR__ . '/..' . '/vxm/laravel-async/src/Commands/JobMakeCommand.php',
+        'VXM\\Async\\Invocation' => __DIR__ . '/..' . '/vxm/laravel-async/src/Invocation.php',
+        'VXM\\Async\\Pool' => __DIR__ . '/..' . '/vxm/laravel-async/src/Pool.php',
+        'VXM\\Async\\Runtime\\ParentRuntime' => __DIR__ . '/..' . '/vxm/laravel-async/src/Runtime/ParentRuntime.php',
         'ValueError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/ValueError.php',
         'Webmozart\\Assert\\Assert' => __DIR__ . '/..' . '/webmozart/assert/src/Assert.php',
         'Webmozart\\Assert\\Mixin' => __DIR__ . '/..' . '/webmozart/assert/src/Mixin.php',
@@ -5140,10 +5194,17 @@ class ComposerStaticInit64f6988b5c83aaaed6ed16f3b232866d
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
+<<<<<<< HEAD
             $loader->prefixLengthsPsr4 = ComposerStaticInit64f6988b5c83aaaed6ed16f3b232866d::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit64f6988b5c83aaaed6ed16f3b232866d::$prefixDirsPsr4;
             $loader->prefixesPsr0 = ComposerStaticInit64f6988b5c83aaaed6ed16f3b232866d::$prefixesPsr0;
             $loader->classMap = ComposerStaticInit64f6988b5c83aaaed6ed16f3b232866d::$classMap;
+=======
+            $loader->prefixLengthsPsr4 = ComposerStaticInit8a88d4054c53661c34cba311ec913577::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit8a88d4054c53661c34cba311ec913577::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit8a88d4054c53661c34cba311ec913577::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit8a88d4054c53661c34cba311ec913577::$classMap;
+>>>>>>> d30f5a6f86d1fd599fc3a8f0a1314bc543f4133a
 
         }, null, ClassLoader::class);
     }

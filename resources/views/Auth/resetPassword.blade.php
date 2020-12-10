@@ -11,18 +11,18 @@
 <body>
     <div class="container" id="container">
         <div class="form-container ">
-            <form action="#" class="forgot-container form">
+            <form action="" method="POST" class="forgot-container form">
+                @csrf
                 <h1 class="title">Reset Password</h1>
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
-                    <input type="password" placeholder="New Password" />
+                    <input type="password" name="pass1" placeholder="New Password" />
                 </div>
                 <div class="input-field">
                     <i class="fas fa-check-circle"></i>
-                    <input type="password" placeholder="Confirm Password" />
+                    <input type="password" name="pass2" placeholder="Confirm Password" />
                 </div>
-                <button>Reset</button>
-            </form>
+                <button type="submit">Reset</button>
         </div>
 
         <div class="overlay-container">

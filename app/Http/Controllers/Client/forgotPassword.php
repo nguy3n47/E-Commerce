@@ -6,56 +6,63 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Mail\Gmail;
 use Illuminate\Support\Facades\Mail;
+use App\Mail\Gmail;
 
 class forgotPassword extends Controller
 {
+    private function generateRandomString($length = 6)
+    {
+        $characters = '0123456789';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        }
+        return $randomString;
+    }
 
-
-    public function getForgotPassword(Request $request)
+    public function getForgotPassword()
     {
         return view('../Auth/forgotPass');
     }
 
     public function postForgotPassword(Request $request)
     {
-        // $user = DB::table('users')->where('email', $request->email)->first();
-        // if ($user !== null) {
-        //     dd($user);
-        // }
-
-        $details = [
-            'title' => 'Mail from ItSolutionStuff.com',
-            'body' => 'This is for testing email using smtp'
-        ];
-
-        Mail::to('ducga079099@gmail.com')->send(new Gmail($details));
-        dd("oke");
-
-        //return redirect()->action('Client\forgotPassword@getEnterCode');
+        $user = DB::table('users')->where('email', $request->email)->first();
+        if ($user !== null) {
+            $details = [
+                'title' => 'Reset Password',
+                'body' => 'This is for testing email using smtp',
+                'code' => $this->generateRandomString(6)
+            ];
 
 
-
-
-
-
-
-
-
-
-
+            Mail::to($request->email)->send(new Gmail($details));
+            // save code to session to check
+            $request->session()->put(['id' => $user->id, 'code' => $details['code']]);
+            return redirect()->action('Client\forgotPassword@getEnterCode');
+        } else {
+            return redirect()->action('Client\forgotPassword@getForgotPassword');
+        }
     }
 
 
-
-
-    public function getEnterCode(Request $request)
+    public function getEnterCode()
     {
-
-        //return view('../Auth/EnterCode');
+        return view('../Auth/EnterCode');
     }
 
+    public function postEnterCode(Request $request)
+    {
+        $id = $request->session()->get('id');
+        $code = $request->session()->get('code');
+        if ($request->code === $code) {
+            return redirect()->action('Client\updatePassword@getconfirmPass');
+        } else {
+            return redirect()->action('Client\forgotPassword@getEnterCode');
+        }
+    }
 
 
 

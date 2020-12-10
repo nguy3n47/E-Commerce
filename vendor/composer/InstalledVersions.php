@@ -19,7 +19,11 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
+<<<<<<< HEAD
     'reference' => '98dcd720058e1a687b2092f7de1297a25f2497df',
+=======
+    'reference' => 'cbea5333adf1aa66eb61f45df4ed465c17265025',
+>>>>>>> d30f5a6f86d1fd599fc3a8f0a1314bc543f4133a
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -32,6 +36,16 @@ private static $installed = array (
       array (
       ),
       'reference' => '8d8f88b3b3830916be94292c1fbce84433efb1aa',
+    ),
+    'barryvdh/laravel-async-queue' => 
+    array (
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
+      'aliases' => 
+      array (
+        0 => '0.7.x-dev',
+      ),
+      'reference' => '2ec069792a1005e150647fcaaed271968ca5ea66',
     ),
     'brick/math' => 
     array (
@@ -458,7 +472,11 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
+<<<<<<< HEAD
       'reference' => '98dcd720058e1a687b2092f7de1297a25f2497df',
+=======
+      'reference' => 'cbea5333adf1aa66eb61f45df4ed465c17265025',
+>>>>>>> d30f5a6f86d1fd599fc3a8f0a1314bc543f4133a
     ),
     'laravel/tinker' => 
     array (
@@ -560,6 +578,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '7c2b95589bf81e274e61e47f7672a1b2c3e06eaa',
+    ),
+    'ognjen/laravel-async-mail' => 
+    array (
+      'pretty_version' => 'v2.0.0',
+      'version' => '2.0.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'e3b6f206b598671324257868bbd9a9f758e0d191',
     ),
     'opis/closure' => 
     array (
@@ -773,8 +800,8 @@ private static $installed = array (
     array (
       'provided' => 
       array (
-        0 => '1.0.0',
-        1 => '1.0',
+        0 => '1.0',
+        1 => '1.0.0',
       ),
     ),
     'psr/simple-cache' => 
@@ -972,6 +999,15 @@ private static $installed = array (
       array (
       ),
       'reference' => 'c6c1022351a901512170118436c764e473f6de8c',
+    ),
+    'spatie/async' => 
+    array (
+      'pretty_version' => '1.5.2',
+      'version' => '1.5.2.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'e410c38a93b93589dfd8046b4b93cdaa6a9b7de2',
     ),
     'swiftmailer/swiftmailer' => 
     array (
@@ -1274,6 +1310,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '80953678b19901e5165c56752d087fc11526017c',
+    ),
+    'vxm/laravel-async' => 
+    array (
+      'pretty_version' => '2.0.3',
+      'version' => '2.0.3.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '9f8be749043e11015e720b243f14ea6f741642f5',
     ),
     'webmozart/assert' => 
     array (

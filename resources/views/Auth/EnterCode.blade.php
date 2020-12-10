@@ -12,7 +12,8 @@
 <body>
     <div class="container" id="container">
         <div class="form-container ">
-            <form action="#" class="forgot-container form">
+            <form action="" method="POST" class="forgot-container form">
+                @csrf
                 <h1 class="title">Enter code</h1>
                 <div class="input-field">
                     <i class="fas fa-code"></i>
