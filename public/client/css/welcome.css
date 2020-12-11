@@ -1,9 +1,26 @@
 header {
-    display: block;
+    display: block !important;
+    height: auto !important;
+}
+
+.nav-first {
+    font-size: 0.9rem;
+}
+
+.nav-first li {
+    display: flex !important;
+}
+
+.nav-first li a {
+    margin: auto;
 }
 
 .navbar {
     z-index: 1;
+}
+
+body {
+    background-color: black;
 }
 
 .nav-bhx {
@@ -14,6 +31,12 @@ header {
     .fas,
     .far {
         display: none !important;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .nav-first {
+        font-size: 0.6rem;
     }
 }
 
