@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enter Password</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
-    <link rel="stylesheet" href="../public/client/css/forgot.css" />
+    <link rel="stylesheet" type="text/css" href="../public/client/css/forgot.css" />
 </head>
 
 <body>
