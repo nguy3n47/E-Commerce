@@ -14,9 +14,7 @@ use App\Http\Controllers\Client;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','Client\welcome@getHomePage');
 
 // login
 Route::get('/login', 'Client\LoginContronller@create');
