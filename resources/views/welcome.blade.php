@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,11 +17,14 @@
     <!-- JQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js">
+    </script>
     <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js">
+    </script>
 
 
     <!-- Font Awesome -->
@@ -41,13 +45,17 @@
         <nav class="navbar navbar-expand-lg navbar-dark  black nav-first">
             <div class="container">
 
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><img src="{{ asset('client/images/image_welcome/logoshop.png') }}" width="35" height="35" alt=""><b> Thế giới công nghệ</b></i>
+                            <a class="nav-link" href="#"><img
+                                    src="{{ asset('client/images/image_welcome/logoshop.png') }}" width="35" height="35"
+                                    alt=""><b> Thế giới công nghệ</b></i>
                                 </span>
                             </a>
                         </li>
@@ -57,13 +65,16 @@
                         <nav class="navbar navbar-dark ">
                             <form class="form-inline my-2 my-lg-0 ml-auto">
                                 <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                                <button class="btn btn-outline-white btn-md my-2 my-sm-0 ml-3" type="submit">Search</button>
+                                <button class="btn btn-outline-white btn-md my-2 my-sm-0 ml-3"
+                                    type="submit">Search</button>
                             </form>
                         </nav>
                         <li class="nav-item nav-bhx pt-2">
                             <a class="nav-link " href="#"><i class="fas fa-circle"></i>
-                                <img src="{{ asset('client/images/image_welcome/logo-bhx.png') }}" width="100" height="15"alt="">
-                                <b  style="display:inline-block;vertical-align:middle;margin-left:2px;color:yellow; line-height:1.3">
+                                <img src="{{ asset('client/images/image_welcome/logo-bhx.png') }}" width="100"
+                                    height="15" alt="">
+                                <b
+                                    style="display:inline-block;vertical-align:middle;margin-left:2px;color:yellow; line-height:1.3">
                                     <span style="font-weight:normal;">giảm</span>
                                     " đến 50% +"
                                     <br>
@@ -74,8 +85,8 @@
                         </li>
                         <li class="nav-item mt-1">
                             <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i> Giỏ hàng
-                            
-                        </a>
+
+                            </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Lịch sử mua hàng</a>
@@ -91,8 +102,10 @@
         <nav class="navbar navbar-expand-lg navbar-dark  light-blue accent-3">
             <div class="container">
 
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
@@ -140,31 +153,43 @@
         <div class="row">
             <div class="col-8">
                 <!-- Carousel wrapper -->
-                <div id="carouselDarkVariant" class="carousel slide carousel-fade carousel-dark" data-mdb-ride="carousel">
+                <div id="carouselDarkVariant" class="carousel slide carousel-fade carousel-dark"
+                    data-mdb-ride="carousel">
 
 
                     <!-- Inner -->
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <a href="#"><img class="d-block w-100" src="{{ asset('client/images/image_welcome/Carousel1.png') }}" alt="First slide"></a>
+                            <a href="#"><img class="d-block w-100"
+                                    src="{{ asset('client/images/image_welcome/Carousel1.png') }}"
+                                    alt="First slide"></a>
                         </div>
                         <div class="carousel-item">
-                            <a href="#"><img class="d-block w-100" src="{{ asset('client/images/image_welcome/Carousel2.png') }}" alt="Second slide"></a>
+                            <a href="#"><img class="d-block w-100"
+                                    src="{{ asset('client/images/image_welcome/Carousel2.png') }}"
+                                    alt="Second slide"></a>
                         </div>
                         <div class="carousel-item">
-                            <a href="#"><img class="d-block w-100" src="{{ asset('client/images/image_welcome/Carousel3.png') }}" alt="Third slide"></a>
+                            <a href="#"><img class="d-block w-100"
+                                    src="{{ asset('client/images/image_welcome/Carousel3.png') }}"
+                                    alt="Third slide"></a>
                         </div>
                         <div class="carousel-item">
-                            <a href="#"><img class="d-block w-100" src="{{ asset('client/images/image_welcome/Carousel4.png') }}" alt="Four slide"></a>
+                            <a href="#"><img class="d-block w-100"
+                                    src="{{ asset('client/images/image_welcome/Carousel4.png') }}" alt="Four slide"></a>
                         </div>
                         <div class="carousel-item">
-                            <a href="#"><img class="d-block w-100" src="{{ asset('client/images/image_welcome/Carousel5.png') }}" alt="Five slide"></a>
+                            <a href="#"><img class="d-block w-100"
+                                    src="{{ asset('client/images/image_welcome/Carousel5.png') }}" alt="Five slide"></a>
                         </div>
                         <div class="carousel-item">
-                            <a href="#"><img class="d-block w-100" src="{{ asset('client/images/image_welcome/Carousel6.png') }}" alt="Six slide"></a>
+                            <a href="#"><img class="d-block w-100"
+                                    src="{{ asset('client/images/image_welcome/Carousel6.png') }}" alt="Six slide"></a>
                         </div>
                         <div class="carousel-item">
-                            <a href="#"><img class="d-block w-100" src="{{ asset('client/images/image_welcome/Carousel7.png') }}" alt="Seven slide"></a>
+                            <a href="#"><img class="d-block w-100"
+                                    src="{{ asset('client/images/image_welcome/Carousel7.png') }}"
+                                    alt="Seven slide"></a>
                         </div>
                     </div>
                     <!-- Inner -->
@@ -188,8 +213,12 @@
                     </h2>
                 </figure>
                 <div>
-                    <a href="#"><img width="100%" src="{{ asset('client/images/image_welcome/24hCongNghe_files/M51-398-110-398x110-2.png') }}" alt=""></a>
-                    <a href="#"><img width="100%" class="mt-2" src="{{ asset('client/images/image_welcome/24hCongNghe_files/398-110-398x110-2.png') }}" alt=""></a>
+                    <a href="#"><img width="100%"
+                            src="{{ asset('client/images/image_welcome/24hCongNghe_files/M51-398-110-398x110-2.png') }}"
+                            alt=""></a>
+                    <a href="#"><img width="100%" class="mt-2"
+                            src="{{ asset('client/images/image_welcome/24hCongNghe_files/398-110-398x110-2.png') }}"
+                            alt=""></a>
                 </div>
             </div>
 
@@ -202,11 +231,14 @@
     <div class="container mt-3">
         <!--image-->
         <div class="container m-0 p-0 mt-2">
-            <a href="#"><img width="100%" src="{{ asset('client/images/image_welcome/24hCongNghe_files/xa-kho-1200-75-1200x75.png') }}" alt=""></a>
+            <a href="#"><img width="100%"
+                    src="{{ asset('client/images/image_welcome/24hCongNghe_files/xa-kho-1200-75-1200x75.png') }}"
+                    alt=""></a>
         </div>
         <!--image-->
         <div class="container m-0 p-0 mt-2">
-            <a href="#"><img width="100%" src="{{ asset('client/images/image_welcome/24hCongNghe_files/km-hot.png') }}" alt=""></a>
+            <a href="#"><img width="100%" src="{{ asset('client/images/image_welcome/24hCongNghe_files/km-hot.png') }}"
+                    alt=""></a>
         </div>
         <!--SP khuyen mai-->
         <div class="container m-0 p-0 mt-2">
@@ -218,38 +250,43 @@
                             <!--owl-wrapper-->
                             <div class="row mt-5 mb-5 owl-wrapper">
                                 <!-- show products -->
-                                @for($i = 0; $i < count($products); $i++)
-                                <div class="col ">
+                                @for($i = 0; $i < count($products); $i++) <div class="col ">
                                     <div class="ml-3">
-                                        <label style="background-color:yellow; width: 45%; left: 0; border-radius:5px; padding-left:3px; padding:2px"><b>Trả góp 0%</b></label>
+                                        <label
+                                            style="background-color:yellow; width: 45%; left: 0; border-radius:5px; padding-left:3px; padding:2px"><b>Trả
+                                                góp 0%</b></label>
                                     </div>
-                                    <img height="180" src="{{ asset('client/images/image_welcome/24hCongNghe_files/iphone-12-trang-new-600x600-600x600..jpg') }}" class=" lazyloaded" alt="iPhone 12 128GB">
-                                    <h3>{{ $products[$i]->pro_Name }}</h3>
-                                    <div class="price">
-                                        <strong>{{ $products[$i]->price }}₫</strong>
-                                        <br>
-                                        <span>Số lượng: {{ $products[$i]->quantity}}</span>
-                                    </div>
-                                </div>
-                                @endfor
+                                    <a href="{{ url('/detail', $products[$i]->id) }}">
+                                        <img height="180"
+                                            src="{{ asset('client/images/image_welcome/24hCongNghe_files/iphone-12-trang-new-600x600-600x600..jpg') }}"
+                                            class=" lazyloaded" alt="iPhone 12 128GB">
+                                        <h3>{{ $products[$i]->pro_Name }}</h3>
+                                        <div class="price">
+                                            <strong>{{ $products[$i]->price }}₫</strong>
+                                            <br>
+                                            <span>Số lượng: {{ $products[$i]->quantity}}</span>
+                                        </div>
+                                    </a>
                             </div>
+                            @endfor
                         </div>
                     </div>
-                    <div class="carousel-item">
-                        
-                    </div>
+                </div>
+                <div class="carousel-item">
 
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-mdb-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-mdb-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </a>
+
             </div>
+            <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-mdb-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-mdb-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </a>
         </div>
+    </div>
     </div>
 
 </body>

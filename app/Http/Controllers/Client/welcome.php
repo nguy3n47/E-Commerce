@@ -16,5 +16,8 @@ class welcome extends Controller
         $products = DB::table('product')->get();
         return view('welcome')->with('products', $products);
     }
+    
+    public function getDetail($id){
+        return view('../Auth/detailProduct');
+    }
 }
-

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Details</title>
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
-    <link rel="stylesheet" type="text/css" href="../public/client/css/styleDetails.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('client/css/styleDetails.css') }}">
 </head>
 
 <body>
@@ -17,12 +17,11 @@
                 <i class="fas fa-heart"><sup id="items-added"></sup></i>
             </div>
             <div class="images">
-                <h2>Apple Watch Series 6</h2>
-                <div class="slider"><img id="big-image" src="../public/client/images/product/1.jpg" alt=""></div>
+                <div class="slider"><img id="big-image" src="{{ asset('client/images/product/1.jpg') }}" alt=""></div>
                 <div id="img-slider" class="img-slider">
-                    <div class="imgs"><img id="Nomos1" src="../public/client/images/product/1.jpg" alt=""></div>
-                    <div class="imgs"><img id="Nomos2" src="../public/client/images/product/2.jpg" alt=""></div>
-                    <div class="imgs"><img id="Nomos3" src="../public/client/images/product/3.jpg" alt=""></div>
+                    <div class="imgs"><img id="Nomos1" src="{{ asset('client/images/product/1.jpg') }}" alt=""></div>
+                    <div class="imgs"><img id="Nomos2" src="{{ asset('client/images/product/2.jpg') }}" alt=""></div>
+                    <div class="imgs"><img id="Nomos3" src="{{ asset('client/images/product/3.jpg') }}" alt=""></div>
                 </div>
             </div>
             <div class="infos">
@@ -40,7 +39,6 @@
                 </div>
                 <div id="more-infos">
                     <h5 class="choose">Giới thiệu</h5>
-                    <h5 class="choose">Bảo hành</h5>
                     <h5 class="choose">Bảo hành</h5>
                 </div>
                 <div id="info-content">
@@ -73,7 +71,7 @@
             </div>
         </div>
     </div>
-    <script src="../public/client/js/product&profile.js"></script>
+    <script src="{{ asset('client/js/product&profile.js') }}"></script>
 </body>
 
 </html>

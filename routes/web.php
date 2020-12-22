@@ -14,7 +14,15 @@ use App\Http\Controllers\Client;
 |
 */
 
+// home page
 Route::get('/','Client\welcome@getHomePage');
+
+// product detail
+Route::get('/detail/{product_id}', 'Client\welcome@getDetail');
+
+
+
+
 
 // login
 Route::get('/login', 'Client\LoginContronller@create');
