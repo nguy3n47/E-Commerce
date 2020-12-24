@@ -68,7 +68,7 @@
   </div>
 
   <!-- Script -->
-  <script type="text/javascript" src="script.js"></script>
+  <script type="text/javascript" src="{{ asset('client/js/product&profile.js') }}"></script>
 
 </body>
 
