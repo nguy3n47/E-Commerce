@@ -53,7 +53,7 @@ img{
     padding: 2rem 1rem;
 }
 .product-title{
-    font-size: 3rem;
+    font-size: 4rem;
     text-transform: capitalize;
     font-weight: 700;
     position: relative;
@@ -73,16 +73,19 @@ img{
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 400;
-    font-size: 0.9rem;
+    font-size: 1.5rem;
     display: inline-block;
     margin-bottom: 0.1rem;
     background: #256eff;
     color: #fff;
     padding: 0 0.3rem;
     transition: all 0.5s ease;
+    text-decoration: none;
 }
 .product-link:hover{
     opacity: 0.9;
+    text-decoration: none;
+    color: #D8D8D8;
 }
 .product-rating{
     color: #ffc107;
@@ -109,7 +112,7 @@ img{
 .product-detail h2{
     text-transform: capitalize;
     color: #12263a;
-    padding-bottom: 0.6rem;
+    padding-bottom: 1rem;
 }
 .product-detail p{
     font-size: 0.9rem;
@@ -197,8 +200,11 @@ img{
     display: flex;
     justify-content: start;
 }
-.infos .price h3:last-child  {
-    margin-left: 20px; 
+.infos .price span{
+    font-size: 15px;
+}
+.infos .price h3:first-child  {
+    margin-right: 20px; 
 }
 
 
@@ -234,14 +240,24 @@ h3:nth-child(2) {
     color: gray;
     text-decoration: line-through; 
 }
-
+.sale-price {
+    display: inline-block;
+    vertical-align: middle;
+    color: #333;
+    height: 21px;
+    margin-left: 5px;
+    padding: 3px;
+    font-size: 10px;
+    border-radius: 5px;
+    border: 1px solid #f57224;
+}
 .choose {
     cursor: pointer;
     margin-right: 20px;
 }
 
 .quantity {
-    width: 35%;
+    width: 25%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -262,6 +278,24 @@ h3:nth-child(2) {
 .choose-color{
     display: flex;
     flex-direction: column;
+}
+.choose-color h4:first-child{
+    margin-right: 18px;
+
+}
+.choose-color button{
+    width: 80px;
+    font-size: 13px;
+    padding: 5px;
+    margin-right: 20px;
+    background-color: transparent;
+    border: 1px solid #333;
+    border-radius: 5px;
+}
+.choose-color button:hover{
+    background-color: #4481eb;
+    border: 1px solid #4481eb;
+    color: #ddd;
 }
 
 .choose-color .choose button{
@@ -284,10 +318,12 @@ h3:nth-child(2) {
 
 .buttons {
     height: 40px;
+    line-height: 25px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    margin-top: 20px;
 }
 
 .buttons button {
@@ -333,4 +369,55 @@ h3:nth-child(2) {
     .product-content{
         padding-top: 0;
     }
+}
+
+/* RAtING */
+.btn-grey{
+    background-color:#D8D8D8;
+	color:#FFF;
+}
+.rating-block{
+	background-color:#FAFAFA;
+	border:1px solid #EFEFEF;
+	padding:15px 15px 20px 15px;
+	border-radius:3px;
+}
+.bold{
+	font-weight:700;
+}
+.padding-bottom-7{
+	padding-bottom:7px;
+}
+
+.review-block{
+	background-color:#FAFAFA;
+	border:1px solid #EFEFEF;
+	padding:15px;
+	border-radius:3px;
+	margin-bottom:15px;
+}
+.review-block-name{
+	font-size:12px;
+	margin:10px 0;
+}
+.review-block-date{
+	font-size:12px;
+}
+.review-block-rate{
+	font-size:13px;
+	margin-bottom:15px;
+}
+.review-block-title{
+	font-size:15px;
+	font-weight:700;
+	margin-bottom:10px;
+}
+.review-block-description{
+	font-size:13px;
+}
+.col-sm-9 p{
+    font-size: 16px;
+}
+.glyphicon-star{
+    color: #ffc107;
 }
