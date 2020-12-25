@@ -20,32 +20,32 @@
             <div class="product-imgs">
                 <div class="img-display">
                     <div class="img-showcase">
-                        <img src="shoes_images/1.jpg" alt="shoe image">
-                        <img src="shoes_images/2.jpg" alt="shoe image">
-                        <img src="shoes_images/3.jpg" alt="shoe image">
-                        <img src="shoes_images/4.jpg" alt="shoe image">
+                        <img src="{{ asset('client/images/1.jpg') }}" alt="shoe image">
+                        <img src="{{ asset('client/images/2.jpg') }}" alt="shoe image">
+                        <img src="{{ asset('client/images/3.jpg') }}" alt="shoe image">
+                        <img src="{{ asset('client/images/4.jpg') }}" alt="shoe image">
                     </div>
                 </div>
                 <div class="img-select">
                     <div class="img-item">
                         <a href="#" data-id="1">
-                            <img src="shoes_images/1.jpg" alt="shoe image">
+                            <img src="{{ asset('client/images/1.jpg') }}" alt="shoe image">
                         </a>
                     </div>
 
                     <div class="img-item">
                         <a href="#" data-id="2">
-                            <img src="shoes_images/2.jpg" alt="shoe image">
+                            <img src="{{ asset('client/images/2.jpg') }}" alt="shoe image">
                         </a>
                     </div>
                     <div class="img-item">
                         <a href="#" data-id="3">
-                            <img src="shoes_images/3.jpg" alt="shoe image">
+                            <img src="{{ asset('client/images/3.jpg') }}" alt="shoe image">
                         </a>
                     </div>
                     <div class="img-item">
                         <a href="#" data-id="4">
-                            <img src="shoes_images/4.jpg" alt="shoe image">
+                            <img src="{{ asset('client/images/4.jpg') }}" alt="shoe image">
                         </a>
                     </div>-
                 </div>
