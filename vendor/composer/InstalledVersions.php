@@ -53,6 +53,15 @@ private static $installed = array (
       ),
       'reference' => '2ec069792a1005e150647fcaaed271968ca5ea66',
     ),
+    'barryvdh/laravel-debugbar' => 
+    array (
+      'pretty_version' => 'v3.5.1',
+      'version' => '3.5.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '233c10688f4c1a6e66ed2ef123038b1363d1bedc',
+    ),
     'brick/math' => 
     array (
       'pretty_version' => '0.9.1',
@@ -489,6 +498,15 @@ private static $installed = array (
       ),
       'reference' => '45884b526e10a88a1b179fa1a1a24d5468c668c2',
     ),
+    'laravel/ui' => 
+    array (
+      'pretty_version' => 'v3.1.0',
+      'version' => '3.1.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '444072cb2f8baaa15172c5cde2bd30d188c3b7e7',
+    ),
     'league/commonmark' => 
     array (
       'pretty_version' => '1.5.7',
@@ -515,6 +533,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '353f66d7555d8a90781f6f5e7091932f9a4250aa',
+    ),
+    'maximebf/debugbar' => 
+    array (
+      'pretty_version' => 'v1.16.4',
+      'version' => '1.16.4.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'c86c717e4bf3c6d98422da5c38bfa7b0f494b04c',
     ),
     'mockery/mockery' => 
     array (
@@ -1037,6 +1064,15 @@ private static $installed = array (
       array (
       ),
       'reference' => 'b8d8eb06b0942e84a69e7acebc3e9c1e6e6e7256',
+    ),
+    'symfony/debug' => 
+    array (
+      'pretty_version' => 'v4.4.18',
+      'version' => '4.4.18.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '5dfc7825f3bfe9bb74b23d8b8ce0e0894e32b544',
     ),
     'symfony/deprecation-contracts' => 
     array (

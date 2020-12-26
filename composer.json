@@ -15,12 +15,14 @@
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^8.12",
         "laravel/tinker": "^2.5",
+        "laravel/ui": "^3.1",
         "ognjen/laravel-async-mail": "v2.0.0",
         "phpmailer/phpmailer": "^6.2",
         "vxm/laravel-async": "^2.0",
         "wildbit/swiftmailer-postmark": "^3.3"
     },
     "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.5",
         "facade/ignition": "^2.5",
         "fakerphp/faker": "^1.9.1",
         "mockery/mockery": "^1.4.2",
