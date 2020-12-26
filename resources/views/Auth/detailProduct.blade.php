@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Details</title>
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
-    <link rel="stylesheet" type="text/css" href="{{ asset('client/css/styleDetails.css') }}">
+    <link rel="stylesheet" type="text/css" href="../public/client/css/styleDatils.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
 
 
@@ -20,32 +20,32 @@
             <div class="product-imgs">
                 <div class="img-display">
                     <div class="img-showcase">
-                        <img src="{{ asset('client/images/1.jpg') }}" alt="shoe image">
-                        <img src="{{ asset('client/images/2.jpg') }}" alt="shoe image">
-                        <img src="{{ asset('client/images/3.jpg') }}" alt="shoe image">
-                        <img src="{{ asset('client/images/4.jpg') }}" alt="shoe image">
+                        <img src="{{ asset('client/images/product/1.jpg') }}" alt="shoe image">
+                        <img src="{{ asset('client/images/product/2.jpg') }}" alt="shoe image">
+                        <img src="{{ asset('client/images/product/3.jpg') }}" alt="shoe image">
+                        <img src="{{ asset('client/images/product/4.jpg') }}" alt="shoe image">
                     </div>
                 </div>
                 <div class="img-select">
                     <div class="img-item">
                         <a href="#" data-id="1">
-                            <img src="{{ asset('client/images/1.jpg') }}" alt="shoe image">
+                            <img src="{{ asset('client/images/product/1.jpg') }}" alt="shoe image">
                         </a>
                     </div>
 
                     <div class="img-item">
                         <a href="#" data-id="2">
-                            <img src="{{ asset('client/images/2.jpg') }}" alt="shoe image">
+                            <img src="{{ asset('client/images/product/2.jpg') }}" alt="shoe image">
                         </a>
                     </div>
                     <div class="img-item">
                         <a href="#" data-id="3">
-                            <img src="{{ asset('client/images/3.jpg') }}" alt="shoe image">
+                            <img src="{{ asset('client/images/product/3.jpg') }}" alt="shoe image">
                         </a>
                     </div>
                     <div class="img-item">
                         <a href="#" data-id="4">
-                            <img src="{{ asset('client/images/4.jpg') }}" alt="shoe image">
+                            <img src="{{ asset('client/images/product/4.jpg') }}" alt="shoe image">
                         </a>
                     </div>-
                 </div>
