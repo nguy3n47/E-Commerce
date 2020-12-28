@@ -93,7 +93,7 @@ p {
 }
 
 #top-left ul li a:hover {
-    color: #e43445;
+    color: #4481eb;
 }
 
 #top-right ul {
@@ -112,7 +112,7 @@ p {
 }
 
 #top-right ul li a:hover {
-    color: #e43445;
+    color: #4481eb;
 }
 
 /* --------------- navbar ----------------- */
@@ -818,11 +818,10 @@ main .blog-content span {
     display: block;
 }
 
-
 .blog-header .icons {
     position: absolute;
-    right: 15%;
-    top: 17%;
+    right: 5%;
+    top: 15%;
     transform: translate(0, -50%) scale(0);
     z-index: 2;
     opacity: 0;
@@ -842,16 +841,16 @@ main .blog-content span {
 
 .blog-header .icons span i {
     transition: all 500ms ease-in-out;
-    color: #10326e;
+    color: #3f4954;
 }
 
 .blog-header .icons span:not(:last-child) {
     margin-bottom: 1rem;
 }
 
-.blog-header .icons span:hover {
-    background-color: #ff7c9c;
+.blog-header .icons span:hover i{
     color: #fff;
+    color: #e43445;
 }
 
 .blog-content:hover .icons {
@@ -936,11 +935,11 @@ section .container .owl-nav {
 }
 
 .rating {
-    color: #43b3d9;
+    color:#4481eb;
 }
 
 .product-footer .price {
-    color: #ff7c9c;
+    color: #e43445;
     font-size: 1.3rem;
 }
 
@@ -980,16 +979,15 @@ section .container .owl-nav {
 
 .product-header .icons span i {
     transition: all 500ms ease-in-out;
-    color: #10326e;
+    color: #3f4954;
 }
 
 .product-header .icons span:not(:last-child) {
     margin-bottom: 1rem;
 }
 
-.product-header .icons span:hover {
-    background-color: #ff7c9c;
-    color: #fff;
+.product-header .icons span:hover i{
+    color: #e43445;
 }
 
 .product:hover .icons {
@@ -1231,6 +1229,7 @@ section .container .owl-nav {
 /* ----------------- Footer --------------------- */
 
 footer.footer {
+    margin-top: 100px;
     height: 100%;
     background: var(--bg-color);
     position: relative;

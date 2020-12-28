@@ -172,10 +172,10 @@
             <!-- Carousel -->
             <section>
                 <div class="blog">
-                    <div class="title" style="margin-bottom: -100px;">
+                    <div class="title" data-aos="zoom-in" data-aos-delay="200" style="margin-bottom: -100px;">
                         <h2>Sản Phẩm Bán Chạy Nhất</h2>
                     </div>
-                    <div class="container">
+                    <div class="container" data-aos="zoom-in" data-aos-delay="200">
                         <div class="owl-carousel owl-theme blog-post">
                             @foreach($products as $pro)
                             <a href="{{ url('/', str_replace(' ', '-', $pro->pro_Name))}}">
@@ -205,11 +205,11 @@
 
             <!-- Gird Product -->
             <section class="section featured">
-                <div class="title">
+                <div class="title" data-aos="zoom-in" data-aos-delay="200">
                     <h2>Sản Phẩm Mới Nhất</h2>
                 </div>
 
-                <div class="product-center container">
+                <div class="product-center container" data-aos="zoom-in" data-aos-delay="200">
                     <div class="product">
                         <div class="product-header">
                             <img src="./images/pic5.jpg" alt="">
@@ -236,11 +236,11 @@
             </section>
 
             <section class="section featured">
-                <div class="title">
+                <div class="title" data-aos="zoom-in" data-aos-delay="200">
                     <h2>Sản Phẩm Yêu Thích</h2>
                 </div>
 
-                <div class="product-center container">
+                <div class="product-center container" data-aos="zoom-in" data-aos-delay="200">
                     <div class="product">
                         <div class="product-header">
                             <img src="./images/pic5.jpg" alt="">
@@ -268,6 +268,56 @@
 
         </main>
     </div>
+
+    <!-- --------------------------- Footer ---------------------------------------- -->
+
+    <footer class="footer">
+        <div class="container">
+            <div class="about-us" data-aos="fade-right" data-aos-delay="200">
+                <h2>About us</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium quia atque nemo ad modi officiis
+                    iure, autem nulla tenetur repellendus.</p>
+            </div>
+            <div class="newsletter" data-aos="fade-right" data-aos-delay="200">
+                <h2>Rjfjhh</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis aperiam sed facilis eaque. Exercitationem expedita nam aspernatur quia hic repudiandae illo tempora quos est ipsam voluptas dolorem, distinctio nulla neque.</p>
+                <div class="form-element">
+                    <input type="text" placeholder="Email"><span><i class="fas fa-chevron-right"></i></span>
+                </div>
+            </div>
+            <div class="instagram" data-aos="fade-left" data-aos-delay="200">
+                <h2>Our Teams</h2>
+                <div class="flex-row">
+                    <img src="./assets/instagram/thumb-card3.png" alt="insta1">
+                    <img src="./assets/instagram/thumb-card4.png" alt="insta2">
+                </div>
+                <div class="flex-row">
+                    <img src="./assets/instagram/thumb-card6.png" alt="insta4">
+                    <img src="./assets/instagram/thumb-card7.png" alt="insta5">
+                </div>
+            </div>
+            <div class="follow" data-aos="fade-left" data-aos-delay="200">
+                <h2>Follow us</h2>
+                <p>Let us be Social</p>
+                <div>
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+        <div class="rights flex-row">
+            <h4 class="text-gray">
+                <a href="#" target="_black">AECC Team</a>
+            </h4>
+        </div>
+        <div class="move-up">
+            <span><i class="fas fa-arrow-circle-up fa-2x"></i></span>
+        </div>
+    </footer>
+
+    <!-- -------------x------------- Footer --------------------x------------------- -->
 
 
     <!-- jQuery -->
