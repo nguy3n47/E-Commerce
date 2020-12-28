@@ -13,11 +13,14 @@ use App\Models\Product;
 class welcome extends Controller
 {
     public function getHomePage(){
-        $products = DB::table('product')->get();
+        $products = DB::table('product')->orderBy('create_at', 'desc')->take(10)->get();
         return view('homePage')->with('products', $products);
     }
     
-    public function getDetail($id){
+    public function getDetail($product_name){
+        $product = str_replace('-', ' ', $product_name);
+        
+        
         return view('../Auth/detailProduct');
     }
 }

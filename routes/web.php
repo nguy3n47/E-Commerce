@@ -18,7 +18,7 @@ use App\Http\Controllers\Client;
 Route::get('/','Client\welcome@getHomePage');
 
 // product detail
-Route::get('/detail/{product_id}', 'Client\welcome@getDetail');
+Route::get('/{pro_name}', 'Client\welcome@getDetail');
 
 
 // login
