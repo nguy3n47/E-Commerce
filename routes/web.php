@@ -18,7 +18,8 @@ use App\Http\Controllers\Client;
 Route::get('/','Client\welcome@getHomePage');
 
 // product detail
-Route::get('/detail/{product_id}', 'Client\welcome@getDetail');
+Route::get('/{pro_name}', 'Client\welcome@getDetail');
+
 
 // login
 Route::get('/login', 'Client\LoginContronller@create');
@@ -42,14 +43,3 @@ Route::post('/enterCode', 'Client\forgotPassword@postEnterCode');
 
 Route::get('/confirmPass', 'Client\updatePassword@getconfirmPass');
 Route::post('/confirmPass', 'Client\updatePassword@postconfirmPass');
-
-
-
-// admin
-Route::group(['prefix'  =>  'admin'], function () {
-
-    Route::get('login', 'Admin\LoginController@showLoginForm')->name('admin.login');
-    Route::post('login', 'Admin\LoginController@login')->name('admin.login.post');
-    Route::get('logout', 'Admin\LoginController@logout')->name('admin.logout');
-    
-});
