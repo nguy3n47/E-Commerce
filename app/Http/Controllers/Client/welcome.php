@@ -18,9 +18,13 @@ class welcome extends Controller
     }
     
     public function getDetail($product_name){
-        $product = str_replace('-', ' ', $product_name);
-        
-        
-        return view('../Auth/detailProduct');
+        $pro = str_replace('-', ' ', $product_name);
+        $product = DB::table('product')->where('pro_Name', $pro)->get();
+        return view('../Shop/detailProduct')->with('product', $product[0]);
+    }
+
+
+    public function postToCart(Request $request){
+        dd($request->all());
     }
 }

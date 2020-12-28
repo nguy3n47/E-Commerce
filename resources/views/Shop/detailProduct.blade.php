@@ -7,7 +7,9 @@
     <title>Details</title>
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <link rel="stylesheet" type="text/css" href="{{ asset('client/css/styleDetails.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
 
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -55,11 +57,11 @@
                 <div class="title">
                     <!--Tên-->
                     <h1 class="product-title">
-                        Apple Watch
+                        {{ $product->pro_Name}}
                     </h1>
                     <i class="far fa-heart" style="font-size: 30px;margin: 1.4rem 0;"><sup id="items-added"></sup></i>
                 </div>
-                <a href="#" class="product-link">Series 6</a>
+                <a href="#" class="product-link">{{ $product->sku}}</a>
                 <div class="infos">
                     <!--Đánh giá-->
                     <div class="reviews">
@@ -72,7 +74,7 @@
 
                     <!--Giá sp-->
                     <div class="price">
-                        <h3>13.999.000<span>₫</span></h3>
+                        <h3>{{ $product->price}}<span>₫</span></h3>
                     </div>
                     <div id="more-infos">
                         <h5 class="choose">Giới thiệu</h5>
@@ -111,7 +113,15 @@
                     <div class="buttons">
                         <button id="add-to-cart"><i class="fas fa-shopping-cart"></i>THÊM VÀO GIỎ
                             HÀNG</button>
-                        <button>MUA NGAY</button>
+                        <form action="/cart" method="post">
+                            @csrf
+                            <input type="hidden" name="product_name" value="{{ $product->pro_Name}}">
+                            <input type="hidden" name="price" value="{{ $product->price }}">
+                            <input type="hidden" name="quantity"
+                                value="<script>document.getElementById('counter').value</script>">
+                            <button type="submit">MUA NGAY</button>
+                        </form>
+
                     </div>
                 </div>
             </div>
@@ -142,7 +152,8 @@
                     </div>
                     <div class="pull-left" style="width:180px;">
                         <div class="progress" style="height:9px; margin:8px 0;">
-                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="5" style="width: 1000%">
+                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="5"
+                                aria-valuemin="0" aria-valuemax="5" style="width: 1000%">
                                 <span class="sr-only">80% Complete (danger)</span>
                             </div>
                         </div>
@@ -155,7 +166,8 @@
                     </div>
                     <div class="pull-left" style="width:180px;">
                         <div class="progress" style="height:9px; margin:8px 0;">
-                            <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="4" aria-valuemin="0" aria-valuemax="5" style="width: 80%">
+                            <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="4"
+                                aria-valuemin="0" aria-valuemax="5" style="width: 80%">
                                 <span class="sr-only">80% Complete (danger)</span>
                             </div>
                         </div>
@@ -168,7 +180,8 @@
                     </div>
                     <div class="pull-left" style="width:180px;">
                         <div class="progress" style="height:9px; margin:8px 0;">
-                            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="3" aria-valuemin="0" aria-valuemax="5" style="width: 60%">
+                            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="3"
+                                aria-valuemin="0" aria-valuemax="5" style="width: 60%">
                                 <span class="sr-only">80% Complete (danger)</span>
                             </div>
                         </div>
@@ -181,7 +194,8 @@
                     </div>
                     <div class="pull-left" style="width:180px;">
                         <div class="progress" style="height:9px; margin:8px 0;">
-                            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="5" style="width: 40%">
+                            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="2"
+                                aria-valuemin="0" aria-valuemax="5" style="width: 40%">
                                 <span class="sr-only">80% Complete (danger)</span>
                             </div>
                         </div>
@@ -194,7 +208,8 @@
                     </div>
                     <div class="pull-left" style="width:180px;">
                         <div class="progress" style="height:9px; margin:8px 0;">
-                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="5" style="width: 20%">
+                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="1"
+                                aria-valuemin="0" aria-valuemax="5" style="width: 20%">
                                 <span class="sr-only">80% Complete (danger)</span>
                             </div>
                         </div>
@@ -228,7 +243,8 @@
                             </div>
                             <div class="review-block-description">
                                 <p>this was nice in buy. this was nice in buy. this was nice in buy.
-                                    this was nice in buy this was nice in buy this was nice in buy this was nice in buy this was nice in
+                                    this was nice in buy this was nice in buy this was nice in buy this was nice in buy
+                                    this was nice in
                                     buy</p>
                             </div>
                         </div>
@@ -253,7 +269,8 @@
                             </div>
                             <div class="review-block-description">
                                 <p>this was nice in buy. this was nice in buy. this was nice in buy.
-                                    this was nice in buy this was nice in buy this was nice in buy this was nice in buy this was nice in
+                                    this was nice in buy this was nice in buy this was nice in buy this was nice in buy
+                                    this was nice in
                                     buy</p>
                             </div>
                         </div>
@@ -278,7 +295,8 @@
                             </div>
                             <div class="review-block-description">
                                 <p>this was nice in buy. this was nice in buy. this was nice in buy.
-                                    this was nice in buy this was nice in buy this was nice in buy this was nice in buy this was nice in
+                                    this was nice in buy this was nice in buy this was nice in buy this was nice in buy
+                                    this was nice in
                                     buy</p>
                             </div>
                         </div>
