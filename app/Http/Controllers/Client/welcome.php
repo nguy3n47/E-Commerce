@@ -14,7 +14,7 @@ class welcome extends Controller
 {
     public function getHomePage(){
         $products = DB::table('product')->get();
-        return view('welcome')->with('products', $products);
+        return view('homePage')->with('products', $products);
     }
     
     public function getDetail($id){
