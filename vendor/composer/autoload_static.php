@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit94648f1c2877ef0c478ac7142c1c9d24
+class ComposerStaticInit3a2d1b779193bc905c819836c0b43bdf
 {
     public static $files = array (
         'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
@@ -36,8 +36,8 @@ class ComposerStaticInit94648f1c2877ef0c478ac7142c1c9d24
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '7dd996d98a91d095f100c75e0b9e2391' => __DIR__ . '/..' . '/spatie/async/src/helpers.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
-        '4a1f389d6ce373bda9e57857d3b61c84' => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src/helpers.php',
         'ed962a97bd972bc82007176b647d4e36' => __DIR__ . '/..' . '/facade/ignition/src/helpers.php',
+        '4a1f389d6ce373bda9e57857d3b61c84' => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src/helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -5343,10 +5343,10 @@ class ComposerStaticInit94648f1c2877ef0c478ac7142c1c9d24
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit94648f1c2877ef0c478ac7142c1c9d24::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit94648f1c2877ef0c478ac7142c1c9d24::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit94648f1c2877ef0c478ac7142c1c9d24::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit94648f1c2877ef0c478ac7142c1c9d24::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit3a2d1b779193bc905c819836c0b43bdf::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit3a2d1b779193bc905c819836c0b43bdf::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit3a2d1b779193bc905c819836c0b43bdf::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit3a2d1b779193bc905c819836c0b43bdf::$classMap;
 
         }, null, ClassLoader::class);
     }
