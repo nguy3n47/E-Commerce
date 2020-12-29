@@ -43,3 +43,6 @@ Route::post('/enterCode', 'Client\forgotPassword@postEnterCode');
 
 Route::get('/confirmPass', 'Client\updatePassword@getconfirmPass');
 Route::post('/confirmPass', 'Client\updatePassword@postconfirmPass');
+
+// admin
+require 'admin.php';
