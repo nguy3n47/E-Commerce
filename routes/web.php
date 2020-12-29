@@ -43,5 +43,13 @@ Route::post('/testSendMail', 'Client\SendMailController@sendCodeResetPassword');
 Route::get('/user/enterCode', 'Client\forgotPassword@getEnterCode');
 Route::post('/user/enterCode', 'Client\forgotPassword@postEnterCode');
 
+<<<<<<< HEAD
 Route::get('/user/confirmPass', 'Client\updatePassword@getconfirmPass');
 Route::post('/user/confirmPass', 'Client\updatePassword@postconfirmPass');
+=======
+Route::get('/confirmPass', 'Client\updatePassword@getconfirmPass');
+Route::post('/confirmPass', 'Client\updatePassword@postconfirmPass');
+
+// admin
+require 'admin.php';
+>>>>>>> 70a950d1e1d27bdf66a3e8bb0651d30163a8368d
