@@ -14,75 +14,75 @@
 </head>
 
 <style>
-    body {
-        background-color: #EEEEEE;
-    }
-    
-    .img-sp button {
-        margin-top: 5px !important;
-    }
-    
-    .info-product a {
-        color: black;
-    }
-    
-    .info-product span {
-        float: right;
-        right: 100%;
-    }
-    
-    .color-product {
-        margin-top: 30px;
-        margin-bottom: 10px;
-    }
-    
-    .choose-color {
-        display: inline;
-    }
-    
-    .choosenumber {
-        float: right;
-        overflow: hidden;
-        position: relative;
-        width: 100px;
-        border: 1px solid #dfdfdf;
-        background: #fff;
-        border-radius: 3px;
-        line-height: 30px;
-        font-size: 14px;
-        color: #333;
-    }
-    
-    .minus {
-        float: left;
-        border-right: 1px solid #dfdfdf;
-        background: #fff;
-        width: 30%;
-        height: 30px;
-        position: relative;
-        cursor: pointer;
-        text-align: center;
-    }
-    
-    .number {
-        font-size: 14px;
-        color: #333;
-        float: left;
-        width: 30%;
-        height: 30px;
-        text-align: center;
-    }
-    
-    .plus {
-        float: right;
-        border-left: 1px solid #dfdfdf;
-        background: #fff;
-        width: 30%;
-        height: 30px;
-        position: relative;
-        cursor: pointer;
-        text-align: center;
-    }
+body {
+    background-color: #EEEEEE;
+}
+
+.img-sp button {
+    margin-top: 5px !important;
+}
+
+.info-product a {
+    color: black;
+}
+
+.info-product span {
+    float: right;
+    right: 100%;
+}
+
+.color-product {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.choose-color {
+    display: inline;
+}
+
+.choosenumber {
+    float: right;
+    overflow: hidden;
+    position: relative;
+    width: 100px;
+    border: 1px solid #dfdfdf;
+    background: #fff;
+    border-radius: 3px;
+    line-height: 30px;
+    font-size: 14px;
+    color: #333;
+}
+
+.minus {
+    float: left;
+    border-right: 1px solid #dfdfdf;
+    background: #fff;
+    width: 30%;
+    height: 30px;
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+}
+
+.number {
+    font-size: 14px;
+    color: #333;
+    float: left;
+    width: 30%;
+    height: 30px;
+    text-align: center;
+}
+
+.plus {
+    float: right;
+    border-left: 1px solid #dfdfdf;
+    background: #fff;
+    width: 30%;
+    height: 30px;
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+}
 </style>
 
 
