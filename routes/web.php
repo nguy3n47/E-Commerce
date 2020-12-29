@@ -23,26 +23,25 @@ Route::get('/{pro_Name}', 'Client\welcome@getDetail');
 // cart
 Route::post('/cart', 'Client\welcome@postToCart');
 
-
 // login
-Route::get('/login', 'Client\LoginContronller@create');
-Route::post('/login', 'Client\LoginContronller@loginUser');
+Route::get('/user/login', 'Client\LoginContronller@create');
+Route::post('/user/login', 'Client\LoginContronller@loginUser');
 
 // register
-Route::get('/register', 'Client\RegisterController@create');
-Route::post('/register', 'Client\RegisterController@store');
+Route::get('/user/register', 'Client\RegisterController@create');
+Route::post('/user/register', 'Client\RegisterController@store');
 
 // forgot password
-Route::get('/forgotPass', 'Client\forgotPassword@getForgotPassword');
-Route::post('/forgotPass', 'Client\forgotPassword@postForgotPassword');
+Route::get('/user/forgotPass', 'Client\forgotPassword@getForgotPassword');
+Route::post('/user/forgotPass', 'Client\forgotPassword@postForgotPassword');
 
 // send email
 Route::get('/testSendMail', 'Client\SendMailController@create');
 Route::post('/testSendMail', 'Client\SendMailController@sendCodeResetPassword');
 
 // entercode
-Route::get('/enterCode', 'Client\forgotPassword@getEnterCode');
-Route::post('/enterCode', 'Client\forgotPassword@postEnterCode');
+Route::get('/user/enterCode', 'Client\forgotPassword@getEnterCode');
+Route::post('/user/enterCode', 'Client\forgotPassword@postEnterCode');
 
-Route::get('/confirmPass', 'Client\updatePassword@getconfirmPass');
-Route::post('/confirmPass', 'Client\updatePassword@postconfirmPass');
+Route::get('/user/confirmPass', 'Client\updatePassword@getconfirmPass');
+Route::post('/user/confirmPass', 'Client\updatePassword@postconfirmPass');

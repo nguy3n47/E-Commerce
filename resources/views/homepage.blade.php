@@ -46,8 +46,8 @@
             <ul>
                 <li><i class="fas fa-sign-in-alt" style="color: #ffffff;"></i></li>
                 <li class="An">|</li>
-                <li class="An"><a href="file:///C:/Users/MyPC/Documents/Web/Login/LogIn.html" target="_blank"><b>Đăng
-                            nhập</b></a></liclass="An">
+                <li class="An"><a href="{{ url('/user/login') }}"><b>Đăng
+                            nhập</b></a></li>
                 <li class="An">|</li class="An">
                 <li class="An"><a href="file:///C:/Users/MyPC/Documents/Web/Login/Register.html" target="_blank"><b>Đăng
                             ký</b></a></li class="An">
@@ -180,7 +180,7 @@
                             @foreach($products as $pro)
                             <a href="{{ url('/', str_replace(' ', '-', $pro->pro_Name))}}">
                                 <div class="blog-content">
-                                <div class="blog-header">
+                                    <div class="blog-header">
                                         <img src="./images/pic1.jpg" alt="">
                                         <ul class="icons">
                                             <span><i class="fas fa-heart"></i></span>
@@ -280,7 +280,9 @@
             </div>
             <div class="newsletter" data-aos="fade-right" data-aos-delay="200">
                 <h2>Rjfjhh</h2>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis aperiam sed facilis eaque. Exercitationem expedita nam aspernatur quia hic repudiandae illo tempora quos est ipsam voluptas dolorem, distinctio nulla neque.</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis aperiam sed facilis eaque.
+                    Exercitationem expedita nam aspernatur quia hic repudiandae illo tempora quos est ipsam voluptas
+                    dolorem, distinctio nulla neque.</p>
                 <div class="form-element">
                     <input type="text" placeholder="Email"><span><i class="fas fa-chevron-right"></i></span>
                 </div>

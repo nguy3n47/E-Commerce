@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class LoginContronller extends Controller
 {
@@ -28,7 +29,6 @@ class LoginContronller extends Controller
      */
     public function create()
     {
-        //
         return view('../Auth/SignInSignUp');
     }
 
@@ -50,13 +50,8 @@ class LoginContronller extends Controller
         $user = DB::table('users')
                     ->where('email', '=', $email)
                     ->first();
-        if (!$user) {
-            return response()->json(['success'=>false, 'message' => 'Tai khoan khong ton tai!']);
-        }
-        if (!Hash::check($password, $user->password)) {
-            return response()->json(['success'=>false, 'message' => 'Mat khau khong chinh xac!']);
-        }
-            return response()->json(['success'=>true,'message'=>'Dang nhap thanh cong!', 'data' => $user]);
+        $user = Auth::user();
+        dd($user);
     }
     
     /**

@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '15bdfe65e56e8355f9ce2ce8595f9ac839fb9791',
+    'reference' => 'e9b16f492b62f661b8a674c138c937f89b32b206',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -127,12 +127,12 @@
     ),
     'facade/ignition' => 
     array (
-      'pretty_version' => '2.5.3',
-      'version' => '2.5.3.0',
+      'pretty_version' => '2.5.5',
+      'version' => '2.5.5.0',
       'aliases' => 
       array (
       ),
-      'reference' => 'd8dc4f90ed469f9f9313b976fb078c20585d5c99',
+      'reference' => '2b6fd8b7b630e5c6a04440f7ed358e8753229509',
     ),
     'facade/ignition-contracts' => 
     array (
@@ -464,7 +464,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '15bdfe65e56e8355f9ce2ce8595f9ac839fb9791',
+      'reference' => 'e9b16f492b62f661b8a674c138c937f89b32b206',
     ),
     'laravel/tinker' => 
     array (
@@ -806,8 +806,8 @@
     array (
       'provided' => 
       array (
-        0 => '1.0',
-        1 => '1.0.0',
+        0 => '1.0.0',
+        1 => '1.0',
       ),
     ),
     'psr/simple-cache' => 
