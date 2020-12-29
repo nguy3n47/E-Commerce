@@ -1,5 +1,3 @@
-const quantity = document.getElementById('counter').value;
-
 function mydate() {
     //alert("");
     document.getElementById("dt").hidden = false;
@@ -17,7 +15,6 @@ function mydate1() {
 }
 
 // Navigate product images 
-
 const BigImage = document.getElementById('big-image');
 const imgSlider = document.getElementById('img-slider');
 
@@ -40,7 +37,6 @@ imgSlider.addEventListener('click', event => {
 
 
 // Navigate information 
-
 const chooseInfo = document.getElementById('more-infos');
 const choose = document.getElementsByClassName('choose');
 const paragraph = document.getElementsByClassName('paragraph');
@@ -79,7 +75,6 @@ chooseInfo.addEventListener('click', event => {
 });
 
 // add items to the cart
-
 const addToCart = document.getElementById('add-to-cart');
 const itemsAdded = document.getElementById('items-added');
 const counter = document.getElementById('counter');

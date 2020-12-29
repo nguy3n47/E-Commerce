@@ -74,7 +74,7 @@
 
                     <!--Giá sp-->
                     <div class="price">
-                        <h3>{{ $product->price}}<span>₫</span></h3>
+                        <h3>{{ $product->price }}<span>₫</span></h3>
                     </div>
                     <div id="more-infos">
                         <h5 class="choose">Giới thiệu</h5>
@@ -83,8 +83,7 @@
 
                     <!--Giới thiệu sp-->
                     <div id="info-content">
-                        <p class="paragraph" style="display: block;">Apple Watch Series 6 44mm GPS Viền Nhôm Dây Cao Su
-                            Chính Hãng.</p>
+                        <p class="paragraph" style="display: block;">{{ $product->description }}</p>
                         <p class="paragraph" style="display: none;">
                             - Trong 30 ngày đầu nhập lại máy, trừ phí 20% trên giá
                             hiện tại(hoặc giá mua nếu giá mua thấp hơn giá hiện tại)
@@ -106,9 +105,13 @@
                     <!--Số lượng-->
                     <div class="quantity">
                         <h4><b>Số lượng</b></h4>
+                        <input type="hidden" id="amountOfProduct" value="{{ $product->quantity }}">
                         <input type="number" style="outline: none;" name="items" id="counter" min="1" value="1">
-                    </div>
 
+                    </div>
+                    <div class="quantity">
+                        <p><b>Còn lại {{ $product->quantity }} sản phẩm</b></p>
+                    </div>
                     <!--Mua hàng-->
                     <div class="buttons">
                         <button id="add-to-cart"><i class="fas fa-shopping-cart"></i>THÊM VÀO GIỎ
@@ -117,11 +120,9 @@
                             @csrf
                             <input type="hidden" name="product_name" value="{{ $product->pro_Name}}">
                             <input type="hidden" name="price" value="{{ $product->price }}">
-                            <input type="hidden" name="quantity"
-                                value="<script>document.getElementById('counter').value</script>">
-                            <button type="submit">MUA NGAY</button>
+                            <input type="hidden" name="quantity" id="qti">
+                            <button id="btn" type="submit" onclick="getQuantity()">MUA NGAY</button>
                         </form>
-
                     </div>
                 </div>
             </div>
@@ -309,6 +310,9 @@
 
     <!-- Script -->
     <script src="{{ asset('client/js/product&profile.js') }}"></script>
+
+    <!-- Process back-end -->
+    <script src="{{ asset('client/js/detailToCart.js') }}"></script>
 </body>
 
 </html>

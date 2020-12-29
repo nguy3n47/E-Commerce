@@ -26,5 +26,14 @@ class welcome extends Controller
 
     public function postToCart(Request $request){
         dd($request->all());
+        // find id user
+
+        // find user_id in purchase to check status_id is NULL
+
+        // insert (user_id) to purchase
+
+        // find (product_id) with product_name
+
+        // insert (purchase_id, product_id, price, quantity) to order_detail
     }
 }
