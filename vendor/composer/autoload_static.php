@@ -7,35 +7,35 @@ namespace Composer\Autoload;
 class ComposerStaticInita8fa71c71a81ee0c6189aeb7419c96ef
 {
     public static $files = array (
-        'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
         'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
-        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+        'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
         '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
+        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         'e69f7f6ee287b969198c3c9d6777bd38' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/bootstrap.php',
         '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
         'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
-        '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '0d59ee240a4cd96ddbb4ff164fccea4d' => __DIR__ . '/..' . '/symfony/polyfill-php73/bootstrap.php',
-        '8825ede83f2f289127722d4e842cf7e8' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/bootstrap.php',
-        'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
+        '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         'def43f6c87e4f8dfd0c9e1b1bab14fe8' => __DIR__ . '/..' . '/symfony/polyfill-iconv/bootstrap.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
-        '538ca81a9a966a6716601ecf48f4eaef' => __DIR__ . '/..' . '/opis/closure/functions.php',
-        'a1105708a18b76903365ca1c4aa61b02' => __DIR__ . '/..' . '/symfony/translation/Resources/functions.php',
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
+        '538ca81a9a966a6716601ecf48f4eaef' => __DIR__ . '/..' . '/opis/closure/functions.php',
+        'a1105708a18b76903365ca1c4aa61b02' => __DIR__ . '/..' . '/symfony/translation/Resources/functions.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
         '265b4faa2b3a9766332744949e83bf97' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Collections/helpers.php',
         'c7a3c339e7e14b60e06a2d7fcce9476b' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Events/functions.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
+        '8825ede83f2f289127722d4e842cf7e8' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/bootstrap.php',
         '9cdd7b9056abc3081735233ba9dd9c7f' => __DIR__ . '/..' . '/facade/flare-client-php/src/helpers.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '7dd996d98a91d095f100c75e0b9e2391' => __DIR__ . '/..' . '/spatie/async/src/helpers.php',
+        'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
         '4a1f389d6ce373bda9e57857d3b61c84' => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src/helpers.php',
         'ed962a97bd972bc82007176b647d4e36' => __DIR__ . '/..' . '/facade/ignition/src/helpers.php',
     );
@@ -65,6 +65,7 @@ class ComposerStaticInita8fa71c71a81ee0c6189aeb7419c96ef
         'T' => 
         array (
             'TijsVerkoyen\\CssToInlineStyles\\' => 31,
+            'Tightenco\\Ziggy\\' => 16,
             'Tests\\' => 6,
         ),
         'S' => 
@@ -174,6 +175,7 @@ class ComposerStaticInita8fa71c71a81ee0c6189aeb7419c96ef
             'DebugBar\\' => 9,
             'Database\\Seeders\\' => 17,
             'Database\\Factories\\' => 19,
+            'Darryldecode\\' => 13,
         ),
         'C' => 
         array (
@@ -201,8 +203,8 @@ class ComposerStaticInita8fa71c71a81ee0c6189aeb7419c96ef
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
         ),
         'XdgBaseDir\\' => 
         array (
@@ -223,6 +225,10 @@ class ComposerStaticInita8fa71c71a81ee0c6189aeb7419c96ef
         'TijsVerkoyen\\CssToInlineStyles\\' => 
         array (
             0 => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src',
+        ),
+        'Tightenco\\Ziggy\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/tightenco/ziggy/src',
         ),
         'Tests\\' => 
         array (
@@ -517,6 +523,10 @@ class ComposerStaticInita8fa71c71a81ee0c6189aeb7419c96ef
         array (
             0 => __DIR__ . '/../..' . '/database/factories',
         ),
+        'Darryldecode\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/darryldecode/cart/src/Darryldecode',
+        ),
         'Cron\\' => 
         array (
             0 => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron',
@@ -737,6 +747,21 @@ class ComposerStaticInita8fa71c71a81ee0c6189aeb7419c96ef
         'Cron\\HoursField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/HoursField.php',
         'Cron\\MinutesField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/MinutesField.php',
         'Cron\\MonthField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/MonthField.php',
+        'Darryldecode\\Cart\\Cart' => __DIR__ . '/..' . '/darryldecode/cart/src/Darryldecode/Cart/Cart.php',
+        'Darryldecode\\Cart\\CartCollection' => __DIR__ . '/..' . '/darryldecode/cart/src/Darryldecode/Cart/CartCollection.php',
+        'Darryldecode\\Cart\\CartCondition' => __DIR__ . '/..' . '/darryldecode/cart/src/Darryldecode/Cart/CartCondition.php',
+        'Darryldecode\\Cart\\CartConditionCollection' => __DIR__ . '/..' . '/darryldecode/cart/src/Darryldecode/Cart/CartConditionCollection.php',
+        'Darryldecode\\Cart\\CartServiceProvider' => __DIR__ . '/..' . '/darryldecode/cart/src/Darryldecode/Cart/CartServiceProvider.php',
+        'Darryldecode\\Cart\\Exceptions\\InvalidConditionException' => __DIR__ . '/..' . '/darryldecode/cart/src/Darryldecode/Cart/Exceptions/InvalidConditionException.php',
+        'Darryldecode\\Cart\\Exceptions\\InvalidItemException' => __DIR__ . '/..' . '/darryldecode/cart/src/Darryldecode/Cart/Exceptions/InvalidItemException.php',
+        'Darryldecode\\Cart\\Exceptions\\UnknownModelException' => __DIR__ . '/..' . '/darryldecode/cart/src/Darryldecode/Cart/Exceptions/UnknownModelException.php',
+        'Darryldecode\\Cart\\Facades\\CartFacade' => __DIR__ . '/..' . '/darryldecode/cart/src/Darryldecode/Cart/Facades/CartFacade.php',
+        'Darryldecode\\Cart\\Helpers\\Helpers' => __DIR__ . '/..' . '/darryldecode/cart/src/Darryldecode/Cart/Helpers/Helpers.php',
+        'Darryldecode\\Cart\\ItemAttributeCollection' => __DIR__ . '/..' . '/darryldecode/cart/src/Darryldecode/Cart/ItemAttributeCollection.php',
+        'Darryldecode\\Cart\\ItemCollection' => __DIR__ . '/..' . '/darryldecode/cart/src/Darryldecode/Cart/ItemCollection.php',
+        'Darryldecode\\Cart\\Validators\\CartConditionValidator' => __DIR__ . '/..' . '/darryldecode/cart/src/Darryldecode/Cart/Validators/CartConditionValidator.php',
+        'Darryldecode\\Cart\\Validators\\CartItemValidator' => __DIR__ . '/..' . '/darryldecode/cart/src/Darryldecode/Cart/Validators/CartItemValidator.php',
+        'Darryldecode\\Cart\\Validators\\Validator' => __DIR__ . '/..' . '/darryldecode/cart/src/Darryldecode/Cart/Validators/Validator.php',
         'Database\\Seeders\\DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeders/DatabaseSeeder.php',
         'DebugBar\\Bridge\\CacheCacheCollector' => __DIR__ . '/..' . '/maximebf/debugbar/src/DebugBar/Bridge/CacheCacheCollector.php',
         'DebugBar\\Bridge\\DoctrineCollector' => __DIR__ . '/..' . '/maximebf/debugbar/src/DebugBar/Bridge/DoctrineCollector.php',
@@ -5228,6 +5253,10 @@ class ComposerStaticInita8fa71c71a81ee0c6189aeb7419c96ef
         'TheSeer\\Tokenizer\\TokenCollectionException' => __DIR__ . '/..' . '/theseer/tokenizer/src/TokenCollectionException.php',
         'TheSeer\\Tokenizer\\Tokenizer' => __DIR__ . '/..' . '/theseer/tokenizer/src/Tokenizer.php',
         'TheSeer\\Tokenizer\\XMLSerializer' => __DIR__ . '/..' . '/theseer/tokenizer/src/XMLSerializer.php',
+        'Tightenco\\Ziggy\\BladeRouteGenerator' => __DIR__ . '/..' . '/tightenco/ziggy/src/BladeRouteGenerator.php',
+        'Tightenco\\Ziggy\\CommandRouteGenerator' => __DIR__ . '/..' . '/tightenco/ziggy/src/CommandRouteGenerator.php',
+        'Tightenco\\Ziggy\\Ziggy' => __DIR__ . '/..' . '/tightenco/ziggy/src/Ziggy.php',
+        'Tightenco\\Ziggy\\ZiggyServiceProvider' => __DIR__ . '/..' . '/tightenco/ziggy/src/ZiggyServiceProvider.php',
         'TijsVerkoyen\\CssToInlineStyles\\CssToInlineStyles' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/CssToInlineStyles.php',
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Processor' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Processor.php',
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Property\\Processor' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Property/Processor.php',

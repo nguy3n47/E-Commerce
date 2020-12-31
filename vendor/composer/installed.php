@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '873cf469e726b7ddf8f00922565ccafde98af7b6',
+    'reference' => '751fc232195acabb1de16eef5233fc8235b6ee32',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -54,6 +54,15 @@
       array (
         0 => '*',
       ),
+    ),
+    'darryldecode/cart' => 
+    array (
+      'pretty_version' => '4.2.1',
+      'version' => '4.2.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '2ad23e070af341da80300ef990b1fb529af88893',
     ),
     'davedevelopment/hamcrest-php' => 
     array (
@@ -464,7 +473,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '873cf469e726b7ddf8f00922565ccafde98af7b6',
+      'reference' => '751fc232195acabb1de16eef5233fc8235b6ee32',
     ),
     'laravel/tinker' => 
     array (
@@ -806,8 +815,8 @@
     array (
       'provided' => 
       array (
-        0 => '1.0',
-        1 => '1.0.0',
+        0 => '1.0.0',
+        1 => '1.0',
       ),
     ),
     'psr/simple-cache' => 
@@ -1298,6 +1307,15 @@
       array (
       ),
       'reference' => '75a63c33a8577608444246075ea0af0d052e452a',
+    ),
+    'tightenco/ziggy' => 
+    array (
+      'pretty_version' => 'v1.0.4',
+      'version' => '1.0.4.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '4777dafd683873978ccc529085187d03b750d39f',
     ),
     'tijsverkoyen/css-to-inline-styles' => 
     array (

@@ -15,16 +15,18 @@ use App\Http\Controllers\Client;
 */
 
 // home page
-Route::get('/','Client\welcome@getHomePage');
+Route::get('/','Client\welcome@getHomePage')->name('homePage');
 
 // product detail
-Route::get('/{pro_Name}', 'Client\welcome@getDetail');
+Route::get('/detail/{pro_Name}', 'Client\welcome@getDetail');
 
 // cart
-Route::post('/cart', 'Client\welcome@postToCart');
+Route::get('/cart', 'Client\Cart\cart@getToCart')->name('getCart');
+Route::post('/cart', 'Client\Cart\cart@postToCart')->name('postCart');
+
 
 // login
-Route::get('/user/login', 'Client\LoginContronller@create');
+Route::get('/user/login', 'Client\LoginContronller@create')->name('login');
 Route::post('/user/login', 'Client\LoginContronller@loginUser');
 
 // register
@@ -43,13 +45,8 @@ Route::post('/testSendMail', 'Client\SendMailController@sendCodeResetPassword');
 Route::get('/user/enterCode', 'Client\forgotPassword@getEnterCode');
 Route::post('/user/enterCode', 'Client\forgotPassword@postEnterCode');
 
-<<<<<<< HEAD
-Route::get('/user/confirmPass', 'Client\updatePassword@getconfirmPass');
-Route::post('/user/confirmPass', 'Client\updatePassword@postconfirmPass');
-=======
 Route::get('/confirmPass', 'Client\updatePassword@getconfirmPass');
 Route::post('/confirmPass', 'Client\updatePassword@postconfirmPass');
 
 // admin
 require 'admin.php';
->>>>>>> 70a950d1e1d27bdf66a3e8bb0651d30163a8368d

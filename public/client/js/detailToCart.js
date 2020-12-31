@@ -1,3 +1,15 @@
+function test(product_id) {
+    route('user.editCart', { post: 1337 })
+}
+
+
+
+
+
+
+
+
+// input quantity detail
 document.getElementById('counter').addEventListener("input", checkValidQuantity);
 
 function checkValidQuantity() {

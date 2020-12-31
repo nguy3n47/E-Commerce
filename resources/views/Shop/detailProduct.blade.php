@@ -107,7 +107,6 @@
                         <h4><b>Số lượng</b></h4>
                         <input type="hidden" id="amountOfProduct" value="{{ $product->quantity }}">
                         <input type="number" style="outline: none;" name="items" id="counter" min="1" value="1">
-
                     </div>
                     <div class="quantity">
                         <p><b>Còn lại {{ $product->quantity }} sản phẩm</b></p>
@@ -116,7 +115,7 @@
                     <div class="buttons">
                         <button id="add-to-cart"><i class="fas fa-shopping-cart"></i>THÊM VÀO GIỎ
                             HÀNG</button>
-                        <form action="/cart" method="post">
+                        <form action="{{route('postCart')}}" method="post">
                             @csrf
                             <input type="hidden" name="product_name" value="{{ $product->pro_Name}}">
                             <input type="hidden" name="price" value="{{ $product->price }}">
@@ -307,7 +306,7 @@
         </div>
 
     </div> <!-- /container -->
-
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <!-- Script -->
     <script src="{{ asset('client/js/product&profile.js') }}"></script>
 

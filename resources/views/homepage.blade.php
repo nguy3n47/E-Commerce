@@ -46,7 +46,7 @@
             <ul>
                 <li><i class="fas fa-sign-in-alt" style="color: #ffffff;"></i></li>
                 <li class="An">|</li>
-                <li class="An"><a href="{{ url('/user/login') }}"><b>Đăng
+                <li class="An"><a href="{{ route('login') }}"><b>Đăng
                             nhập</b></a></li>
                 <li class="An">|</li class="An">
                 <li class="An"><a href="file:///C:/Users/MyPC/Documents/Web/Login/Register.html" target="_blank"><b>Đăng
@@ -95,8 +95,8 @@
                                     </li>
                                     <li>
                                         <div class="cart_link">
-                                            <a href="#"><i class="ion-android-cart"></i></a>
-                                            <span class="cart_quantity">2</span>
+                                            <a href="{{route('getCart')}}"><i class="ion-android-cart"></i></a>
+                                            <span class="cart_quantity">{{ $amountOfProduct }}</span>
                                         </div>
                                     </li>
                                 </ul>
@@ -178,7 +178,7 @@
                     <div class="container" data-aos="zoom-in" data-aos-delay="200">
                         <div class="owl-carousel owl-theme blog-post">
                             @foreach($products as $pro)
-                            <a href="{{ url('/', str_replace(' ', '-', $pro->pro_Name))}}">
+                            <a href="{{ url('/detail', str_replace(' ', '-', $pro->pro_Name))}}">
                                 <div class="blog-content">
                                     <div class="blog-header">
                                         <img src="./images/pic1.jpg" alt="">

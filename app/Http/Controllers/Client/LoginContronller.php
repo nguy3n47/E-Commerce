@@ -45,13 +45,24 @@ class LoginContronller extends Controller
 
     // login
     public function loginUser(Request $request){
-	    $email = $request->email;
-        $password = $request->password;
+        $email = $request->email;
+        session()->forget('user_id');
         $user = DB::table('users')
                     ->where('email', '=', $email)
                     ->first();
-        $user = Auth::user();
-        dd($user);
+        if($user != null){
+            // if from page cart to login
+            session()->put('user_id', $user->id);
+            $cart = session('cart');
+            if($cart == null){
+                return redirect()->route('homePage');
+            }
+            // button loggin
+            else{
+                session()->forget('cart');
+                return redirect()->route('getCart');
+            }
+        }
     }
     
     /**

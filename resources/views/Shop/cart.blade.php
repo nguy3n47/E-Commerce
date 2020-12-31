@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
     <!-- MDB -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.0.0/mdb.min.css" rel="stylesheet" />
+    @routes()
 </head>
 
 <style>
@@ -91,8 +92,12 @@ body {
 
     <div class="container">
         <div class="container" style="width:50% ;background-color:white; ">
+            @if (count($order_details) === 0)
+            <p>Giỏ hàng trống</p>
+            @else
             <!-- thông tin sản phẩm -->
             <div class="container pb-3 pt-3" style=" border-bottom:1px solid #dfdfdf;">
+                @foreach($order_details as $order)
                 <div class="row">
                     <!-- col 4 -->
                     <div class="col-4">
@@ -101,7 +106,12 @@ body {
                             <a href="#"><img src="../../public/client/images/product/4.jpg" width="100%" alt=""></a>
                             <br>
                             <!-- button xóa sản phẩm -->
-                            <button type="button" class="btn p-2"><i class="fas fa-trash-alt mr-2"></i> Xoá</i></button>
+                            <form action="{{route('postCart')}}" method="post">
+                                @csrf
+                                <input type="hidden" name="product_id" value="{{ $order->product_id }}">
+                                <button type="submit" id="del" name="del" value="{{ $order->id }}" class="btn p-2"><i
+                                        class="fas fa-trash-alt mr-2"></i> Xoá</i></button>
+                            </form>
                         </div>
                     </div>
                     <!-- col 4 -->
@@ -110,8 +120,8 @@ body {
                     <div class="col-8">
                         <div class="row">
                             <div class="info-product">
-                                <a href="#"> Điện thoại iPhone 11 Pro Max 512GB </a>
-                                <span> 24.990.000₫ </span>
+                                <a href="#"> {{ $order->pro_Name }} </a>
+                                <span> {{ $order->price }}đ </span>
                             </div>
                             <!-- màu sp -->
                             <div class="color-product">
@@ -119,22 +129,30 @@ body {
                                     <span>Màu:</span> <span> Xanh</span>
                                 </div>
                                 <div class="choosenumber">
-                                    <div class="minus">
-                                        <i class="fas fa-minus"></i>
-                                    </div>
-                                    <div class="number">
-                                        1
-                                    </div>
-                                    <div class="plus">
-                                        <i class="fas fa-plus"></i>
-                                    </div>
+                                    <form action="{{route('postCart')}}" method="post">
+                                        @csrf
+                                        <input type="hidden" name="qtyMax" value="{{ $order->qtyMax }}">
+                                        <input type="hidden" name="price" value="{{ $order->price }}">
+                                        <input type="hidden" name="purchase_id" value="{{ $order->purchase_id }}">
+                                        <!-- sub quantity -->
+                                        <button type="submit" id="sub" name="sub" value="{{ $order->id }}"
+                                            class="btn">-</button>
+                                        <input type="number" style="outline: none;" name="quantity" id="counter" min="1"
+                                            value="{{ $order->quantity }}">
+
+                                        <!-- add quantity -->
+                                        <button type="submit" id="add" name="add" value="{{ $order->id }}"
+                                            class="btn">+</button>
+                                    </form>
+
+
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- col 8 -->
                 </div>
-
+                @endforeach
             </div>
             <!-- Tổng tiền -->
             <div class="container" style="  border-bottom:1px solid #dfdfdf;">
@@ -142,13 +160,13 @@ body {
                 <div class="row" style="border-top: 1px solid  #dfdfdf">
                     <div class="col">
                         <span>Số lượng:( </span> <span>2</span> <span>sản phẩm)</span>
-                        <span style="float:right">151561531đ</span>
+                        <span style="float:right">{{ $order_details[0]->total }}đ</span>
                     </div>
                 </div>
                 <div class="row mt-2">
                     <div class="col">
                         <span><b>Tổng tiền:</b></span>
-                        <span style="float:right">151561531đ</span>
+                        <span style="float:right">{{ $order_details[0]->total }}đ</span>
                     </div>
                 </div>
             </div>
@@ -158,11 +176,13 @@ body {
                 </h5>
                 <!-- ridio check -->
                 <div class="form-check form-check-inline m-2">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" />
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                        value="option1" />
                     <label class="form-check-label" for="inlineRadio1">Anh</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" />
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                        value="option2" />
                     <label class="form-check-label" for="inlineRadio2">Chị</label>
                 </div>
 
@@ -203,14 +223,18 @@ body {
                 <div class="container m-0 p-0">
                     <h5>PHƯƠNG THỨC THANH TOÁN</h5>
                     <button class="btn btn-light"> Thanh toán khi nhận hàng</button>
-                    <button class="btn btn-light" data-mdb-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"> Thanh toán card/thẻ ghi nợ</button>
+                    <button class="btn btn-light" data-mdb-toggle="collapse" href="#collapseExample" role="button"
+                        aria-expanded="false" aria-controls="collapseExample"> Thanh toán card/thẻ ghi nợ</button>
                     <!-- Collapsed content -->
                     <div class="collapse mt-3" id="collapseExample">
                         <div class="container">
-                            <a href="#"><img src="../../public/client/images/card/ic_CIMB@4x.png" width="48%" alt=""></a>
+                            <a href="#"><img src="../../public/client/images/card/ic_CIMB@4x.png" width="48%"
+                                    alt=""></a>
                             <a href="#"><img src="../../public/client/images/card/ic_MSB@4x.png" width="48%" alt=""></a>
-                            <a href="#"><img src="../../public/client/images/card/ic_sacombank@4x.png" width="48%" alt=""></a>
-                            <a href="#"><img src="../../public/client/images/card/ic_Vietcombank@4x.png" width="48%" alt=""></a>
+                            <a href="#"><img src="../../public/client/images/card/ic_sacombank@4x.png" width="48%"
+                                    alt=""></a>
+                            <a href="#"><img src="../../public/client/images/card/ic_Vietcombank@4x.png" width="48%"
+                                    alt=""></a>
                         </div>
                     </div>
                 </div>
@@ -245,21 +269,28 @@ body {
                     <!--  Chốt -->
                     <div class="row pb-5 mt-2" style="text-align:right">
                         <p align="right">
-                            <button style="width: 200px" type="submit" class="btn btn-danger btn-block">Đặt hàng</button>
+                            <button style="width: 200px" type="submit" class="btn btn-danger btn-block">Đặt
+                                hàng</button>
                         </p>
                     </div>
-
-
-
                 </div>
             </div>
+            @endif
         </div>
 
 
     </div>
     </div>
 </body>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
 <!-- MDB -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.0.0/mdb.min.js"></script>
+<!-- Process back-end -->
+<script src="{{ asset('client/js/detailToCart.js') }}"></script>
+
+
 
 </html>
