@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.0.0/mdb.min.css" rel="stylesheet" />
+
+</head>
+<style>
+    body {
+        background-color: #EEEEEE;
+    }
+    
+    .border-product {
+        border: 1px solid #dfdfdf;
+    }
+    
+    .border-product img {
+        margin-top: 20px;
+        transition: all 0.2s 0.1s ease-in;
+        -moz-transition: all 0.2s 0.1s ease-in;
+        -webkit-transition: all 0.2s 0.1s ease-in;
+    }
+    
+    .border-product img:hover {
+        margin-top: 5px;
+        margin-bottom: 15px;
+    }
+</style>
+
+<body>
+    <!-- thanh chọn -->
+    <div class="container" style="background-color:white; width: 80%; height: 50px;padding-top:10px ;">
+        <!-- hãng -->
+        <div class="dropdown" style="display: contents;">
+            <a class=" dropdown-toggle" id="dropdownMenuButton" data-mdb-toggle="dropdown" aria-expanded="false">
+            Hãng
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <div class="dropdown-item mt-3" id="collapseExample">
+                    Dưới 2 triệu
+                </div>
+                <div class="dropdown-item  mt-3" id="collapseExample">
+                    Từ 2-4 triệu
+                </div>
+                <div class="dropdown-item  mt-3" id="collapseExample">
+                    Từ 4-7 triệu
+                </div>
+                <div class="dropdown-item  mt-3" id="collapseExample">
+                    Từ 7-10 triệu
+                </div>
+                <div class="dropdown-item  mt-3" id="collapseExample">
+                    trên 10 triệu
+                </div>
+            </ul>
+        </div>
+        <!-- sắp xếp giá -->
+        <div class="dropdown" style="float: right;">
+            <a class=" dropdown-toggle" id="dropdownMenuButton" data-mdb-toggle="dropdown" aria-expanded="false">
+            Sắp xếp
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <div class="dropdown-item mt-3" id="collapseExample">
+                    Từ thấp đến cao
+                </div>
+                <div class="dropdown-item  mt-3" id="collapseExample">
+                    Từ cao đến thấp
+                </div>
+
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- sản phẩm -->
+    <div class="container" style="background-color:white; width: 80%;">
+        <div class="row">
+            <div class="col-md-3 border-product">
+
+                <div>
+                    <img src="../../public/client/images/product/1.jpg" alt="">
+                </div>
+
+                <br>
+                <span>Iphone 11 promax</span>
+                <br>
+                <span>213123123123đ</span>
+            </div>
+            <div class="col-md-3 border-product">
+
+                <div>
+                    <img src="../../public/client/images/product/1.jpg" alt="">
+                </div>
+
+                <span>Iphone 11 promax</span>
+                <br>
+                <span>213123123123đ</span>
+            </div>
+            <div class="col-md-3 border-product">
+                <div>
+                    <img src="../../public/client/images/product/1.jpg" alt="">
+                </div>
+                <span>Iphone 11 promax</span>
+                <br>
+                <span>213123123123đ</span>
+            </div>
+            <div class="col-md-3 border-product">
+                <div>
+                    <img src="../../public/client/images/product/1.jpg" alt="">
+                </div>
+                <span>Iphone 11 promax</span>
+                <br>
+                <span>213123123123đ</span>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-3 border-product">
+                <div>
+                    <img src="../../public/client/images/product/1.jpg" alt="">
+                </div>
+                <span>Iphone 11 promax</span>
+                <br>
+                <span>213123123123đ</span>
+            </div>
+            <div class="col-md-3 border-product">
+                <div>
+                    <img src="../../public/client/images/product/1.jpg" alt="">
+                </div>
+                <span>Iphone 11 promax</span>
+                <br>
+                <span>213123123123đ</span>
+            </div>
+            <div class="col-md-3 border-product">
+                <div>
+                    <img src="../../public/client/images/product/1.jpg" alt="">
+                </div>
+                <span>Iphone 11 promax</span>
+                <br>
+                <span>213123123123đ</span>
+            </div>
+            <div class="col-md-3 border-product">
+                <div>
+                    <img src="../../public/client/images/product/1.jpg" alt="">
+                </div>
+                <span>Iphone 11 promax</span>
+                <br>
+                <span>213123123123đ</span>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-4" style=" width: 80%;">
+        <nav aria-label="Page navigation example" style="float: right">
+            <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+        </nav>
+    </div>
+
+</body>
+<!-- MDB -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.0.0/mdb.min.js"></script>
+
+</html>
