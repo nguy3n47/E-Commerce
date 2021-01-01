@@ -15,6 +15,7 @@ class cart extends Controller
 {
     public function getToCart()
     {
+        //dd($request->route('message'));
         // if not logged in then loggin
         $user = session('user_id');
         if($user == null){
@@ -40,6 +41,75 @@ class cart extends Controller
         return view('../Shop/cart')->with('order_details', $order_details);
     }
 
+    private function subQuantity($pur_id, $sub_id, $product_name, $quantity, $price, $total){
+        if($quantity - 1 == 0){
+            return -1;
+        }else{
+            DB::table('order_detail')
+                    ->where('id', $sub_id)
+                    ->update([
+                        'quantity' => $quantity - 1,
+                        'total' => $price * ($quantity - 1)
+                    ]);
+
+            // plus 1 to quantity of product
+            $oldQuantity = DB::table('product')
+                            ->where('pro_Name', $product_name)
+                            ->select('quantity')
+                            ->first();
+                            
+            DB::table('product')
+                    ->where('pro_Name', $product_name)
+                    ->update(['quantity' => $oldQuantity->quantity + 1]);
+        }
+        return $total - $price;
+    }
+
+    private function addQuantity($pur_id, $sub_id, $product_name, $quantity, $price, $total, $maxQuantity){
+        if($quantity + 1 > $maxQuantity){
+            return -1;
+        }
+        else{
+            DB::table('order_detail')
+            ->where('id', $sub_id)
+            ->update([
+                'quantity' => $quantity + 1,
+                'total' => $price * ($quantity + 1)
+            ]);
+
+            // minus 1 to quantity of product
+            $oldQuantity = DB::table('product')
+                            ->where('pro_Name', $product_name)
+                            ->select('quantity')
+                            ->first();
+                            
+            DB::table('product')
+                    ->where('pro_Name', $product_name)
+                    ->update(['quantity' => $oldQuantity->quantity - 1]);
+        }
+        return $total + $price;
+    }
+
+    private function delProductInCart($pur_id, $product_id, $product_name, $quantity, $price, $total){
+        DB::table('order_detail')
+                    ->where('id', $pur_id)
+                    ->where('product_id', $product_id)
+                    ->delete();
+        // minus 1 to quantity of product
+        $oldQuantity = DB::table('product')
+                            ->where('pro_Name', $product_name)
+                            ->select('quantity')
+                            ->first();
+        
+        DB::table('product')
+            ->where('pro_Name', $product_name)
+            ->update(['quantity' => $oldQuantity->quantity + $quantity]);
+            
+        $total = $total - ($quantity * $price);
+        return $total;
+    }
+
+
     public function postToCart(Request $request){
         $total = 0;
         $pur_id = NULL;
@@ -47,45 +117,28 @@ class cart extends Controller
         // sub quantity
         if($request->sub != null){
             $pur_id = $request->purchase_id;
-            if($request->quantity - 1 == 0){
-                dd("xóa lun à");
-            }else{
-                DB::table('order_detail')
-                        ->where('id', $request->sub)
-                        ->update([
-                            'quantity' => $request->quantity - 1,
-                            'total' => $request->price * ($request->quantity - 1)
-                        ]);
-
-                $total = DB::table('order_detail')
-                        ->where('purchase_id', $request->purchase_id)
-                        ->sum('total');
+            $total = self::subQuantity($pur_id, $request->sub, 
+                                        $request->product_name, $request->quantity, 
+                                        $request->price, $request->total);
+            if($total == -1){
+                dd("Muốn xóa luôn à th lol!");
             }
         }
         // add quantity
         else if($request->add != null){
             $pur_id = $request->purchase_id;
-            DB::table('order_detail')
-                        ->where('id', $request->add)
-                        ->update([
-                            'quantity' => $request->quantity + 1,
-                            'total' => $request->price * ($request->quantity + 1)
-                        ]);
-
-                $total = DB::table('order_detail')
-                        ->where('purchase_id', $request->purchase_id)
-                        ->sum('total');
+            $total = self::addQuantity($pur_id, $request->add,
+                            $request->product_name, $request->quantity, 
+                            $request->price, $request->total, $request->qtyMax);
+            if($total == -1){
+                dd("Max r th lol!");
+            }
         }
         else if($request->del != null){
             $pur_id = $request->del;
-            DB::table('order_detail')
-                    ->where('id', $pur_id)
-                    ->where('product_id', $request->product_id)
-                    ->delete();
-
-            $total = DB::table('order_detail')
-                    ->where('purchase_id', $pur_id)
-                    ->sum('total');
+            $total = self::delProductInCart($pur_id, $request->product_id,
+                            $request->product_name, $request->quantity, 
+                            $request->price, $request->total);
             // check empty cart
             if($total == 0){
                 DB::table('purchase')
@@ -106,18 +159,22 @@ class cart extends Controller
                 $count_purchaseID = DB::table('purchase')->count(); // count number of column in `purchase`
                 DB::table('purchase')->insert(['id'=>$count_purchaseID + 1,'user_id'=>$user_id]);
                 
-                // step 2: find product_id with product_Name
-                $product_id = DB::table('product')
-                                ->where('pro_Name', $request->product_name)
-                                ->select('id')->get();
-
+                // step 2: find product_id with product_Name and update minus quantity
+                $product = DB::table('product')
+                            ->where('pro_Name', $request->product_name)
+                            ->select('id', 'quantity')->first();
+                $qty = $product->quantity;
+                DB::table('product')
+                        ->where('pro_Name', $request->product_name)
+                        ->update(['quantity' => $qty-$request->quantity]);
+                        
                 // step 3: insert (purchase_id, product_id, quantity, price, total = quantity * price) to order_detail
                 $count_order_detailID = DB::table('order_detail')->count();
                 DB::table('order_detail')
                         ->insert([
                             'id'=> $count_order_detailID + 1,
                             'purchase_id' => $count_purchaseID + 1,
-                            'product_id' => $product_id[0]->id,
+                            'product_id' => $product->id,
                             'quantity' => $request->quantity,
                             'price' => $request->price,
                             'total' => $request->price * $request->quantity
@@ -133,14 +190,18 @@ class cart extends Controller
             // if exists
             else{
                 //find product_id with product_Name
-                $product_id = DB::table('product')
-                                ->where('pro_Name', $request->product_name)
-                                ->select('id')->get();
+                $product = DB::table('product')
+                            ->where('pro_Name', $request->product_name)
+                            ->select('id', 'quantity')->first();
+                $qty = $product->quantity;
+                DB::table('product')
+                        ->where('pro_Name', $request->product_name)
+                        ->update(['quantity' => $qty-$request->quantity]);
                 
                 $t = DB::table('purchase')
                             ->join('order_detail', 'purchase.id', '=', 'order_detail.purchase_id')
                             ->where('purchase.id', $purchase[0]->id)
-                            ->where('order_detail.product_id', $product_id[0]->id)
+                            ->where('order_detail.product_id', $product->id)
                             ->select('order_detail.*')
                             ->get();
                 $pur_id = $purchase[0]->id;
@@ -152,7 +213,7 @@ class cart extends Controller
                         ->insert([
                             'id'=> $count_order_detailID + 1,
                             'purchase_id' => $pur_id,
-                            'product_id' => $product_id[0]->id,
+                            'product_id' => $product->id,
                             'quantity' => $request->quantity,
                             'price' => $request->price,
                             'total' => $request->price * $request->quantity
@@ -163,7 +224,7 @@ class cart extends Controller
                     DB::table('order_detail')
                             ->where('id', $t[0]->id)
                             ->where('purchase_id', $pur_id)
-                            ->where('product_id', $product_id[0]->id)
+                            ->where('product_id', $product->id)
                             ->update([
                                 'quantity' => $t[0]->quantity + $request->quantity,
                                 'total' => $request->price * ($t[0]->quantity + $request->quantity)
@@ -180,6 +241,7 @@ class cart extends Controller
             ->where('id', $pur_id)
             ->update(['total' => $total]);
 
+        //return redirect()->back()->with('message', 'State saved correctly!!!');
         return redirect()->route('getCart');
         
     }

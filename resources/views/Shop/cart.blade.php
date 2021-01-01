@@ -11,7 +11,6 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
     <!-- MDB -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.0.0/mdb.min.css" rel="stylesheet" />
-    @routes()
 </head>
 
 <style>
@@ -103,12 +102,16 @@ body {
                     <div class="col-4">
                         <div class="img-sp">
                             <!-- hình sản phẩm -->
-                            <a href="#"><img src="../../public/client/images/product/4.jpg" width="100%" alt=""></a>
+                            <a href="#"><img src="{{ asset('client/images/product/4.jpg') }}" width="100%" alt=""></a>
                             <br>
                             <!-- button xóa sản phẩm -->
                             <form action="{{route('postCart')}}" method="post">
                                 @csrf
                                 <input type="hidden" name="product_id" value="{{ $order->product_id }}">
+                                <input type="hidden" name="product_name" value="{{ $order->pro_Name }}">
+                                <input type="hidden" name="quantity" value="{{ $order->quantity }}">
+                                <input type="hidden" name="price" value="{{ $order->price }}">
+                                <input type="hidden" name="total" value="{{ $order_details[0]->total }}">
                                 <button type="submit" id="del" name="del" value="{{ $order->id }}" class="btn p-2"><i
                                         class="fas fa-trash-alt mr-2"></i> Xoá</i></button>
                             </form>
@@ -131,9 +134,12 @@ body {
                                 <div class="choosenumber">
                                     <form action="{{route('postCart')}}" method="post">
                                         @csrf
-                                        <input type="hidden" name="qtyMax" value="{{ $order->qtyMax }}">
+                                        <input type="hidden" id="amountOfProduct" name="qtyMax"
+                                            value="{{ $order->qtyMax }}">
+                                        <input type="hidden" name="product_name" value="{{ $order->pro_Name }}">
                                         <input type="hidden" name="price" value="{{ $order->price }}">
                                         <input type="hidden" name="purchase_id" value="{{ $order->purchase_id }}">
+                                        <input type="hidden" name="total" value="{{ $order_details[0]->total }}">
                                         <!-- sub quantity -->
                                         <button type="submit" id="sub" name="sub" value="{{ $order->id }}"
                                             class="btn">-</button>
@@ -144,8 +150,6 @@ body {
                                         <button type="submit" id="add" name="add" value="{{ $order->id }}"
                                             class="btn">+</button>
                                     </form>
-
-
                                 </div>
                             </div>
                         </div>
@@ -228,12 +232,13 @@ body {
                     <!-- Collapsed content -->
                     <div class="collapse mt-3" id="collapseExample">
                         <div class="container">
-                            <a href="#"><img src="../../public/client/images/card/ic_CIMB@4x.png" width="48%"
+                            <a href="#"><img src="{{ asset('client/images/card/ic_CIMB@4x.png') }}" width="48%"
                                     alt=""></a>
-                            <a href="#"><img src="../../public/client/images/card/ic_MSB@4x.png" width="48%" alt=""></a>
-                            <a href="#"><img src="../../public/client/images/card/ic_sacombank@4x.png" width="48%"
+                            <a href="#"><img src="{{ asset('client/images/card/ic_MSB@4x.png') }}" width="48%"
                                     alt=""></a>
-                            <a href="#"><img src="../../public/client/images/card/ic_Vietcombank@4x.png" width="48%"
+                            <a href="#"><img src="{{ asset('client/images/card/ic_sacombank@4x.png') }}" width="48%"
+                                    alt=""></a>
+                            <a href="#"><img src="{{ asset('client/images/card/ic_Vietcombank@4x.png') }}" width="48%"
                                     alt=""></a>
                         </div>
                     </div>
@@ -290,7 +295,5 @@ body {
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.0.0/mdb.min.js"></script>
 <!-- Process back-end -->
 <script src="{{ asset('client/js/detailToCart.js') }}"></script>
-
-
 
 </html>

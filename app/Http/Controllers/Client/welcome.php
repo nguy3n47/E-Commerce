@@ -31,13 +31,22 @@ class welcome extends Controller
                         ->count();
             }
         }
-        $products = DB::table('product')->orderBy('create_at', 'desc')->take(10)->get();
-        return view('homePage')->with('products', $products)->with('amountOfProduct', $amountOfProduct);
+        //$best_selling_products = DB::table('product')->orderBy('create_at', 'asc')->take(10)->get();
+        $newProducts = DB::table('product')->orderBy('create_at', 'desc')->take(10)->get();
+        //$best_loving_products = DB::table('product')->orderBy('create_at', 'asc')->take(10)->get();
+        return view('homePage')
+                ->with('products', $newProducts)
+                ->with('amountOfProduct', $amountOfProduct);
     }
     
     public function getDetail($product_name){
         $pro = str_replace('-', ' ', $product_name);
-        $product = DB::table('product')->where('pro_Name', $pro)->get();
-        return view('../Shop/detailProduct')->with('product', $product[0]);
+        $product = DB::table('product')
+                    ->join('images', 'product.id','=','images.product_id')
+                    ->join('proc_colors', 'images.id', '=', 'proc_colors.image_id')
+                    ->where('pro_Name', $pro)
+                    ->select('product.*','proc_colors.*')
+                    ->get();
+        return view('../Shop/detailProduct')->with('product', $product);
     }
 }
