@@ -39,6 +39,7 @@ $(document).on("click", "#sub", function (e) {
                 var msg = JSON.parse(msg);
                 console.log(msg[0]);
                 document.getElementById("totalSum").textContent = msg[0] + "đ";
+                document.getElementById("totalSum").value = msg[0];
             }
         });
     }
@@ -83,6 +84,7 @@ $(document).on("click", "#add", function (e) {
             var msg = JSON.parse(msg);
             console.log(msg[0]);
             document.getElementById("totalSum").textContent = msg[0] + "đ";
+            document.getElementById("totalSum").value = msg[0];
         }
     });
     console.log("hello")
@@ -129,6 +131,7 @@ $(document).on("click", "#del", function (e) {
                     $('#order_sumary')[0].innerHTML = "<h1>Your Cart is Empty</h1><a href='/'>Trang chủ</a>";
                 }
                 document.getElementById("totalSum").textContent = msg[0] + "đ";
+                document.getElementById("totalSum").value = msg[0];
                 $('.row').each(function () {
                     if ($(this)[0].id === id_holder) {
                         $(this)[0].innerHTML = "";
@@ -140,3 +143,21 @@ $(document).on("click", "#del", function (e) {
         });
     }
 });
+
+$(document).on("click", "#confirm_order", () => {
+    var purchase_id = $('#purchase_id').val();
+
+    var url = $('#urlPay').val();
+
+    var total = $('#totalSum').val();
+
+    var name = $('#form3Example1').val();
+
+    var phone = $('#form3Example2').val();
+
+    var adress = $('#form3Example3').val();
+
+    var payment = $('input[name="payment"]:checked').val();
+
+    console.log("hello");
+})

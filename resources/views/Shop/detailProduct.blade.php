@@ -57,11 +57,11 @@
                 <div class="title">
                     <!--Tên-->
                     <h1 class="product-title">
-                        {{ $product[0]->pro_Name}}
+                        {{ $product->pro_Name }}
                     </h1>
                     <i class="far fa-heart" style="font-size: 30px;margin: 1.4rem 0;"><sup id="items-added"></sup></i>
                 </div>
-                <a href="#" class="product-link">{{ $product[0]->sku }}</a>
+                <a href="#" class="product-link">{{ $product->sku }}</a>
                 <div class="infos">
                     <!--Đánh giá-->
                     <div class="reviews">
@@ -74,7 +74,7 @@
 
                     <!--Giá sp-->
                     <div class="price">
-                        <h3>{{ $product[0]->price }}<span>₫</span></h3>
+                        <h3>{{ $product->price }}<span>₫</span></h3>
                     </div>
                     <div id="more-infos">
                         <h5 class="choose">Giới thiệu</h5>
@@ -83,33 +83,21 @@
 
                     <!--Giới thiệu sp-->
                     <div id="info-content">
-                        <p class="paragraph" style="display: block;">{{ $product[0]->description }}</p>
+                        <p class="paragraph" style="display: block;">{{ $product->description }}</p>
                         <p class="paragraph" style="display: none;">
                             - Trong 30 ngày đầu nhập lại máy, trừ phí 20% trên giá
                             hiện tại(hoặc giá mua nếu giá mua thấp hơn giá hiện tại)
                             </br>
-                            - Sau 30 ngày nhập lại máy theo giá thoả
-                            thuận</p>
-                    </div>
-
-                    <!--Màu sắc-->
-
-                    <div class="choose-color">
-                        <h4><b>Màu sắc</b></h4>
-                        <div>
-                            @for($i = 0; $i < count($product); $i++) <input type="radio" id="color" name="prod_color"
-                                value="{{ $product[$i]->image_id }}">
-                                {{ $product[$i]->name_color }}</input>
-                                @endfor
-                        </div>
+                            - Ra khỏi cửa hàng thì đéo được đổi nha</p>
                     </div>
 
                     <!--Số lượng-->
-                    @if($product[0]->quantity == 0)
+                    @if($product->quantity == 0)
                     <p><b>Sản phẩm đã hết hàng</b></p>
                     @else
                     <div class="quantity">
                         <h4><b>Số lượng</b></h4>
+                        <input type="hidden" id="maxQuantity" value="{{ $product->quantity }}">
                         <input type="number" style="outline: none;" name="items" id="counter" min="1" value="1">
                     </div>
 
@@ -118,12 +106,11 @@
                     <div class="buttons">
                         <button id="add-to-cart"><i class="fas fa-shopping-cart"></i>THÊM VÀO GIỎ
                             HÀNG</button>
-                        <form action="{{route('postCart')}}" onsubmit="return getQuantity()" method="post">
+                        <form action="{{route('postCart')}}" onsubmit="getQuantity()" method="post">
                             @csrf
-                            <input type="hidden" name="product_name" value="{{ $product[0]->pro_Name}}">
-                            <input type="hidden" name="price" value="{{ $product[0]->price }}">
-                            <input type="hidden" name="quantity" id="qti">
-                            <input type="hidden" name="product_color" id="pro_color">
+                            <input type="hidden" name="product_name" value="{{ $product->pro_Name}}">
+                            <input type="hidden" name="price" value="{{ $product->price }}">
+                            <input type="hidden" id="quantity" name="quantity">
                             <button id="btn" type="submit">MUA NGAY</button>
                         </form>
                     </div>

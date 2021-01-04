@@ -3,11 +3,12 @@ document.getElementById('counter').addEventListener("input", checkValidQuantity)
 
 function checkValidQuantity() {
     const amount = parseInt(document.getElementById('counter').value);
+    const max_amount = parseInt(document.getElementById('maxQuantity').value);
     if (amount < 1) {
         document.getElementById('counter').value = 1;
     }
-    else if (amount > 100) {
-        document.getElementById('counter').value = 100;
+    else if (amount > max_amount) {
+        document.getElementById('counter').value = max_amount;
     }
 }
 
@@ -29,18 +30,5 @@ function checkValidQuantity() {
 // passing quantity to cart
 function getQuantity() {
     const quantity = document.getElementById('counter').value;
-    document.getElementById("qti").value = quantity;
-
-    const color = document.getElementsByName('prod_color');
-    let flag = -1;
-    for (i = 0; i < color.length; i++) {
-        if (color[i].checked) {
-            flag = 0;
-            document.getElementById("pro_color").value = color[i].value;
-        }
-    }
-    if (flag == -1) {
-        alert('Mày chưa chọn màu kìa th ngu');
-        return false;
-    }
+    document.getElementById("quantity").value = quantity;
 }
