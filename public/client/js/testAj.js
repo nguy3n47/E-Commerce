@@ -144,20 +144,23 @@ $(document).on("click", "#del", function (e) {
     }
 });
 
-$(document).on("click", "#confirm_order", () => {
-    var purchase_id = $('#purchase_id').val();
 
-    var url = $('#urlPay').val();
-
-    var total = $('#totalSum').val();
-
-    var name = $('#form3Example1').val();
-
-    var phone = $('#form3Example2').val();
-
-    var adress = $('#form3Example3').val();
-
+function validateForm() {
+    var purchase_id = document.getElementById('purchase_id').value;
+    var name = document.getElementById('form3Example1').value;
+    var phone = document.getElementById('form3Example2').value;
+    var adress = document.getElementById('form3Example3').value;
     var payment = $('input[name="payment"]:checked').val();
 
-    console.log("hello");
-})
+    if (name == "" || phone == "" || adress == "") {
+        alert("Mày chưa điền đủ thông tin kìa");
+        return false;
+    }
+
+
+    document.getElementById('pur_id').value = purchase_id;
+    document.getElementById('name').value = name;
+    document.getElementById('phone').value = phone;
+    document.getElementById('adress').value = adress;
+    document.getElementById('pay').value = payment;
+}

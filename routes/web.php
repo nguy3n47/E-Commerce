@@ -27,6 +27,11 @@ Route::post('/cart', 'Client\Cart\cart@postToCart')->name('postCart');
 // edit cart
 Route::post('/edit-cart', 'Client\Cart\cart@editcart')->name('edit_cart');
 
+// purchase
+Route::get('/user/purchase', 'Client\Cart\purchase@getpurchase')->name('get_purchase');
+Route::post('/user/purchase', 'Client\Cart\purchase@postpurchase')->name('post_purchase');
+
+
 // login
 Route::get('/user/login', 'Client\LoginContronller@create')->name('login');
 Route::post('/user/login', 'Client\LoginContronller@loginUser');

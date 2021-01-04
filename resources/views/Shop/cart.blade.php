@@ -188,7 +188,7 @@ body {
                         <!--  column  sdt -->
                         <div class="col">
                             <div class="form-outline">
-                                <input type="text" id="form3Example2" class="form-control" />
+                                <input type="number" id="form3Example2" class="form-control" />
                                 <label class="form-label" for="form3Example2">Số điện thoại</label>
                             </div>
                         </div>
@@ -292,11 +292,22 @@ body {
                     <!--  Chốt -->
                     <div class="row pb-5 mt-2" style="text-align:right">
                         <p align="right">
-                            <input type="hidden" id="urlPay" name="urlPay" value="{{route('edit_cart')}}">
-                            <button id="confirm_order" style="width: 200px" type="submit"
-                                class="btn btn-danger btn-block">Đặt hàng</button>
+                            <input type="hidden" id="urlPay" name="urlPay" value="{{route('post_purchase')}}">
                         </p>
                     </div>
+                    <form action="{{route('post_purchase')}}" onsubmit="validateForm()" method="post">
+                        @csrf
+                        <input type="hidden" id="pur_id" name="pur_id">
+                        <input type="hidden" id="name" name="name">
+                        <input type="hidden" id="phone" name="phone">
+                        <input type="hidden" id="adress" name="address">
+                        <input type="hidden" id="pay" name="pay">
+
+
+                        <input class="btn btn-danger btn-block" style="width: 200px" type="submit" value="Đặt hàng">
+                        <!-- <button onclick="validateForm()" id="confirm_order" style="width: 200px" type="submit"
+                            class="btn btn-danger btn-block">Đặt hàng</button> -->
+                    </form>
                 </div>
             </div>
             @endif
@@ -309,7 +320,7 @@ body {
 <!-- MDB -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.0.0/mdb.min.js"></script>
 <!-- Process back-end -->
-<script src="{{ asset('client/js/detailToCart.js') }}"></script>
+
 <script src="{{ asset('client/js/testAj.js') }}"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
