@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>Document</title>
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
@@ -87,34 +88,27 @@ body {
 
 
 <body>
-
-
+    {{ csrf_field() }}
     <div class="container">
-        <div class="container" style="width:50% ;background-color:white; ">
+        <div id="order_sumary" class="container" style="width:50% ;background-color:white; ">
             @if (count($order_details) === 0)
-            <p>Giỏ hàng trống</p>
+            <div id="comback_homepage">
+                <h1>Your Cart is Empty</h1>
+                <a href="/">Trang chủ</a>
+            </div>
             @else
             <!-- thông tin sản phẩm -->
             <div class="container pb-3 pt-3" style=" border-bottom:1px solid #dfdfdf;">
                 @foreach($order_details as $order)
-                <div class="row">
+                <div class="row" id="deleteItem_{{$order->product_color}}">
                     <!-- col 4 -->
                     <div class="col-4">
                         <div class="img-sp">
                             <!-- hình sản phẩm -->
                             <a href="#"><img src="{{ asset('client/images/product/4.jpg') }}" width="100%" alt=""></a>
                             <br>
-                            <!-- button xóa sản phẩm -->
-                            <form action="{{route('postCart')}}" method="post">
-                                @csrf
-                                <input type="hidden" name="product_id" value="{{ $order->product_id }}">
-                                <input type="hidden" name="product_name" value="{{ $order->pro_Name }}">
-                                <input type="hidden" name="quantity" value="{{ $order->quantity }}">
-                                <input type="hidden" name="price" value="{{ $order->price }}">
-                                <input type="hidden" name="total" value="{{ $order_details[0]->total }}">
-                                <button type="submit" id="del" name="del" value="{{ $order->id }}" class="btn p-2"><i
-                                        class="fas fa-trash-alt mr-2"></i> Xoá</i></button>
-                            </form>
+                            <button type="submit" id="del" name="del" value="{{ $order->product_color }}"
+                                class="btn p-2"><i class="fas fa-trash-alt mr-2"></i> Xoá</i></button>
                         </div>
                     </div>
                     <!-- col 4 -->
@@ -129,27 +123,28 @@ body {
                             <!-- màu sp -->
                             <div class="color-product">
                                 <div class="dropdown choose-color">
-                                    <span>Màu:</span> <span> Xanh</span>
+                                    <span>Màu:</span> <span id="demo">{{ $order->product_color }}</span>
                                 </div>
                                 <div class="choosenumber">
-                                    <form action="{{route('postCart')}}" method="post">
-                                        @csrf
-                                        <input type="hidden" id="amountOfProduct" name="qtyMax"
-                                            value="{{ $order->qtyMax }}">
-                                        <input type="hidden" name="product_name" value="{{ $order->pro_Name }}">
-                                        <input type="hidden" name="price" value="{{ $order->price }}">
-                                        <input type="hidden" name="purchase_id" value="{{ $order->purchase_id }}">
-                                        <input type="hidden" name="total" value="{{ $order_details[0]->total }}">
-                                        <!-- sub quantity -->
-                                        <button type="submit" id="sub" name="sub" value="{{ $order->id }}"
-                                            class="btn">-</button>
-                                        <input type="number" style="outline: none;" name="quantity" id="counter" min="1"
-                                            value="{{ $order->quantity }}">
+                                    <!-- url -->
+                                    <input type="hidden" id="url" name="url" value="{{ route('edit_cart') }}">
+                                    <!-- product id -->
+                                    <input type="hidden" id='product_id' name="product_id"
+                                        value="{{ $order->product_id }}">
+                                    <!-- price -->
+                                    <input type="hidden" id="price" name="price" value="{{ $order->price }}">
+                                    <!-- purchase id -->
+                                    <input type="hidden" id="purchase_id" name="purchase_id"
+                                        value="{{ $order->purchase_id }}">
 
-                                        <!-- add quantity -->
-                                        <button type="submit" id="add" name="add" value="{{ $order->id }}"
-                                            class="btn">+</button>
-                                    </form>
+                                    <!-- sub quantity -->
+                                    <button type="submit" id="sub" name="sub" value="{{ $order->product_color }}"
+                                        class="btn">-</button>
+                                    <!-- current quantity -->
+                                    <input type="number" style="outline: none;" id="counter" min="1"
+                                        value="{{ $order->quantity }}" readonly>
+                                    <button type="submit" id="add" name="add" value="{{ $order->product_color }}"
+                                        class="btn">+</button>
                                 </div>
                             </div>
                         </div>
@@ -161,19 +156,14 @@ body {
             <!-- Tổng tiền -->
             <div class="container" style="  border-bottom:1px solid #dfdfdf;">
                 <!-- tổng tiền -->
-                <div class="row" style="border-top: 1px solid  #dfdfdf">
-                    <div class="col">
-                        <span>Số lượng:( </span> <span>2</span> <span>sản phẩm)</span>
-                        <span style="float:right">{{ $order_details[0]->total }}đ</span>
-                    </div>
-                </div>
                 <div class="row mt-2">
                     <div class="col">
                         <span><b>Tổng tiền:</b></span>
-                        <span style="float:right">{{ $order_details[0]->total }}đ</span>
+                        <span class="totalSum" id="totalSum" style="float:right">{{ $order_details[0]->total }}đ</span>
                     </div>
                 </div>
             </div>
+
             <!-- Thông tin khách hàng -->
             <div class="container mt-3">
                 <h5>THÔNG TIN KHÁCH HÀNG:
@@ -274,7 +264,8 @@ body {
                     <!--  Chốt -->
                     <div class="row pb-5 mt-2" style="text-align:right">
                         <p align="right">
-                            <button style="width: 200px" type="submit" class="btn btn-danger btn-block">Đặt
+                            <button id="confirm_order" style="width: 200px" type="submit"
+                                class="btn btn-danger btn-block">Đặt
                                 hàng</button>
                         </p>
                     </div>
@@ -282,18 +273,18 @@ body {
             </div>
             @endif
         </div>
-
-
-    </div>
     </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
 <!-- MDB -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.0.0/mdb.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.0.0/mdb.min.js"></script>
 <!-- Process back-end -->
 <script src="{{ asset('client/js/detailToCart.js') }}"></script>
+<script src="{{ asset('client/js/testAj.js') }}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
 
 </html>

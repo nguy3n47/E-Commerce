@@ -61,7 +61,7 @@
                     </h1>
                     <i class="far fa-heart" style="font-size: 30px;margin: 1.4rem 0;"><sup id="items-added"></sup></i>
                 </div>
-                <a href="#" class="product-link">{{ $product[0]->sku}}</a>
+                <a href="#" class="product-link">{{ $product[0]->sku }}</a>
                 <div class="infos">
                     <!--Đánh giá-->
                     <div class="reviews">
@@ -105,15 +105,16 @@
                     </div>
 
                     <!--Số lượng-->
+                    @if($product[0]->quantity == 0)
+                    <p><b>Sản phẩm đã hết hàng</b></p>
+                    @else
                     <div class="quantity">
                         <h4><b>Số lượng</b></h4>
-                        <input type="hidden" id="amountOfProduct" value="{{ $product[0]->quantity }}">
                         <input type="number" style="outline: none;" name="items" id="counter" min="1" value="1">
                     </div>
-                    <div class="quantity">
-                        <p><b>Còn lại {{ $product[0]->quantity }} sản phẩm</b></p>
-                    </div>
+
                     <!--Mua hàng-->
+
                     <div class="buttons">
                         <button id="add-to-cart"><i class="fas fa-shopping-cart"></i>THÊM VÀO GIỎ
                             HÀNG</button>
@@ -126,6 +127,7 @@
                             <button id="btn" type="submit">MUA NGAY</button>
                         </form>
                     </div>
+                    @endif
                 </div>
             </div>
         </div>

@@ -3,14 +3,27 @@ document.getElementById('counter').addEventListener("input", checkValidQuantity)
 
 function checkValidQuantity() {
     const amount = parseInt(document.getElementById('counter').value);
-    const amountOfProduct = parseInt(document.getElementById('amountOfProduct').value);
     if (amount < 1) {
         document.getElementById('counter').value = 1;
     }
-    else if (amount > amountOfProduct) {
-        document.getElementById('counter').value = amountOfProduct;
+    else if (amount > 100) {
+        document.getElementById('counter').value = 100;
     }
 }
+
+// $(document).ready(function () {
+//     $('input[type=radio]').click(function () {
+//         //alert(this.value);
+//         var temp = "amountOfProduct[" + this.value + "]";
+//         $('input[name^="amountOfProduct"]').each(function () {
+//             if ($(this)[0].name == temp) {
+//                 var str = "<b>Còn lại " + this.value + " sản phẩm</b>"
+//                 $('#slton')[0].innerHTML = str;
+//                 return false;
+//             }
+//         });
+//     });
+// });
 
 
 // passing quantity to cart

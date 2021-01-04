@@ -18,12 +18,14 @@ use App\Http\Controllers\Client;
 Route::get('/','Client\welcome@getHomePage')->name('homePage');
 
 // product detail
-Route::get('/detail/{pro_Name}', 'Client\welcome@getDetail');
+Route::get('/detail/{pro_Name}', 'Client\welcome@getDetail')->name('detailProduct');
 
 // cart
 Route::get('/cart', 'Client\Cart\cart@getToCart')->name('getCart');
 Route::post('/cart', 'Client\Cart\cart@postToCart')->name('postCart');
 
+// edit cart
+Route::post('/edit-cart', 'Client\Cart\cart@editcart')->name('edit_cart');
 
 // login
 Route::get('/user/login', 'Client\LoginContronller@create')->name('login');

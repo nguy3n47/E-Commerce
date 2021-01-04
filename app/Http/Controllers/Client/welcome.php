@@ -15,7 +15,7 @@ use App\Models\Product;
 
 class welcome extends Controller
 {
-    public function getHomePage(){
+    public function getHomePage(Request $request){
         $user = session('user_id');
         $amountOfProduct = 0;
         if($user != null){
@@ -44,9 +44,11 @@ class welcome extends Controller
         $product = DB::table('product')
                     ->join('images', 'product.id','=','images.product_id')
                     ->join('proc_colors', 'images.id', '=', 'proc_colors.image_id')
+                    ->join('quantity_product', 'proc_colors.id','=','quantity_product.color_id')
                     ->where('pro_Name', $pro)
-                    ->select('product.*','proc_colors.*')
+                    ->select('product.*','proc_colors.*', 'quantity_product.quantity')
                     ->get();
+
         return view('../Shop/detailProduct')->with('product', $product);
     }
 }

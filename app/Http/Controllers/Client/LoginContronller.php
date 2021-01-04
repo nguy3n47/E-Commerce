@@ -54,13 +54,20 @@ class LoginContronller extends Controller
             // if from page cart to login
             session()->put('user_id', $user->id);
             $cart = session('cart');
-            if($cart == null){
-                return redirect()->route('homePage');
+            $detailProduct = session('detailProduct');
+            if($cart != null){
+                session()->forget('cart');
+                return redirect()->route('getCart');
+                
+            }
+            else if($detailProduct != null){
+                $product_name = str_replace(' ', '-', $detailProduct);
+                session()->forget('detailProduct');
+                return redirect()->route('detailProduct', ['pro_Name' => $product_name]);
             }
             // button loggin
             else{
-                session()->forget('cart');
-                return redirect()->route('getCart');
+                return redirect()->route('homePage');
             }
         }
     }
