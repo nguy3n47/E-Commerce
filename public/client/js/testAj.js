@@ -164,3 +164,47 @@ function validateForm() {
     document.getElementById('adress').value = adress;
     document.getElementById('pay').value = payment;
 }
+
+$(document).ready(function () {
+    $('#form3Example5').blur(function (e) {
+        if (!validatePhone('form3Example5')) {
+            $('#spnPhoneStatus').html('Invalid');
+            $('#spnPhoneStatus').css('color', 'red');
+        }
+        else {
+            $('#spnPhoneStatus').html('');
+        }
+    });
+});
+
+
+function validatePhone(txtPhone) {
+    var a = document.getElementById(txtPhone).value;
+    var filter = /^((\+[1-9]{1,4}[ \-]*)|(\([0-9]{2,3}\)[ \-]*)|([0-9]{2,4})[ \-]*)*?[0-9]{3,4}?[ \-]*[0-9]{3,4}?$/;
+    if (filter.test(a)) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+
+
+function validateInformationCustomer() {
+    var name = document.getElementById('form3Example11').value;
+    var phone = document.getElementById('form3Example5').value;
+    var adress = document.getElementById('form3Example4').value;
+
+    if (name == "" || phone == "" || adress == "") {
+        alert("Mày chưa điền đủ thông tin kìa");
+        return false;
+    }
+
+    document.getElementById('form3Example1').value = name;
+    document.getElementById('form3Example2').value = phone;
+    document.getElementById('form3Example3').value = adress;
+
+
+
+}

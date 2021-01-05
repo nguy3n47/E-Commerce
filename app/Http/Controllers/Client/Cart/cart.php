@@ -15,16 +15,17 @@ class cart extends Controller
 {
     public function getToCart(){
         // if not logged in then loggin
-        $user = session('user_id');
-        if($user == null){
+        $user_id = session('user_id');
+        if($user_id == null){
             session()->put('cart', 'cart');
             return redirect()->route('login');
         }
         $purchase = DB::table('purchase')
-                        ->where('user_id', '=', $user)
+                        ->where('user_id', '=', $user_id)
                         ->WhereNull('status_id')
                         ->get();
         $order_details = [];
+        $user = [];
         if($purchase->count() != 0){
             $order_details = DB::table('order_detail')
                         ->join('product', 'order_detail.product_id', '=', 'product.id')
@@ -33,7 +34,12 @@ class cart extends Controller
                         ->select('order_detail.*', 'product.pro_Name', 'purchase.total')
                         ->get();
         }
-        return view('../Shop/cart')->with('order_details', $order_details);
+        $customer = DB::table('users')
+                        ->where('id', $user_id)
+                        ->get();
+        return view('../Shop/cart')
+                    ->with('order_details', $order_details)
+                    ->with('customer', $customer);
     }
 
     private function subQuantity($purchase_id, $product_id, $quantity, $price){

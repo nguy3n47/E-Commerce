@@ -181,14 +181,16 @@ body {
                         <!-- column họ tên -->
                         <div class="col">
                             <div class="form-outline">
-                                <input type="text" id="form3Example1" class="form-control" />
+                                <input type="text" id="form3Example1" class="form-control"
+                                    value="{{ $customer[0]->lastname }} {{ $customer[0]->firstname }}" />
                                 <label class="form-label" for="form3Example1">Họ tên</label>
                             </div>
                         </div>
                         <!--  column  sdt -->
                         <div class="col">
                             <div class="form-outline">
-                                <input type="number" id="form3Example2" class="form-control" />
+                                <input type="tel" id="form3Example2" class="form-control"
+                                    value="{{ $customer[0]->phone }}" />
                                 <label class="form-label" for="form3Example2">Số điện thoại</label>
                             </div>
                         </div>
@@ -200,7 +202,8 @@ body {
                         <!-- Dia chỉ -->
                         <div class="col">
                             <div class="form-outline">
-                                <input type="text" id="form3Example3" class="form-control" />
+                                <input type="text" id="form3Example3" class="form-control"
+                                    value="{{ $customer[0]->address }}" />
                                 <label class="form-label" for="form3Example3">Địa chỉ</label>
                             </div>
                         </div>
@@ -215,49 +218,39 @@ body {
                                 aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
-                                        <form>
-                                            <!-- 2 column grid layout with text inputs for the first and last names -->
-                                            <div class="row mb-4 Form-edit mt-5">
-                                                <div class="col" style="padding-left:0px">
-                                                    <div class="form-outline">
-                                                        <input type="text" id="form3Example1" class="form-control" />
-                                                        <label class="form-label" for="form3Example1">First name</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col" style="padding-right:0px">
-                                                    <div class="form-outline">
-                                                        <input type="text" id="form3Example2" class="form-control" />
-                                                        <label class="form-label" for="form3Example2">Last name</label>
-                                                    </div>
+                                        <!-- 2 column grid layout with text inputs for the first and last names -->
+                                        <div class="row mb-4 Form-edit mt-5">
+                                            <div class="col" style="padding-left:0px">
+                                                <div class="form-outline">
+                                                    <label class="form-label" for="form3Example11">Full Name</label>
+                                                    <input type="text" id="form3Example11"
+                                                        value="{{ $customer[0]->lastname }} {{ $customer[0]->firstname }}"
+                                                        cl"ass="form-control" />
                                                 </div>
                                             </div>
+                                        </div>
 
-                                            <!-- Email input -->
-                                            <div class="form-outline mb-4 Form-edit">
-                                                <input type="email" id="form3Example3" class="form-control" />
-                                                <label class="form-label" for="form3Example3">Email address</label>
-                                            </div>
+                                        <!-- Address input -->
+                                        <div class="form-outline mb-4 Form-edit">
+                                            <input type="text" id="form3Example4" class="form-control"
+                                                value="{{ $customer[0]->address }}" />
+                                            <label class="form-label" for="form3Example4">Address</label>
+                                        </div>
+                                        <!-- sdt input -->
+                                        <div class="form-outline mb-4 Form-edit">
+                                            <input type="tel" id="form3Example5" class="form-control"
+                                                value="{{ $customer[0]->phone }}" />
+                                            <label class="form-label" for="form3Example5">Số điện thoại</label>
+                                        </div>
+                                        <span id="spnPhoneStatus"></span>
 
-
-                                            <!-- Address input -->
-                                            <div class="form-outline mb-4 Form-edit">
-                                                <input type="password" id="form3Example4" class="form-control" />
-                                                <label class="form-label" for="form3Example4">Address</label>
-                                            </div>
-                                            <!-- sdt input -->
-                                            <div class="form-outline mb-4 Form-edit">
-                                                <input type="email" id="form3Example5" class="form-control" />
-                                                <label class="form-label" for="form3Example5">Số điện thoại</label>
-                                            </div>
-
-
-
-                                            <!-- Submit button -->
-                                            <p align="right" style="margin-right: 50px;">
-                                                <button type="submit" class="btn btn-primary btn-block mb-4"
-                                                    style="width:20%;">Xác nhận</button>
-                                            </p>
-                                        </form>
+                                        <!-- Submit button -->
+                                        <p align="right" style="margin-right: 50px;">
+                                            <button type="button" autocomplete="off"
+                                                onclick="validateInformationCustomer()"
+                                                class="btn btn-primary btn-block mb-4" style="width:20%;">Xác
+                                                nhận</button>
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -295,7 +288,7 @@ body {
                             <input type="hidden" id="urlPay" name="urlPay" value="{{route('post_purchase')}}">
                         </p>
                     </div>
-                    <form action="{{route('post_purchase')}}" onsubmit="validateForm()" method="post">
+                    <form action="{{route('post_purchase')}}" onsubmit="return validateForm()" method="post">
                         @csrf
                         <input type="hidden" id="pur_id" name="pur_id">
                         <input type="hidden" id="name" name="name">

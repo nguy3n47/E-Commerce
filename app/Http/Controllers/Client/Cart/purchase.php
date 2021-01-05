@@ -19,6 +19,7 @@ class purchase extends Controller
     }
 
     public function postpurchase(Request $request){
+        $user_id = session()->get('user_id');
         dd($request->all());
     }
 }
