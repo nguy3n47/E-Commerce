@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang chủ</title>
 
+    <!-- Font Family -->
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700;800&family=Josefin+Slab:ital,wght@0,400;0,600;1,300;1,400;1,600&family=Muli:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet" />
+
     <!-- Bootstrap-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css">
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
@@ -24,20 +27,20 @@
     <!-- ------------ AOS Library ------------------------- -->
     <link rel="stylesheet" href="{{ asset('client/css/homePagecss/aos.css') }}">
 
-    <!-- Custom Style   -->
+    <!-- Custom Style -->
     <link rel="stylesheet" href="{{ asset('client/css/homePagecss/Style.css') }}">
 
 </head>
 
 <body>
+
+    <!-- Top -->
     <div id="top">
         <div id="top-left">
             <ul>
-                <li><a href="https://www.instagram.com/accounts/login/?hl=vi" target="_blank"
-                        class="fab fa-instagram"></a></li>
+                <li><a href="https://www.instagram.com/accounts/login/?hl=vi" target="_blank" class="fab fa-instagram"></a></li>
                 <li><a href="https://www.facebook.com/" target="_blank" class="fab fa-facebook-square"></a></li>
-                <li><a href="https://login.yahoo.com/?.intl=us&lang=vi-VN&.src=ym" target="_blank"
-                        class="fab fa-yahoo"></a></li>
+                <li><a href="https://login.yahoo.com/?.intl=us&lang=vi-VN&.src=ym" target="_blank" class="fab fa-yahoo"></a></li>
                 <li><a href="https://twitter.com/login?lang=vi" target="_blank" class="fab fa-twitter-square"></a>
                 </li>
             </ul>
@@ -45,16 +48,15 @@
         <div id="top-right">
             <ul>
                 <li><i class="fas fa-sign-in-alt" style="color: #ffffff;"></i></li>
-                <li class="An">|</li>
                 <li class="An"><a href="file:///C:/Users/MyPC/Documents/Web/Login/LogIn.html" target="_blank"><b>Đăng
                             nhập</b></a></liclass="An">
-                <li class="An">|</li class="An">
+                <li><i class="fas fa-user"></i></li>
                 <li class="An"><a href="file:///C:/Users/MyPC/Documents/Web/Login/Register.html" target="_blank"><b>Đăng
                             ký</b></a></li class="An">
             </ul>
         </div>
     </div>
-    <!-- End Top -->
+    <!--End Top -->
 
 
     <!-- header starts -->
@@ -69,7 +71,7 @@
                                 <ul>
                                     <li class="active">
                                         <div class="contact_icone" style="cursor: pointer;">
-                                            <img src="./img/Untitled-1-removebg-preview.png" alt="">
+                                            <img src="{{ asset('client/images/image_welcome/Untitled-1-removebg-preview.png')}}" alt="">
                                         </div>
                                     </li>
                                     <li><a href="#">Mac</i></a></li>
@@ -108,12 +110,14 @@
         </div>
     </div>
 
-    <!-- header ends -->
+    <!--header ends -->
+
+    <!-- Main -->
     <div class="home_black_version">
         <header class="header_area header_black">
-            <!-- slider section starts -->
+            <!--slider section starts -->
             <div class="slider_area slider_black owl-carousel">
-                <div class="single_slider" data-bgimg="./img/slide1.jpg">
+                <div class="single_slider" data-bgimg="{{ asset('client/images/image_welcome/slide1.jpg')}}">
                     <div class="container">
                         <div class="row align-items-center">
                             <div class="col-12">
@@ -129,7 +133,7 @@
                     </div>
 
                 </div>
-                <div class="single_slider" data-bgimg="./img/slide3.jpg">
+                <div class="single_slider" data-bgimg="{{ asset('client/images/image_welcome/slide3.jpg')}}">
                     <div class="container">
                         <div class="row align-items-center">
                             <div class="col-12">
@@ -145,7 +149,7 @@
                     </div>
 
                 </div>
-                <div class="single_slider" data-bgimg="./img/slide2.jpg">
+                <div class="single_slider" data-bgimg="{{ asset('client/images/image_welcome/slide2.jpg')}}">
                     <div class="container">
                         <div class="row align-items-center">
                             <div class="col-12">
@@ -162,11 +166,11 @@
 
                 </div>
             </div>
-            <!-- slider section ends -->
+            <!--slider section ends -->
 
         </header>
 
-        <!-- Products -->
+        <!--Products -->
         <main>
 
             <!-- Carousel -->
@@ -180,7 +184,7 @@
                             @foreach($products as $pro)
                             <a href="{{ url('/', str_replace(' ', '-', $pro->pro_Name))}}">
                                 <div class="blog-content">
-                                <div class="blog-header">
+                                    <div class="blog-header">
                                         <img src="./images/pic1.jpg" alt="">
                                         <ul class="icons">
                                             <span><i class="fas fa-heart"></i></span>
@@ -203,13 +207,13 @@
                 </div>
             </section>
 
-            <!-- Gird Product -->
+            <!--New Product -->
             <section class="section featured">
                 <div class="title" data-aos="zoom-in" data-aos-delay="200">
                     <h2>Sản Phẩm Mới Nhất</h2>
                 </div>
 
-                <div class="product-center container" data-aos="zoom-in" data-aos-delay="200">
+                <div class="product-center container" data-aos="fade-left" data-aos-delay="200">
                     <div class="product">
                         <div class="product-header">
                             <img src="./images/pic5.jpg" alt="">
@@ -235,12 +239,30 @@
                 </div>
             </section>
 
+            <!-- banner -->
+            <section class="banner_fullwidth black_fullwidth" data-aos="fade-in" data-aos-delay="200">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-12">
+                            <div class="banner_text">
+                                <p>Sale Off 20% All Products</p>
+                                <h2>It’s treat yourself season.</h2>
+                                <span>Get the newest iPhone for an unbelievable price.</span>
+                                <a href="#">Shop Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+             <!-- banner end -->
+
+             <!-- Love Product -->
             <section class="section featured">
                 <div class="title" data-aos="zoom-in" data-aos-delay="200">
                     <h2>Sản Phẩm Yêu Thích</h2>
                 </div>
 
-                <div class="product-center container" data-aos="zoom-in" data-aos-delay="200">
+                <div class="product-center container" data-aos="fade-right" data-aos-delay="200">
                     <div class="product">
                         <div class="product-header">
                             <img src="./images/pic5.jpg" alt="">
@@ -267,7 +289,13 @@
             </section>
 
         </main>
-    </div>
+    </div> 
+    <!-- End Main -->
+
+    <!-- Product Page -->
+    
+
+
 
     <!-- --------------------------- Footer ---------------------------------------- -->
 
@@ -341,6 +369,7 @@
     <!-- Custom Javascript file -->
     <script src="{{ asset('client/js/homePagejs/main.js') }}"></script>
     <script src="{{ asset('client/js/homePagejs/sp.js') }}"></script>
+
 </body>
 
 </html>

@@ -14,6 +14,7 @@
 </head>
 
 <body>
+
     <div class="card-wrapper" id="app">
         <div class="card">
             <!-- card left -->
@@ -85,21 +86,12 @@
                             Chính Hãng.</p>
                         <p class="paragraph" style="display: none;">
                             - Trong 30 ngày đầu nhập lại máy, trừ phí 20% trên giá
-                            hiện tại(hoặc giá mua nếu giá mua thấp hơn giá hiện tại)
+                            hiện tại(hoặc giá mua nếu giá mua thấp hơn giá hiện tại).
                             </br>
                             - Sau 30 ngày nhập lại máy theo giá thoả
-                            thuận</p>
+                            thuận.</p>
                     </div>
 
-                    <!--Màu sắc-->
-                    <div class="choose-color">
-                        <h4><b>Màu sắc</b></h4>
-                        <div>
-                            <button>Màu đen</button>
-                            <button>Màu trắng</button>
-                            <button>Màu hồng</button>
-                        </div>
-                    </div>
 
                     <!--Số lượng-->
                     <div class="quantity">

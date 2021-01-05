@@ -3,7 +3,7 @@ html, body {
     margin: 0%;
     box-sizing: border-box;
     overflow-x: hidden;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Baloo Da 2", serif;
 }
 
 :root {
@@ -101,6 +101,7 @@ p {
 }
 
 #top-right ul li {
+    font-family: ;
     font-size: 13px;
     float: left;
     margin-top: 4px;
@@ -321,7 +322,6 @@ p {
     color: #4481eb;
 }
 
-
 .mini_cart {
     position: fixed;
     min-width: 355px;
@@ -520,7 +520,7 @@ p {
 }
 
 .sticky-header.sticky {
-    background: rgba(54, 63, 77, 0.9);
+    background: white;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.11);
 }
 
@@ -737,38 +737,6 @@ p {
 
 /* ----------------- Main Content----------- */
 
-/* --------------- Site title ---------------- */
-
-main .site-title {
-    background: url('../assets/Background-image.png');
-    background-size: cover;
-    height: 110vh;
-    display: flex;
-    justify-content: center;
-}
-
-main .site-title .site-background {
-    padding-top: 10rem;
-    text-align: center;
-    color: var(--white);
-}
-
-main .site-title h1, h3 {
-    margin: .3rem;
-}
-
-main .site-title .btn {
-    margin: 1.8rem;
-    background: var(--sky);
-}
-
-main .site-title .btn:hover {
-    background: transparent;
-    border: 1px solid var(--white);
-    color: var(--white);
-}
-
-/* --------x------ Site title --------x------- */
 
 /* --------------- Blog Carousel ------------ */
 
@@ -800,7 +768,7 @@ main .blog-post .blog-content {
     box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
 }
 
-main .blog-post .blog-content img{
+main .blog-post .blog-content img {
     height: 19rem;
 }
 
@@ -848,7 +816,7 @@ main .blog-content span {
     margin-bottom: 1rem;
 }
 
-.blog-header .icons span:hover i{
+.blog-header .icons span:hover i {
     color: #fff;
     color: #e43445;
 }
@@ -889,9 +857,11 @@ section .container .owl-nav {
 }
 
 /* Product */
-.featured{
+
+.featured {
     margin-left: -150px;
 }
+
 .product-center {
     margin: 0 auto;
     display: grid;
@@ -935,7 +905,7 @@ section .container .owl-nav {
 }
 
 .rating {
-    color:#4481eb;
+    color: #4481eb;
 }
 
 .product-footer .price {
@@ -986,7 +956,7 @@ section .container .owl-nav {
     margin-bottom: 1rem;
 }
 
-.product-header .icons span:hover i{
+.product-header .icons span:hover i {
     color: #e43445;
 }
 
@@ -1007,16 +977,16 @@ section .container .owl-nav {
 .featured .title {
     margin: 4rem 0rem 7rem 12rem;
     text-align: center;
-  }
-  
-  .title h2 {
+}
+
+.title h2 {
     font-size: 2.5rem;
     display: inline-block;
     position: relative;
     z-index: 0;
-  }
-  
-  .title h2::after {
+}
+
+.title h2::after {
     content: "";
     position: absolute;
     left: 50%;
@@ -1026,8 +996,7 @@ section .container .owl-nav {
     width: 50%;
     height: 4px;
     z-index: 1;
-  }
-  
+}
 
 /* -------x-------- Site Content --------x-------*/
 
@@ -1106,7 +1075,6 @@ section .container .owl-nav {
     color: #fff;
     font-weight: 400;
     margin-bottom: 10px;
-    font-family: "Baloo 2", serif;
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1600px) {
@@ -1225,6 +1193,84 @@ section .container .owl-nav {
     border-radius: 5px;
 }
 
+/* banner section  */
+
+.banner_fullwidth {
+    background-image: url("./bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 100px;
+    margin-bottom: 64px;
+}
+
+.banner_fullwidth .row {
+    height: 630px;
+}
+
+.black_fullwidth .banner_text:hover {
+    transform: scale(1.1);
+}
+
+.black_fullwidth .banner_text p {
+    color: #4481eb;
+}
+
+.black_fullwidth .banner_text h2 {
+    color: #fff;
+    font-weight: 400;
+}
+
+.black_fullwidth .banner_text span {
+    color: #f0f0f0;
+}
+
+.black_fullwidth .banner_text a {
+    color: #4481eb;
+    border: 2px solid #4481eb;
+}
+
+.black_fullwidth .banner_text a:hover {
+    color: #fff;
+    background: #4481eb;
+}
+
+.banner_text {
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.banner_text p {
+    font-size: 16px;
+    margin: 0;
+}
+
+.banner_text h2 {
+    font-size: 50px;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+    font-weight: 700;
+    line-height: 65px;
+}
+
+.banner_text>span {
+    font-size: 16px;
+    margin: 0;
+    display: block;
+}
+
+.banner_text a {
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #4481eb;
+    border: 2px solid #4481eb;
+    padding: 0 45px;
+    border-radius: 3px;
+    margin-top: 70px;
+    line-height: 46px;
+    display: inline-block;
+}
 
 /* ----------------- Footer --------------------- */
 
