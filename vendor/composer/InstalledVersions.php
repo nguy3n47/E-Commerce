@@ -29,11 +29,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-<<<<<<< HEAD
-    'reference' => '240e62f5e289d8432a0cb1b9e2a3ab0310ba55a0',
-=======
-    'reference' => '751fc232195acabb1de16eef5233fc8235b6ee32',
->>>>>>> 154745039d97a87581aaf5b007a12253c4cf10fd
+    'reference' => '539f97802fe030f82ea6898807349b601fdd97d4',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -500,11 +496,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-<<<<<<< HEAD
-      'reference' => '240e62f5e289d8432a0cb1b9e2a3ab0310ba55a0',
-=======
-      'reference' => '751fc232195acabb1de16eef5233fc8235b6ee32',
->>>>>>> 154745039d97a87581aaf5b007a12253c4cf10fd
+      'reference' => '539f97802fe030f82ea6898807349b601fdd97d4',
     ),
     'laravel/tinker' => 
     array (
@@ -846,8 +838,8 @@ private static $installed = array (
     array (
       'provided' => 
       array (
-        0 => '1.0.0',
-        1 => '1.0',
+        0 => '1.0',
+        1 => '1.0.0',
       ),
     ),
     'psr/simple-cache' => 
@@ -1048,12 +1040,12 @@ private static $installed = array (
     ),
     'spatie/async' => 
     array (
-      'pretty_version' => '1.5.2',
-      'version' => '1.5.2.0',
+      'pretty_version' => '1.5.3',
+      'version' => '1.5.3.0',
       'aliases' => 
       array (
       ),
-      'reference' => 'e410c38a93b93589dfd8046b4b93cdaa6a9b7de2',
+      'reference' => 'd371b76ff876530c4906596490fd977720477e48',
     ),
     'swiftmailer/swiftmailer' => 
     array (

@@ -7,7 +7,9 @@
     <title>Trang chủ</title>
 
     <!-- Font Family -->
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700;800&family=Josefin+Slab:ital,wght@0,400;0,600;1,300;1,400;1,600&family=Muli:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700;800&family=Josefin+Slab:ital,wght@0,400;0,600;1,300;1,400;1,600&family=Muli:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap"
+        rel="stylesheet" />
 
     <!-- Bootstrap-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css">
@@ -33,14 +35,16 @@
 </head>
 
 <body>
-
+    {{ csrf_field() }}
     <!-- Top -->
     <div id="top">
         <div id="top-left">
             <ul>
-                <li><a href="https://www.instagram.com/accounts/login/?hl=vi" target="_blank" class="fab fa-instagram"></a></li>
+                <li><a href="https://www.instagram.com/accounts/login/?hl=vi" target="_blank"
+                        class="fab fa-instagram"></a></li>
                 <li><a href="https://www.facebook.com/" target="_blank" class="fab fa-facebook-square"></a></li>
-                <li><a href="https://login.yahoo.com/?.intl=us&lang=vi-VN&.src=ym" target="_blank" class="fab fa-yahoo"></a></li>
+                <li><a href="https://login.yahoo.com/?.intl=us&lang=vi-VN&.src=ym" target="_blank"
+                        class="fab fa-yahoo"></a></li>
                 <li><a href="https://twitter.com/login?lang=vi" target="_blank" class="fab fa-twitter-square"></a>
                 </li>
             </ul>
@@ -48,16 +52,14 @@
         <div id="top-right">
             <ul>
                 <li><i class="fas fa-sign-in-alt" style="color: #ffffff;"></i></li>
-<<<<<<< HEAD
                 <li class="An"><a href="file:///C:/Users/MyPC/Documents/Web/Login/LogIn.html" target="_blank"><b>Đăng
                             nhập</b></a></liclass="An">
                 <li><i class="fas fa-user"></i></li>
-=======
+
                 <li class="An">|</li>
                 <li class="An"><a href="{{ route('login') }}"><b>Đăng
                             nhập</b></a></li>
                 <li class="An">|</li class="An">
->>>>>>> 154745039d97a87581aaf5b007a12253c4cf10fd
                 <li class="An"><a href="file:///C:/Users/MyPC/Documents/Web/Login/Register.html" target="_blank"><b>Đăng
                             ký</b></a></li class="An">
             </ul>
@@ -78,7 +80,8 @@
                                 <ul>
                                     <li class="active">
                                         <div class="contact_icone" style="cursor: pointer;">
-                                            <img src="{{ asset('client/images/image_welcome/Untitled-1-removebg-preview.png')}}" alt="">
+                                            <img src="{{ asset('client/images/image_welcome/Untitled-1-removebg-preview.png')}}"
+                                                alt="">
                                         </div>
                                     </li>
                                     <li><a href="#">Mac</i></a></li>
@@ -105,7 +108,6 @@
                                     <li>
                                         <div class="cart_link">
                                             <a href="{{route('getCart')}}"><i class="ion-android-cart"></i></a>
-
                                         </div>
                                     </li>
                                 </ul>
@@ -189,22 +191,23 @@
                     <div class="container" data-aos="zoom-in" data-aos-delay="200">
                         <div class="owl-carousel owl-theme blog-post">
                             @foreach($best_selling_products as $best_pro)
-                            <a href="{{ url('/detail', str_replace(' ', '-', $best_pro->pro_Name))}}">
-                                <div class="blog-content">
+                            <div class="blog-content">
+                                <ul class="icons">
+                                    <span><i id="loveproduct" value="{{$best_pro->id}}" class="fas fa-heart"></i></span>
+                                </ul>
+                                <a href="{{ url('/detail', str_replace(' ', '-', $best_pro->pro_Name))}}">
                                     <div class="blog-header">
                                         <img src="./images/pic1.jpg" alt="">
                                         <!-- like proc -->
-                                        <ul class="icons">
-                                            <span><i class="fas fa-heart"></i></span>
-                                        </ul>
+
                                     </div>
                                     <div class="blog-title">
                                         <h3>{{ $best_pro->pro_Name }}</h3>
                                         <button class="btn btn-blog">{{ number_format($best_pro->price, 0,'','.') }}
                                             VND</button>
                                     </div>
-                                </div>
-                            </a>
+                                </a>
+                            </div>
                             @endforeach
                         </div>
                         <div class="owl-navigation">
@@ -221,12 +224,8 @@
                     <h2>Sản Phẩm Mới Nhất</h2>
                 </div>
 
-<<<<<<< HEAD
-                <div class="product-center container" data-aos="fade-left" data-aos-delay="200">
-=======
                 <div class="product-center container" data-aos="zoom-in" data-aos-delay="200">
                     @foreach($newProducts as $new_pro)
->>>>>>> 154745039d97a87581aaf5b007a12253c4cf10fd
                     <div class="product">
                         <a href="{{ url('/detail', str_replace(' ', '-', $new_pro->pro_Name))}}">
                             <div class="product-header">
@@ -270,53 +269,50 @@
                     </div>
                 </div>
             </section>
-             <!-- banner end -->
+            <!-- banner end -->
 
-             <!-- Love Product -->
+            <!-- Love Product -->
             <section class="section featured">
                 <div class="title" data-aos="zoom-in" data-aos-delay="200">
                     <h2>Sản Phẩm Yêu Thích</h2>
                 </div>
 
-<<<<<<< HEAD
                 <div class="product-center container" data-aos="fade-right" data-aos-delay="200">
-=======
-                <div class="product-center container" data-aos="zoom-in" data-aos-delay="200">
-                    @foreach($best_loving_products as $love_pro)
->>>>>>> 154745039d97a87581aaf5b007a12253c4cf10fd
-                    <div class="product">
-                        <div class="product-header">
-                            <img src="./images/pic5.jpg" alt="">
+                    <div class="product-center container" data-aos="zoom-in" data-aos-delay="200">
+                        @foreach($best_loving_products as $love_pro)
+                        <div class="product">
+                            <div class="product-header">
+                                <img src="./images/pic5.jpg" alt="">
 
-                            <ul class="icons">
-                                <span><i class="fas fa-heart"></i></span>
-                            </ul>
-                        </div>
-                        <div class="product-footer">
-                            <a href="#">
-                                <h3>{{ $love_pro->pro_Name }}</h3>
-                            </a>
-                            <div class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
+                                <ul class="icons">
+                                    <span><i class="fas fa-heart"></i></span>
+                                </ul>
                             </div>
-                            <h4 class="price">{{ $love_pro->price }}</h4>
+                            <div class="product-footer">
+                                <a href="#">
+                                    <h3>{{ $love_pro->pro_Name }}</h3>
+                                </a>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <h4 class="price">{{ $love_pro->price }}</h4>
+                            </div>
                         </div>
+                        @endforeach
                     </div>
-                    @endforeach
-                </div>
 
             </section>
 
         </main>
-    </div> 
+    </div>
     <!-- End Main -->
 
     <!-- Product Page -->
-    
+
 
 
 
@@ -394,7 +390,7 @@
     <!-- Custom Javascript file -->
     <script src="{{ asset('client/js/homePagejs/main.js') }}"></script>
     <script src="{{ asset('client/js/homePagejs/sp.js') }}"></script>
-
+    <script src="{{ asset('client/js/love_product.js') }}"></script>
 </body>
 
 </html>

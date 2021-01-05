@@ -89,15 +89,8 @@
                             - Trong 30 ngày đầu nhập lại máy, trừ phí 20% trên giá
                             hiện tại(hoặc giá mua nếu giá mua thấp hơn giá hiện tại).
                             </br>
-<<<<<<< HEAD:resources/views/Auth/detailProduct.blade.php
-                            - Sau 30 ngày nhập lại máy theo giá thoả
-                            thuận.</p>
-                    </div>
-
-=======
                             - Ra khỏi cửa hàng thì đéo được đổi nha</p>
                     </div>
->>>>>>> 154745039d97a87581aaf5b007a12253c4cf10fd:resources/views/Shop/detailProduct.blade.php
 
                     <!--Số lượng-->
                     @if($product->quantity == 0)
