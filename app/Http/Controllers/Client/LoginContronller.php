@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class LoginContronller extends Controller
 {
@@ -28,7 +29,6 @@ class LoginContronller extends Controller
      */
     public function create()
     {
-        //
         return view('../Auth/SignInSignUp');
     }
 
@@ -45,18 +45,31 @@ class LoginContronller extends Controller
 
     // login
     public function loginUser(Request $request){
-	    $email = $request->email;
-        $password = $request->password;
+        $email = $request->email;
+        session()->forget('user_id');
         $user = DB::table('users')
                     ->where('email', '=', $email)
                     ->first();
-        if (!$user) {
-            return response()->json(['success'=>false, 'message' => 'Tai khoan khong ton tai!']);
+        if($user != null){
+            // if from page cart to login
+            session()->put('user_id', $user->id);
+            $cart = session('cart');
+            $detailProduct = session('detailProduct');
+            if($cart != null){
+                session()->forget('cart');
+                return redirect()->route('getCart');
+                
+            }
+            else if($detailProduct != null){
+                $product_name = str_replace(' ', '-', $detailProduct);
+                session()->forget('detailProduct');
+                return redirect()->route('detailProduct', ['pro_Name' => $product_name]);
+            }
+            // button loggin
+            else{
+                return redirect()->route('homePage');
+            }
         }
-        if (!Hash::check($password, $user->password)) {
-            return response()->json(['success'=>false, 'message' => 'Mat khau khong chinh xac!']);
-        }
-            return response()->json(['success'=>true,'message'=>'Dang nhap thanh cong!', 'data' => $user]);
     }
     
     /**

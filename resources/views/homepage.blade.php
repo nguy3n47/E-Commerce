@@ -48,9 +48,16 @@
         <div id="top-right">
             <ul>
                 <li><i class="fas fa-sign-in-alt" style="color: #ffffff;"></i></li>
+<<<<<<< HEAD
                 <li class="An"><a href="file:///C:/Users/MyPC/Documents/Web/Login/LogIn.html" target="_blank"><b>Đăng
                             nhập</b></a></liclass="An">
                 <li><i class="fas fa-user"></i></li>
+=======
+                <li class="An">|</li>
+                <li class="An"><a href="{{ route('login') }}"><b>Đăng
+                            nhập</b></a></li>
+                <li class="An">|</li class="An">
+>>>>>>> 154745039d97a87581aaf5b007a12253c4cf10fd
                 <li class="An"><a href="file:///C:/Users/MyPC/Documents/Web/Login/Register.html" target="_blank"><b>Đăng
                             ký</b></a></li class="An">
             </ul>
@@ -97,8 +104,8 @@
                                     </li>
                                     <li>
                                         <div class="cart_link">
-                                            <a href="#"><i class="ion-android-cart"></i></a>
-                                            <span class="cart_quantity">2</span>
+                                            <a href="{{route('getCart')}}"><i class="ion-android-cart"></i></a>
+
                                         </div>
                                     </li>
                                 </ul>
@@ -181,19 +188,20 @@
                     </div>
                     <div class="container" data-aos="zoom-in" data-aos-delay="200">
                         <div class="owl-carousel owl-theme blog-post">
-                            @foreach($products as $pro)
-                            <a href="{{ url('/', str_replace(' ', '-', $pro->pro_Name))}}">
+                            @foreach($best_selling_products as $best_pro)
+                            <a href="{{ url('/detail', str_replace(' ', '-', $best_pro->pro_Name))}}">
                                 <div class="blog-content">
                                     <div class="blog-header">
                                         <img src="./images/pic1.jpg" alt="">
+                                        <!-- like proc -->
                                         <ul class="icons">
                                             <span><i class="fas fa-heart"></i></span>
                                         </ul>
                                     </div>
                                     <div class="blog-title">
-                                        <h3>{{ $pro->pro_Name }}</h3>
-                                        <button class="btn btn-blog">Giá</button>
-                                        <span>Learn more</span>
+                                        <h3>{{ $best_pro->pro_Name }}</h3>
+                                        <button class="btn btn-blog">{{ number_format($best_pro->price, 0,'','.') }}
+                                            VND</button>
                                     </div>
                                 </div>
                             </a>
@@ -213,29 +221,37 @@
                     <h2>Sản Phẩm Mới Nhất</h2>
                 </div>
 
+<<<<<<< HEAD
                 <div class="product-center container" data-aos="fade-left" data-aos-delay="200">
+=======
+                <div class="product-center container" data-aos="zoom-in" data-aos-delay="200">
+                    @foreach($newProducts as $new_pro)
+>>>>>>> 154745039d97a87581aaf5b007a12253c4cf10fd
                     <div class="product">
-                        <div class="product-header">
-                            <img src="./images/pic5.jpg" alt="">
+                        <a href="{{ url('/detail', str_replace(' ', '-', $new_pro->pro_Name))}}">
+                            <div class="product-header">
+                                <img src="./images/pic5.jpg" alt="">
 
-                            <ul class="icons">
-                                <span><i class="fas fa-heart"></i></span>
-                            </ul>
-                        </div>
-                        <div class="product-footer">
-                            <a href="#">
-                                <h3>Tên SP</h3>
-                            </a>
-                            <div class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
+                                <ul class="icons">
+                                    <span><i class="fas fa-heart"></i></span>
+                                </ul>
                             </div>
-                            <h4 class="price">giá</h4>
-                        </div>
+                            <div class="product-footer">
+                                <a href="#">
+                                    <h3>{{ $new_pro->pro_Name }}</h3>
+                                </a>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <h4 class="price">{{ $new_pro->price }}</h4>
+                            </div>
+                        </a>
                     </div>
+                    @endforeach
                 </div>
             </section>
 
@@ -262,7 +278,12 @@
                     <h2>Sản Phẩm Yêu Thích</h2>
                 </div>
 
+<<<<<<< HEAD
                 <div class="product-center container" data-aos="fade-right" data-aos-delay="200">
+=======
+                <div class="product-center container" data-aos="zoom-in" data-aos-delay="200">
+                    @foreach($best_loving_products as $love_pro)
+>>>>>>> 154745039d97a87581aaf5b007a12253c4cf10fd
                     <div class="product">
                         <div class="product-header">
                             <img src="./images/pic5.jpg" alt="">
@@ -273,7 +294,7 @@
                         </div>
                         <div class="product-footer">
                             <a href="#">
-                                <h3>Tên SP</h3>
+                                <h3>{{ $love_pro->pro_Name }}</h3>
                             </a>
                             <div class="rating">
                                 <i class="fas fa-star"></i>
@@ -282,10 +303,12 @@
                                 <i class="fas fa-star"></i>
                                 <i class="far fa-star"></i>
                             </div>
-                            <h4 class="price">giá</h4>
+                            <h4 class="price">{{ $love_pro->price }}</h4>
                         </div>
                     </div>
+                    @endforeach
                 </div>
+
             </section>
 
         </main>
@@ -308,7 +331,9 @@
             </div>
             <div class="newsletter" data-aos="fade-right" data-aos-delay="200">
                 <h2>Rjfjhh</h2>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis aperiam sed facilis eaque. Exercitationem expedita nam aspernatur quia hic repudiandae illo tempora quos est ipsam voluptas dolorem, distinctio nulla neque.</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis aperiam sed facilis eaque.
+                    Exercitationem expedita nam aspernatur quia hic repudiandae illo tempora quos est ipsam voluptas
+                    dolorem, distinctio nulla neque.</p>
                 <div class="form-element">
                     <input type="text" placeholder="Email"><span><i class="fas fa-chevron-right"></i></span>
                 </div>

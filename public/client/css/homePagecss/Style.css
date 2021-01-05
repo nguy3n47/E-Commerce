@@ -1,5 +1,6 @@
 @import url('../css/fonts.css');
-html, body {
+html,
+body {
     margin: 0%;
     box-sizing: border-box;
     overflow-x: hidden;
@@ -22,6 +23,7 @@ html, body {
     --Lexend: 'Lexend', cursive;
     --Livvic: 'Livvic', cursive;
 }
+
 
 /* ---------------- Global Classes ---------------*/
 
@@ -69,7 +71,9 @@ p {
     color: var(--text-light);
 }
 
+
 /* ------x------- Global Classes -------x-------*/
+
 
 /* --------------- header ----------------- */
 
@@ -116,7 +120,9 @@ p {
     color: #4481eb;
 }
 
+
 /* --------------- navbar ----------------- */
+
 
 /* *****************Middle Header******************** */
 
@@ -477,6 +483,7 @@ p {
     font-weight: 600;
 }
 
+
 /* ************************ Header Down ( 3rd ) ******************** */
 
 .header_bottom {
@@ -585,13 +592,15 @@ p {
     font-size: 15px;
 }
 
-.main_menu nav ul li:hover .sub_menu, .main_menu nav ul li:hover .mega_menu {
+.main_menu nav ul li:hover .sub_menu,
+.main_menu nav ul li:hover .mega_menu {
     opacity: 1;
     visibility: visible;
     transform: perspective(600px) rotateX(0deg);
 }
 
-.main_menu nav ul li ul li.active a, .main_menu nav ul li ul li a:hover {
+.main_menu nav ul li ul li.active a,
+.main_menu nav ul li ul li a:hover {
     color: #c09578;
 }
 
@@ -733,9 +742,50 @@ p {
     font-weight: 500;
 }
 
+
 /* -------x------- navbar ---------x------- */
 
+
 /* ----------------- Main Content----------- */
+
+<<<<<<< HEAD
+=======
+
+/* --------------- Site title ---------------- */
+
+main .site-title {
+    background: url('../assets/Background-image.png');
+    background-size: cover;
+    height: 110vh;
+    display: flex;
+    justify-content: center;
+}
+
+main .site-title .site-background {
+    padding-top: 10rem;
+    text-align: center;
+    color: var(--white);
+}
+
+main .site-title h1,
+h3 {
+    margin: .3rem;
+}
+
+main .site-title .btn {
+    margin: 1.8rem;
+    background: var(--sky);
+}
+
+main .site-title .btn:hover {
+    background: transparent;
+    border: 1px solid var(--white);
+    color: var(--white);
+}
+
+
+/* --------x------ Site title --------x------- */
+>>>>>>> 154745039d97a87581aaf5b007a12253c4cf10fd
 
 
 /* --------------- Blog Carousel ------------ */
@@ -841,7 +891,8 @@ section .container .owl-nav {
     justify-content: space-between;
 }
 
-.owl-nav .owl-prev .owl-nav-prev, .owl-nav .owl-next .owl-nav-next {
+.owl-nav .owl-prev .owl-nav-prev,
+.owl-nav .owl-next .owl-nav-next {
     color: var(--text-gray);
     background: transparent;
     font-size: 2rem;
@@ -855,6 +906,7 @@ section .container .owl-nav {
 .owl-theme .owl-nav [class*='owl-'] {
     outline: none;
 }
+
 
 /* Product */
 
@@ -970,7 +1022,9 @@ section .container .owl-nav {
     margin-bottom: 1rem;
 }
 
+
 /* -------x------- Blog Carousel -----x------ */
+
 
 /* ---------------- Site Content ----------------*/
 
@@ -997,8 +1051,13 @@ section .container .owl-nav {
     height: 4px;
     z-index: 1;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 154745039d97a87581aaf5b007a12253c4cf10fd
 
 /* -------x-------- Site Content --------x-------*/
+
 
 /* **********Slider Section *************** */
 
@@ -1121,7 +1180,9 @@ section .container .owl-nav {
     animation-delay: 0.7s;
 }
 
-.active .slider_content p, .active .slider_content h1, .active .slider_content a {
+.active .slider_content p,
+.active .slider_content h1,
+.active .slider_content a {
     animation-fill-mode: both;
     animation-duration: 1s;
     animation-name: fadeInLeft;
@@ -1353,7 +1414,9 @@ footer.footer .move-up span:hover {
     cursor: pointer;
 }
 
+
 /* ---------x------- Footer ----------x---------- */
+
 
 /*              Viewport less then or equal to 1130px            */
 
@@ -1371,12 +1434,15 @@ footer.footer .move-up span:hover {
     }
 }
 
+
 /*      x       Viewport less then or equal to 1130px    x     */
+
 
 /*              Viewport less then or equal to 750px            */
 
 @media only screen and (max-width: 750px) {
-    .nav .nav-menu, .nav .nav-items {
+    .nav .nav-menu,
+    .nav .nav-items {
         flex-direction: column;
     }
     .nav .toggle-collapse {
@@ -1390,7 +1456,9 @@ footer.footer .move-up span:hover {
     }
 }
 
+
 /*        x      Viewport less then or equal to 750px       x     */
+
 
 /*              Viewport less then or equal to 520px            */
 
@@ -1412,5 +1480,6 @@ footer.footer .move-up span:hover {
         width: 80% !important;
     }
 }
+
 
 /*        x      Viewport less then or equal to 520px       x     */

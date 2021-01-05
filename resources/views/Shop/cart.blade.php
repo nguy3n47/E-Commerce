@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>Document</title>
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
@@ -83,81 +84,238 @@ body {
     cursor: pointer;
     text-align: center;
 }
+
+.Form-edit {
+    margin: 0px 50px 0px 50px;
+}
 </style>
 
 
 <body>
-
-
+    {{ csrf_field() }}
     <div class="container">
-        <!-- thông tin sản phẩm -->
-        <div class="container pb-3 pt-3" style="width: 45%; background-color:white; border-bottom:1px solid #dfdfdf;">
-            <div class="row">
-                <!-- col 4 -->
-                <div class="col-4">
-                    <div class="img-sp">
-                        <!-- hình sản phẩm -->
-                        <a href="#"><img src="../../public/client/images/product/4.jpg" width="100%" alt=""></a>
-                        <br>
-                        <!-- button xóa sản phẩm -->
-                        <button type="button" class="btn p-2"><i class="fas fa-trash-alt mr-2"></i> Xoá</i></button>
-                    </div>
-                </div>
-                <!-- col 4 -->
-
-                <!-- col 8 -->
-                <div class="col-8">
-                    <div class="row">
-                        <div class="info-product">
-                            <a href="#"> Điện thoại iPhone 11 Pro Max 512GB </a>
-                            <span> 24.990.000₫ </span>
-                        </div>
-                        <!-- màu sp -->
-                        <div class="color-product">
-                            <div class="dropdown choose-color">
-                                <span>Màu:</span> <span> Xanh</span>
-                            </div>
-                            <div class="choosenumber">
-                                <div class="minus">
-                                    <i class="fas fa-minus"></i>
-                                </div>
-                                <div class="number">
-                                    1
-                                </div>
-                                <div class="plus">
-                                    <i class="fas fa-plus"></i>
-                                </div>
-                            </div>
+        <div id="order_sumary" class="container" style="width:60% ;background-color:white; ">
+            @if (count($order_details) === 0)
+            <div id="comback_homepage">
+                <h1>Your Cart is Empty</h1>
+                <a href="/">Trang chủ</a>
+            </div>
+            @else
+            <!-- thông tin sản phẩm -->
+            <div class="container pb-3 pt-3" style=" border-bottom:1px solid #dfdfdf;">
+                @foreach($order_details as $order)
+                <div class="row" id="deleteItem_{{$order->id}}">
+                    <!-- col 4 -->
+                    <div class="col-4">
+                        <div class="img-sp">
+                            <!-- hình sản phẩm -->
+                            <a href="#"><img src="{{ asset('client/images/product/4.jpg') }}" width="100%" alt=""></a>
+                            <br>
+                            <button type="submit" id="del" name="del" value="{{ $order->id }}" class="btn p-2"><i
+                                    class="fas fa-trash-alt mr-2"></i> Xoá</i></button>
                         </div>
                     </div>
-                </div>
-                <!-- col 8 -->
-            </div>
+                    <!-- col 4 -->
 
+                    <!-- col 8 -->
+                    <div class="col-8">
+                        <div class="row">
+                            <div class="info-product">
+                                <a href="#"> {{ $order->pro_Name }} </a>
+                                <span> {{ $order->price }}đ </span>
+                            </div>
+                            <!-- màu sp -->
+                            <div class="color-product">
+                                <div class="choosenumber" style="width:150px">
+                                    <!-- url -->
+                                    <input type="hidden" id="url" name="url" value="{{ route('edit_cart') }}">
+                                    <!-- product id -->
+                                    <input type="hidden" id='product_id' name="product_id"
+                                        value="{{ $order->product_id }}">
+                                    <!-- price -->
+                                    <input type="hidden" id="price" name="price" value="{{ $order->price }}">
+                                    <!-- purchase id -->
+                                    <input type="hidden" id="purchase_id" name="purchase_id"
+                                        value="{{ $order->purchase_id }}">
+
+
+
+                                    <div class="btn-group" role="group" aria-label="Basic example">
+                                        <button type="submit" id="sub" name="sub" value="{{ $order->id }}"
+                                            class="btn">-</button>
+                                        <input type="number" style="outline: none; width: 50px;" id="counter" min="1"
+                                            value="{{ $order->quantity }}" readonly>
+                                        <button type="submit" id="add" name="add" value="{{ $order->id }}"
+                                            class="btn">+</button>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- col 8 -->
+                </div>
+                @endforeach
+            </div>
+            <!-- Tổng tiền -->
+            <!-- <div class="container" style="  border-bottom:1px solid #dfdfdf;">
+                <div class="row mt-2">
+                    <div class="col">
+                        <span><b>Tổng tiền:</b></span>
+                        <span class="totalSum" id="totalSum" value="{{ $order_details[0]->total }}"
+                            style="float:right">{{ $order_details[0]->total }}đ</span>
+                    </div>
+                </div>
+            </div> -->
+
+            <!-- Thông tin khách hàng -->
+            <div class="container mt-3">
+                <h5>THÔNG TIN KHÁCH HÀNG:
+                </h5>
+
+                <!-- 2 column họ tên sdt -->
+                <form class="m-0">
+
+                    <div class="row mb-4">
+                        <!-- column họ tên -->
+                        <div class="col">
+                            <div class="form-outline">
+                                <input type="text" id="form3Example1" class="form-control"
+                                    value="{{ $customer[0]->lastname }} {{ $customer[0]->firstname }}" />
+                                <label class="form-label" for="form3Example1">Họ tên</label>
+                            </div>
+                        </div>
+                        <!--  column  sdt -->
+                        <div class="col">
+                            <div class="form-outline">
+                                <input type="tel" id="form3Example2" class="form-control"
+                                    value="{{ $customer[0]->phone }}" />
+                                <label class="form-label" for="form3Example2">Số điện thoại</label>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <h5>ĐỊA CHỈ</h5>
+                <form class="m-0">
+                    <div class="row mb-4">
+                        <!-- Dia chỉ -->
+                        <div class="col">
+                            <div class="form-outline">
+                                <input type="text" id="form3Example3" class="form-control"
+                                    value="{{ $customer[0]->address }}" />
+                                <label class="form-label" for="form3Example3">Địa chỉ</label>
+                            </div>
+                        </div>
+                        <!-- Edit dia chi -->
+                        <div class="col-1 pt-1">
+                            <!-- Button trigger modal -->
+                            <button type="button" style="border:none; background-color:white !important;"
+                                data-mdb-toggle="modal" data-mdb-target="#exampleModal">Edit</button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <!-- 2 column grid layout with text inputs for the first and last names -->
+                                        <div class="row mb-4 Form-edit mt-5">
+                                            <div class="col" style="padding-left:0px">
+                                                <div class="form-outline">
+                                                    <label class="form-label" for="form3Example11">Full Name</label>
+                                                    <input type="text" id="form3Example11"
+                                                        value="{{ $customer[0]->lastname }} {{ $customer[0]->firstname }}"
+                                                        cl"ass="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Address input -->
+                                        <div class="form-outline mb-4 Form-edit">
+                                            <input type="text" id="form3Example4" class="form-control"
+                                                value="{{ $customer[0]->address }}" />
+                                            <label class="form-label" for="form3Example4">Address</label>
+                                        </div>
+                                        <!-- sdt input -->
+                                        <div class="form-outline mb-4 Form-edit">
+                                            <input type="tel" id="form3Example5" class="form-control"
+                                                value="{{ $customer[0]->phone }}" />
+                                            <label class="form-label" for="form3Example5">Số điện thoại</label>
+                                        </div>
+                                        <span id="spnPhoneStatus"></span>
+
+                                        <!-- Submit button -->
+                                        <p align="right" style="margin-right: 50px;">
+                                            <button type="button" autocomplete="off"
+                                                onclick="validateInformationCustomer()"
+                                                class="btn btn-primary btn-block mb-4" style="width:20%;">Xác
+                                                nhận</button>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+                <!-- phương thức thanh toán -->
+                <div class="container m-0 p-0">
+                    <h5>PHƯƠNG THỨC THANH TOÁN</h5>
+                    <div>
+                        <input type="radio" id="payOneTime" name="payment" value="1" checked>
+                        <label for="payOneTime">Thanh toán khi nhận hàng</label>
+                        <input type="radio" id="payOneTime1" name="payment" value="2">
+                        <label for="payOneTime1">Thanh toán card/thẻ ghi nợ</label>
+                    </div>
+                    <!-- <button class="btn btn-light" id="payOneTime" value="1"> Thanh toán khi nhận hàng</button>
+                    <button class="btn btn-light" id="payOneTime" value="2" data-mdb-toggle="collapse"
+                        href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        Thanh toán card/thẻ ghi nợ</button> -->
+                </div>
+                <!--  chốt đơn -->
+                <div class="container mt-3">
+                    <div class="row" style="text-align:right">
+                        <div class="col">
+                            <span>Tổng thanh toán:</span>
+                        </div>
+                        <span class="totalSum" id="totalSum" value="{{ $order_details[0]->total }}"
+                            style="float:right">{{ $order_details[0]->total }}đ</span>
+
+                    </div>
+                    <!--  Chốt -->
+                    <div class="row pb-5 mt-2" style="text-align:right">
+                        <p align="right">
+                            <input type="hidden" id="urlPay" name="urlPay" value="{{route('post_purchase')}}">
+                        </p>
+                    </div>
+                    <form action="{{route('post_purchase')}}" onsubmit="return validateForm()" method="post">
+                        @csrf
+                        <input type="hidden" id="pur_id" name="pur_id">
+                        <input type="hidden" id="name" name="name">
+                        <input type="hidden" id="phone" name="phone">
+                        <input type="hidden" id="adress" name="address">
+                        <input type="hidden" id="pay" name="pay">
+
+
+                        <input class="btn btn-danger btn-block" style="width: 200px" type="submit" value="Đặt hàng">
+                        <!-- <button onclick="validateForm()" id="confirm_order" style="width: 200px" type="submit"
+                            class="btn btn-danger btn-block">Đặt hàng</button> -->
+                    </form>
+                </div>
+            </div>
+            @endif
         </div>
-        <!-- Tổng tiền -->
-        <div class="container" style="width: 45%; background-color:white; ;">
-            <!-- tổng tiền -->
-            <div class="row" style="border-top: 1px solid  #dfdfdf">
-                <div class="col">
-                    <span>Số lượng:( </span> <span>2</span> <span>sản phẩm)</span>
-                    <span style="float:right">151561531đ</span>
-                </div>
-            </div>
-            <div class="row mt-2">
-                <div class="col">
-                    <span><b>Tổng tiền:</b></span>
-                    <span style="float:right">151561531đ</span>
-                </div>
-            </div>
-        </div>
-
-
-
-    </div>
     </div>
 </body>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
 <!-- MDB -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.0.0/mdb.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.0.0/mdb.min.js"></script>
+<!-- Process back-end -->
+
+<script src="{{ asset('client/js/testAj.js') }}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 
 </html>
