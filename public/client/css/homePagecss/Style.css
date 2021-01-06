@@ -120,6 +120,15 @@ p {
     color: #4481eb;
 }
 
+/*nháp*/
+.imglike{
+    background-image: url('https://frontend.tikicdn.com/_desktop-next/static/img/pdp_revamp_v2/icons-liked.svg');
+}
+
+.imgLIKE{
+    background-image: url('https://frontend.tikicdn.com/_desktop-next/static/img/pdp_revamp_v2/icons-like.svg');
+}
+
 
 /* --------------- navbar ----------------- */
 
@@ -748,44 +757,6 @@ p {
 
 /* ----------------- Main Content----------- */
 
-<<<<<<< HEAD
-=======
-
-/* --------------- Site title ---------------- */
-
-main .site-title {
-    background: url('../assets/Background-image.png');
-    background-size: cover;
-    height: 110vh;
-    display: flex;
-    justify-content: center;
-}
-
-main .site-title .site-background {
-    padding-top: 10rem;
-    text-align: center;
-    color: var(--white);
-}
-
-main .site-title h1,
-h3 {
-    margin: .3rem;
-}
-
-main .site-title .btn {
-    margin: 1.8rem;
-    background: var(--sky);
-}
-
-main .site-title .btn:hover {
-    background: transparent;
-    border: 1px solid var(--white);
-    color: var(--white);
-}
-
-
-/* --------x------ Site title --------x------- */
->>>>>>> 154745039d97a87581aaf5b007a12253c4cf10fd
 
 
 /* --------------- Blog Carousel ------------ */
@@ -1051,10 +1022,6 @@ section .container .owl-nav {
     height: 4px;
     z-index: 1;
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> 154745039d97a87581aaf5b007a12253c4cf10fd
 
 /* -------x-------- Site Content --------x-------*/
 

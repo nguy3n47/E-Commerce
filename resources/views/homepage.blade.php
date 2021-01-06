@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>Trang chủ</title>
 
     <!-- Font Family -->
@@ -192,7 +193,7 @@
                         <div class="owl-carousel owl-theme blog-post">
                             @foreach($best_selling_products as $best_pro)
                             <div class="blog-content">
-                                <ul class="icons">
+                                <ul>
                                     <span><i id="loveproduct" value="{{$best_pro->id}}" class="fas fa-heart"></i></span>
                                 </ul>
                                 <a href="{{ url('/detail', str_replace(' ', '-', $best_pro->pro_Name))}}">
@@ -227,10 +228,17 @@
                 <div class="product-center container" data-aos="zoom-in" data-aos-delay="200">
                     @foreach($newProducts as $new_pro)
                     <div class="product">
+                        <ul id="loveproduct" value="{{$new_pro->id}}">
+                            <div id="test_{{$new_pro->id}}">
+                                <img src="https://frontend.tikicdn.com/_desktop-next/static/img/pdp_revamp_v2/icons-like.svg"
+                                    alt="no">
+                            </div>
+                        </ul>
+
+
                         <a href="{{ url('/detail', str_replace(' ', '-', $new_pro->pro_Name))}}">
                             <div class="product-header">
                                 <img src="./images/pic5.jpg" alt="">
-
                                 <ul class="icons">
                                     <span><i class="fas fa-heart"></i></span>
                                 </ul>
@@ -281,12 +289,11 @@
                     <div class="product-center container" data-aos="zoom-in" data-aos-delay="200">
                         @foreach($best_loving_products as $love_pro)
                         <div class="product">
+                            <ul class="icons">
+                                <span><i id="loveproduct" value="{{$love_pro->id}}" class="fas fa-heart"></i></span>
+                            </ul>
                             <div class="product-header">
                                 <img src="./images/pic5.jpg" alt="">
-
-                                <ul class="icons">
-                                    <span><i class="fas fa-heart"></i></span>
-                                </ul>
                             </div>
                             <div class="product-footer">
                                 <a href="#">
