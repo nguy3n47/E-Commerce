@@ -42,7 +42,7 @@
                         @foreach($customers as $customer)
                         <tr>
                             <td class="align-middle" style="text-align: center">{{$customer->id}}</td>
-                            <td class="align-middle" style="text-align: center; width:200px; height:200px;">
+                            <td class="align-middle" style="text-align: center; width:64px; height:64px;">
                                 <image style="object-fit: cover; width:100%; height:100%;"
                                     src="{{ Storage::url($customer->avatar)}}"></image>
                             </td>

@@ -118,7 +118,7 @@
                             <span class="date text-muted float-md-right">{{$comment->created_at}}</span>
                             <h6 class="mb-1">{{$comment->name}}</h6>
                             <ul class="rating-stars">
-                                <li style="width:90%" class="stars-active">
+                                <li style="width:100%" class="stars-active">
                                     <img src="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/images/icons/stars-active.svg"
                                         alt="">
                                 </li>

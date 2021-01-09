@@ -103,13 +103,13 @@
                     @foreach($products as $product)
                     <a href="{{ route('product.detail', $product->pro_slug) }}">
                         <div class="col-md-4">
-                            <figure class="card card-product-grid">
+                            <figure class="card card-product-grid" >
                                 <div class="img-wrap">
                                     <!-- <span class="badge badge-danger"> NEW </span> -->
                                     <img src="{{ Storage::url($product->pro_thumbnail)}}">
                                 </div> <!-- img-wrap.// -->
                                 <figcaption class="info-wrap">
-                                    <div class="fix-height">
+                                    <div class="" style="height: 110px">
                                         <a href="{{ route('product.detail', $product->pro_slug) }}"
                                             class="title">{{$product->pro_name}}</a>
                                         <div class="rating-wrap">
@@ -129,8 +129,7 @@
 
                                         </div>
                                         <div class="price-wrap mt-2">
-                                            <span class="price">{{number_format($product->pro_price, 0, '', '.')}}
-                                                VNĐ</span>
+                                            <span class="price">{{number_format($product->pro_price, 0, '', '.')}} VNĐ</span>
                                         </div> <!-- price-wrap.// -->
                                     </div>
                                     <a href="{{route('add.to.cart', $product->pro_slug)}}" class="btn btn-block btn-primary">Add to cart </a>

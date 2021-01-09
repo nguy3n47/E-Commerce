@@ -31,10 +31,10 @@
                             <th class="align-middle" style="text-align: center">Name</th>
                             <th class="align-middle" style="text-align: center">Phone</th>
                             <th class="align-middle" style="text-align: center">Address</th>
-                            <th class="align-middle" style="text-align: center">Total</th>
+                            <th class="align-middle" style="text-align: center; width:110px;">Total</th>
                             <th class="align-middle" style="text-align: center">Status</th>
                             <th class="align-middle" style="text-align: center">Created At</th>
-                            <th class="align-middle" style="text-align: center">Action</th>
+                            <th class="align-middle" style="text-align: center; width:130px;">Action</th>
                         </tr>
                     </thead>
                     <tbody>

@@ -47,7 +47,7 @@
             @if(isset($new_products))
             @foreach($new_products as $new_product)
             <div class="col-md-3">
-                <div href="{{ route('product.detail', $new_product->pro_slug) }}" class="card card-product-grid">
+                <div href="{{ route('product.detail', $new_product->pro_slug) }}" class="card card-product-grid" style="height: 360px">
                     <a href="{{ route('product.detail', $new_product->pro_slug) }}" class="img-wrap"> <span
                             class="badge badge-success"> NEW </span> <img
                             src="{{ Storage::url($new_product->pro_thumbnail)}}"> </a>
@@ -93,7 +93,7 @@
             @if(isset($best_selling_products))
             @foreach($best_selling_products as $best_selling_product)
             <div class="col-md-3">
-                <div href="{{ route('product.detail', $best_selling_product->pro_slug) }}" class="card card-product-grid">
+                <div href="{{ route('product.detail', $best_selling_product->pro_slug) }}" class="card card-product-grid" style="height: 360px">
                     <a href="{{ route('product.detail', $best_selling_product->pro_slug) }}" class="img-wrap"> <span
                             class="badge badge-danger"> HOT </span> <img
                             src="{{ Storage::url($best_selling_product->pro_thumbnail)}}"> </a>
@@ -140,9 +140,9 @@
             @if(isset($best_wishlist_products))
             @foreach($best_wishlist_products as $best_wishlist_product)
             <div class="col-md-3">
-                <div href="{{ route('product.detail', $best_wishlist_product->pro_slug) }}" class="card card-product-grid">
+                <div href="{{ route('product.detail', $best_wishlist_product->pro_slug) }}" class="card card-product-grid" style="height: 360px">
                     <a href="{{ route('product.detail', $best_wishlist_product->pro_slug) }}" class="img-wrap"> <span
-                            class="badge badge-primary"> </span> <img
+                            class="badge badge-warning"> <i class="fas fa-fire"></i></span> <img
                             src="{{ Storage::url($best_wishlist_product->pro_thumbnail)}}"> </a>
                     <figcaption class="info-wrap">
                         <a href="{{ route('product.detail', $best_wishlist_product->pro_slug) }}"
