@@ -1,4 +1,4 @@
-# Project E-Commerce Laravel - Web1
+# Project E-Commerce Laravel
 
 LẬP TRÌNH WEB 1 - 2020
 
