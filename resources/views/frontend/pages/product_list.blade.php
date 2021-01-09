@@ -114,7 +114,7 @@
                                             class="title">{{$product->pro_name}}</a>
                                         <div class="rating-wrap">
                                             <ul class="rating-stars">
-                                                <li style="width:80%" class="stars-active">
+                                                <li style="width:100%" class="stars-active">
                                                     <i class="fa fa-star"></i><i class="fa fa-star"></i><i
                                                         class="fa fa-star"></i><i class="fa fa-star"></i><i
                                                         class="fa fa-star"></i>

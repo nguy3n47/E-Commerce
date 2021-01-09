@@ -58,7 +58,7 @@ class FrontendController extends Controller
     public function home(){
         $new_products = DB::table('products')
                             ->latest()
-                            ->take(10)
+                            ->take(12)
                             ->get();
 
         $best_selling_products =  DB::table('orders')
@@ -67,7 +67,7 @@ class FrontendController extends Controller
                             ->select('order_details.product_id', 'products.pro_id', 'products.pro_name', 'products.pro_slug', 'products.pro_price', 'products.pro_thumbnail')
                             ->groupBy('order_details.product_id', 'products.pro_id', 'products.pro_name', 'products.pro_slug', 'products.pro_price', 'products.pro_thumbnail')
                             ->orderBy(DB::raw('SUM(order_details.quantity)'),'DESC')
-                            ->take(10)
+                            ->take(12)
                             ->get();
 
 
@@ -76,7 +76,7 @@ class FrontendController extends Controller
                             ->select('products.pro_id', 'products.pro_name', 'products.pro_slug', 'products.pro_price', 'products.pro_thumbnail')
                             ->groupBy('wishlists.product_id', 'products.pro_id', 'products.pro_name', 'products.pro_slug', 'products.pro_price', 'products.pro_thumbnail')
                             ->orderBy(DB::raw('SUM(wishlists.product_id)'),'DESC')
-                            ->take(10)
+                            ->take(12)
                             ->get();
 
         return view('frontend.index', compact('new_products', 'best_selling_products', 'best_wishlist_products'));

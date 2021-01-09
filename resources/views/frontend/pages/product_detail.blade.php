@@ -27,7 +27,7 @@
                     <article class="content-body">
                         <h2 class="title">{{$product_detail->pro_name}}</h2>
                         <div class="rating-wrap my-3">
-                            <span class="badge badge-warning"> <i class="fa fa-star"></i> 3.8</span>
+                            <span class="badge badge-warning"> <i class="fa fa-star"></i> 5</span>
                             <small id="totalReviewProduct" class="label-rating text-muted">{{$totalReviewProduct}} reviews</small>
                             <small id="totalWishlishProduct" class="label-rating text-muted">{{$totalWishlishProduct}} wishlists</small>
                             <small id="totalOrderProduct" class="label-rating text-success"> <i class="fa fa-clipboard-check"></i> {{$totalOrderProduct}} orders
@@ -96,7 +96,7 @@
                     </div>
                     <div class="rating-wrap">
                         <ul class="rating-stars stars-lg">
-                            <li style="width:80%" class="stars-active">
+                            <li style="width:100%" class="stars-active">
                                 <img src="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/images/icons/stars-active.svg"
                                     alt="">
                             </li>
@@ -105,7 +105,7 @@
                                     alt="">
                             </li>
                         </ul>
-                        <strong class="label-rating text-lg"> 4.5 <span class="text-muted">| {{$totalReviewProduct}} reviews</span></strong>
+                        <strong class="label-rating text-lg"> 5 <span class="text-muted">| {{$totalReviewProduct}} reviews</span></strong>
                     </div>
                 </header>
 
@@ -118,7 +118,7 @@
                             <span class="date text-muted float-md-right">{{$comment->created_at}}</span>
                             <h6 class="mb-1">{{$comment->name}}</h6>
                             <ul class="rating-stars">
-                                <li style="width:80%" class="stars-active">
+                                <li style="width:90%" class="stars-active">
                                     <img src="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/images/icons/stars-active.svg"
                                         alt="">
                                 </li>
@@ -139,12 +139,13 @@
                 @endforeach
             </div> <!-- col.// -->
         </div> <!-- row.// -->
+        @if(Auth::check())
         <form action="#" class="row mb-3">
             @csrf
             <input type="hidden" name="user-id" class="user-id" value="{{Auth::user()->id}}">
             <input type="hidden" name="product-id" class="product-id" value="{{$product_detail->pro_id}}">
             <div class="col-0">
-                <img src="https://nguyen.dev/storage/img/34123114_235937487140188_8411538856163147776_n.jpg" class="img-xs icon rounded-circle">
+                <img src="{{ Storage::url(Auth::user()->avatar) }}" class="img-xs icon rounded-circle">
             </div>
             <div class="col">
                 <textarea type="text" class="form-control comment-content" id="content" placeholder="Comment" rows="3"></textarea>
@@ -153,6 +154,7 @@
                 <button type="button" class="btn btn-outline-primary send-comment">Send</button>
             </div>
         </form>
+        @endif
     </div><!-- container // -->
 </section>
 @endsection
