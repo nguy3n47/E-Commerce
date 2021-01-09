@@ -13,8 +13,8 @@ return [
     |
     */
 
-    //'default' => env('MAIL_MAILER', 'mailgun'),
-    //'default' => env('MAIL_DRIVER', 'smtp'),
+    'default' => env('MAIL_MAILER', 'smtp'),
+
     /*
     |--------------------------------------------------------------------------
     | Mailer Configurations
@@ -32,20 +32,6 @@ return [
     |            "postmark", "log", "array"
     |
     */
-    'driver'     => env('MAIL_DRIVER', 'smtp'),
-    'host'       => env('MAIL_HOST', 'smtp.gmail.com'),
-    'port'       => env('MAIL_PORT', 587),
-    'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'ducga0790999@gmail.com'),
-        'name' => env('MAIL_FROM_NAME', 'Đức'),
-    ],
-    'encryption' => env('MAIL_ENCRYPTION', 'tls'),
-    'username'   => env('MAIL_USERNAME', 'ducga0790999@gmail.com'),
-    'password'   => env('MAIL_PASSWORD', 'Ducga0388554199'),
-    'sendmail'   => '/usr/sbin/sendmail -bs',
-
-
-
 
     'mailers' => [
         'smtp' => [
@@ -53,24 +39,18 @@ return [
             'host' => env('MAIL_HOST', 'smtp.gmail.com'),
             'port' => env('MAIL_PORT', 587),
             'encryption' => env('MAIL_ENCRYPTION', 'tls'),
-            'username' => env('ducga0790999@gmail.com'),
-            'password' => env('Ducga0388554199'),
+            'username' => env('nguy3n.web1.hcmus@gmail.com'),
+            'password' => env('bmd1eTNu'),
             'timeout' => null,
             'auth_mode' => null,
         ],
-        'driver' => 'smtp',
 
         'ses' => [
             'transport' => 'ses',
-            'key' => env('AWS_ACCESS_KEY_ID'),
-            'secret' => env('AWS_SECRET_ACCESS_KEY'),
-            'region' => env('AWS_DEFAULT_REGION', 'us-east-1')
         ],
 
         'mailgun' => [
             'transport' => 'mailgun',
-            'domain' => env('MAILGUN_DOMAIN'),
-            'secret' => env('MAILGUN_SECRET')
         ],
 
         'postmark' => [
@@ -102,12 +82,10 @@ return [
     | used globally for all e-mails that are sent by your application.
     |
     */
-    'stream' => [
-        'ssl' => [
-            'allow_self_signed' => true,
-            'verify_peer' => false,
-            'verify_peer_name' => false,
-        ],
+
+    'from' => [
+        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
+        'name' => env('MAIL_FROM_NAME', 'Example'),
     ],
 
     /*
@@ -120,7 +98,6 @@ return [
     | of the emails. Or, you may simply stick with the Laravel defaults!
     |
     */
-    'host' => env('MAIL_HOST', 'mailtrap.io'),
 
     'markdown' => [
         'theme' => 'default',

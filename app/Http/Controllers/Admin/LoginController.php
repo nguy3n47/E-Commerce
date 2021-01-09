@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Auth;
 
 class LoginController extends Controller
 {
@@ -42,18 +42,13 @@ class LoginController extends Controller
      * @throws \Illuminate\Validation\ValidationException
      */
     public function login(Request $request)
-    {
-        $this->validate($request, [
-            'email'   => 'required|email',
-            'password' => 'required|min:8'
-        ]);
-        if (Auth::guard('admin')->attempt([
-            'email' => $request->email,
-            'password' => $request->password
-        ], $request->get('remember'))) {
-            return redirect()->intended(route('admin.dashboard'));
+    {        
+        $data = $request->only('email', 'password');
+        if(Auth::guard('admin')->attempt($data)){
+            //dd('OK');
+            return redirect()->route('admin.dashboard');
         }
-        return back()->withInput($request->only('email', 'remember'));
+        return redirect()->back();
     }
 
     /**
@@ -63,7 +58,8 @@ class LoginController extends Controller
     public function logout(Request $request)
     {
         Auth::guard('admin')->logout();
-        $request->session()->invalidate();
+        // $request->session()->invalidate();
+        // $request->session()->regenerateToken();
         return redirect()->route('admin.login');
     }
 }

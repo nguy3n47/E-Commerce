@@ -30,8 +30,8 @@ return [
 
     'connections' => [
 
-        'async' => [
-            'driver' => 'sync'
+        'sync' => [
+            'driver' => 'sync',
         ],
 
         'database' => [

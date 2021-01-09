@@ -17,6 +17,8 @@ return [
         resource_path('views'),
     ],
 
+    'pagination' => 'pagination::slider-3',
+
     /*
     |--------------------------------------------------------------------------
     | Compiled View Path
