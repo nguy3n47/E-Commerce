@@ -9,6 +9,7 @@ use App\Models\Image;
 use App\Models\Order;
 use App\Models\Wishlist;
 use App\Models\OrderDetail;
+use App\Models\ProductReview;
 use Auth;
 use Session;
 use DB;
@@ -96,13 +97,21 @@ class FrontendController extends Controller
             $checkWishlist = null;
         }
 
+        $comments = DB::table('product_reviews')
+                    ->join('users', 'product_reviews.user_id', '=', 'users.id')
+                    ->join('products', 'product_reviews.product_id', '=','products.pro_id')
+                    ->where('products.pro_id', $product_detail->pro_id)
+                    ->select('users.name', 'users.avatar', 'product_reviews.comment', 'product_reviews.rate', 'product_reviews.created_at')
+                    ->get();
+
         $data =[
             'images' => $images,
             'product_detail'=> $product_detail,
             'checkWishlist' => $checkWishlist,
             'totalWishlishProduct'=> $totalWishlishProduct,
             'totalOrderProduct'=> $totalOrderProduct,
-            'totalReviewProduct'=> $totalReviewProduct
+            'totalReviewProduct'=> $totalReviewProduct,
+            'comments'=> $comments
         ];
         
         return view('frontend.pages.product_detail', $data);

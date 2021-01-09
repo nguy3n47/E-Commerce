@@ -109,13 +109,14 @@
                     </div>
                 </header>
 
+                @foreach($comments as $comment)
                 <article class="box mb-3">
                     <div class="icontext w-100">
-                        <img src="https://nguyen.dev/storage/img/34123114_235937487140188_8411538856163147776_n.jpg"
+                        <img src="{{ Storage::url($comment->avatar)}}"
                             class="img-xs icon rounded-circle">
                         <div class="text">
-                            <span class="date text-muted float-md-right">24.04.2020 </span>
-                            <h6 class="mb-1">Nguyen</h6>
+                            <span class="date text-muted float-md-right">{{$comment->created_at}}</span>
+                            <h6 class="mb-1">{{$comment->name}}</h6>
                             <ul class="rating-stars">
                                 <li style="width:80%" class="stars-active">
                                     <img src="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/images/icons/stars-active.svg"
@@ -128,15 +129,30 @@
                             </ul>
                             <span class="label-rating text-warning">Good</span>
                         </div>
-                    </div> <!-- icontext.// -->
+                    </div>
                     <div class="mt-3">
                         <p>
-                            Chó xịn
+                            {{$comment->comment}}
                         </p>
                     </div>
                 </article>
+                @endforeach
             </div> <!-- col.// -->
         </div> <!-- row.// -->
+        <form action="#" class="row mb-3">
+            @csrf
+            <input type="hidden" name="user-id" class="user-id" value="{{Auth::user()->id}}">
+            <input type="hidden" name="product-id" class="product-id" value="{{$product_detail->pro_id}}">
+            <div class="col-0">
+                <img src="https://nguyen.dev/storage/img/34123114_235937487140188_8411538856163147776_n.jpg" class="img-xs icon rounded-circle">
+            </div>
+            <div class="col">
+                <textarea type="text" class="form-control comment-content" id="content" placeholder="Comment" rows="3"></textarea>
+            </div>
+            <div class="col-0">
+                <button type="button" class="btn btn-outline-primary send-comment">Send</button>
+            </div>
+        </form>
     </div><!-- container // -->
 </section>
 @endsection
@@ -147,9 +163,37 @@
 @push('scripts')
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="{{asset('frontend/star-rating/starrr.js')}}"></script>
-<script src=""></script>
-<script>
 
+<script type="text/javascript">
+
+    $(document).ready(function(){
+        $('.send-comment').click(function(){
+            var comment = $('.comment-content').val();
+            var userId = $('.user-id').val();
+            var productId = $('.product-id').val();
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                url: "{{url('/post-comment')}}",
+                method: 'POST',
+                data: {
+                    productId: productId,
+                    comment: comment,
+                    userId: userId
+                },
+                success: function(data){
+                    location.reload();
+                }
+            });
+        });
+    });
+
+</script>
+
+<script>
 function changeImage(imgs) {
     var expandImg = document.getElementById("thumbnailImg");
     thumbnailImg.src = imgs.src;

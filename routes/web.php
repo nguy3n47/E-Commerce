@@ -29,6 +29,8 @@ Route::prefix('cart')->group(function (){
     Route::get('delete/{id}','CartController@deleteCart')->name('delete.to.cart');
 });
 
+// Comment
+Route::post('/post-comment','CommentController@postComment')->name('postComment');
 
 // Checkout
 Route::get('/checkout','CartController@checkOut')->name('checkout');
