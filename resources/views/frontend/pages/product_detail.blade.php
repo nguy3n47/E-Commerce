@@ -135,18 +135,21 @@
                         </p>
                     </div>
                 </article>
-                <article class="box mb-3">
-                    
-                </article>
             </div> <!-- col.// -->
         </div> <!-- row.// -->
     </div><!-- container // -->
-
-
 </section>
 @endsection
+
+@push('styles')
+<link rel="stylesheet" href="{{asset('frontend/star-rating/starrr.css')}}">
+@endpush
 @push('scripts')
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="{{asset('frontend/star-rating/starrr.js')}}"></script>
+<script src=""></script>
 <script>
+
 function changeImage(imgs) {
     var expandImg = document.getElementById("thumbnailImg");
     thumbnailImg.src = imgs.src;
