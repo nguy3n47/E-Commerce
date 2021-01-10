@@ -130,6 +130,12 @@ Route::group(['prefix'  =>  'admin'], function () {
             Route::get('/', 'Admin\CustomerController@index')->name('admin.customers.index');
         
         });
+
+        Route::group(['prefix'  =>   'statistics'], function() {
+
+            Route::get('/', 'Admin\StatisticController@index')->name('admin.statistics.index');
+        
+        });
     
     });
 
