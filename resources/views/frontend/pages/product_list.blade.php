@@ -32,22 +32,11 @@
                         </header>
                         <div class="filter-content collapse show" id="collapse_1" style="">
                             <div class="card-body">
-                                <form class="pb-3">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="Search">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-light" type="button"><i
-                                                    class="fa fa-search"></i></button>
-                                        </div>
-                                    </div>
-                                </form>
-
                                 <ul class="list-menu">
                                 @foreach($categories as $category)
                                     <li><a href="#">{{$category->c_name}}</a></li>
                                 @endforeach
                                 </ul>
-
                             </div> <!-- card-body.// -->
                         </div>
                     </article> <!-- filter-group  .// -->
@@ -109,7 +98,7 @@
                                     <img src="{{ Storage::url($product->pro_thumbnail)}}">
                                 </div> <!-- img-wrap.// -->
                                 <figcaption class="info-wrap">
-                                    <div class="" style="height: 110px">
+                                    <div style="height: 110px">
                                         <a href="{{ route('product.detail', $product->pro_slug) }}"
                                             class="title">{{$product->pro_name}}</a>
                                         <div class="rating-wrap">

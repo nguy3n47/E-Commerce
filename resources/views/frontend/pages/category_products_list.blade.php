@@ -33,22 +33,11 @@
                         </header>
                         <div class="filter-content collapse show" id="collapse_1" style="">
                             <div class="card-body">
-                                <form class="pb-3">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="Search">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-light" type="button"><i
-                                                    class="fa fa-search"></i></button>
-                                        </div>
-                                    </div>
-                                </form>
-
                                 <ul class="list-menu">
                                 @foreach($categories as $category)
                                     <li><a href="#">{{$category->c_name}}</a></li>
                                 @endforeach
                                 </ul>
-
                             </div> <!-- card-body.// -->
                         </div>
                     </article> <!-- filter-group  .// -->
@@ -105,16 +94,16 @@
                     <a href="{{ route('product.detail', $product->pro_slug) }}">
                         <div class="col-md-4">
                             <figure class="card card-product-grid">
-                                <div class="img-wrap">
+                                <div class="img-wrap" >
                                     <img src="{{ Storage::url($product->pro_thumbnail)}}">
                                 </div> <!-- img-wrap.// -->
                                 <figcaption class="info-wrap">
-                                    <div class="fix-height">
+                                    <div style="height: 110px">
                                         <a href="{{ route('product.detail', $product->pro_slug) }}"
                                             class="title">{{$product->pro_name}}</a>
                                         <div class="rating-wrap">
                                             <ul class="rating-stars">
-                                                <li style="width:80%" class="stars-active">
+                                                <li style="width: 100%" class="stars-active">
                                                     <i class="fa fa-star"></i><i class="fa fa-star"></i><i
                                                         class="fa fa-star"></i><i class="fa fa-star"></i><i
                                                         class="fa fa-star"></i>
