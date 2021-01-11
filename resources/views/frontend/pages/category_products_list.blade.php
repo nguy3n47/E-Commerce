@@ -35,7 +35,7 @@
                             <div class="card-body">
                                 <ul class="list-menu">
                                 @foreach($categories as $category)
-                                    <li><a href="#">{{$category->c_name}}</a></li>
+                                    <li><a href="{{route('category.products', $category->c_slug)}}">{{$category->c_name}}</a></li>
                                 @endforeach
                                 </ul>
                             </div> <!-- card-body.// -->
@@ -122,7 +122,7 @@
                                                 VNĐ</span>
                                         </div> <!-- price-wrap.// -->
                                     </div>
-                                    <a href="#" class="btn btn-block btn-primary">Add to cart </a>
+                                    <a href="{{route('add.to.cart', $product->pro_slug)}}" class="btn btn-block btn-primary">Add to cart </a>
                                 </figcaption>
                             </figure>
                         </div>

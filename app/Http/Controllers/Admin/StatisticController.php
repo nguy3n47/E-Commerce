@@ -16,36 +16,27 @@ use DB;
 
 class StatisticController extends Controller
 {
-    public function index(){
+    public function index(Request $request){
 
-        // Doanh thu theo ngày
-        $odersDay = Order::where('status', 'process')
-                        ->whereDay('created_at', date('d'))
-                        ->select(\DB::raw('sum(sub_total) as total'), \DB::raw('DATE(created_at) day'))
-                        ->groupBy('day')
-                        ->get()->toArray();
-        
-        // Doanh thu theo tháng
-        $month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
-        $odersMonth = Order::where('status', 'delivered')
-                        ->whereMonth('created_at', date('m'))
+        return view('admin.statistics.index');
+
+    }
+
+    public function run(Request $request){
+        $fromDate = $request->fromDate;
+        $toDate = $request->toDate;
+
+        $orders = Order::where('status', 'delivered')
+                        ->whereDate('created_at', '>=', $fromDate)
+                        ->whereDate('created_at', '<=', $toDate)
                         ->select(\DB::raw('sum(sub_total) as total'))
                         ->get()->toArray();
 
-        // Doanh thu theo năm
-        $odersYear = Order::where('status', 'process')
-                        ->whereYear('created_at', date('Y'))
-                        ->select(\DB::raw('sum(sub_total) as total'), \DB::raw('DATE(created_at) day'))
-                        ->groupBy('day')
-                        ->get()->toArray();
-                        
         $temp = array();
-        foreach ($odersMonth as $or){
-            array_push($temp, $or['total']);
+        foreach ($orders as $order){
+            array_push($temp, $order['total']);
         }
 
-        return view('admin.statistics.index')
-            ->with('odersMonth',json_encode($temp,JSON_NUMERIC_CHECK));
-        
+        return ($temp);
     }
 }

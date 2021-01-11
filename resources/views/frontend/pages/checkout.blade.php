@@ -41,7 +41,7 @@
                             <div class="row">
                                 <div class="form-group col-sm-6">
                                     <label>Full name</label>
-                                    <input name="name" required type="text" class="form-control" value={{Auth::user()->name}}>
+                                    <input name="name" required type="text" class="form-control" value="{{Auth::user()->name}}">
                                 </div>
                                 <div class="form-group col-sm-6">
                                     <label>Email</label>

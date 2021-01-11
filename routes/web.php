@@ -134,6 +134,7 @@ Route::group(['prefix'  =>  'admin'], function () {
         Route::group(['prefix'  =>   'statistics'], function() {
 
             Route::get('/', 'Admin\StatisticController@index')->name('admin.statistics.index');
+            Route::post('/', 'Admin\StatisticController@run')->name('admin.statistics.run');
         
         });
     

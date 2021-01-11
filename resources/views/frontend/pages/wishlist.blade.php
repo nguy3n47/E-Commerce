@@ -16,9 +16,9 @@
                 <figure class="card card-product-grid  mb-3">
                     <div class="img-wrap"> <img src="{{ Storage::url($item->pro_thumbnail) }}"> </div>
                     <figcaption class="info-wrap">
-                        <a href="#" class="title text-truncate">{{$item->pro_name}}</a>
+                        <a href="{{route('product.detail', $item->pro_slug)}}" class="title text-truncate">{{$item->pro_name}}</a>
                         <p class="price mb-2">{{number_format($item->pro_price, 0, '', '.')}} VNĐ</p>
-                        <a href="#" class="btn btn-primary btn-sm"> Add to cart </a>
+                        <a href="{{route('add.to.cart', $item->pro_slug)}}" class="btn btn-primary btn-sm"> Add to cart </a>
                         <a href="{{route('user.wishlist.delete', $item->product_id)}}" class="btn btn-danger btn-sm" data-toggle="tooltip" title=""
                             data-original-title="Remove from wishlist"> <i class="fa fa-times"></i> </a>
                     </figcaption>
