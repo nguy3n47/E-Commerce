@@ -19,4 +19,4 @@ VNUHCM - University Of Science
 <p> php artisan config:cache </p>
 
 -------------------------------------------------------------------
-host: http://eshop-aecc.great-site.net/
+host: https://eshop-aecc.great-site.net/
