@@ -23,7 +23,7 @@
 jQuery(document).ready(function($) {
     var engine = new Bloodhound({
         remote: {
-            url: 'api/find?q=%QUERY%',
+            url: '/api/find?q=%QUERY%',
             wildcard: '%QUERY%'
         },
         datumTokenizer: Bloodhound.tokenizers.whitespace('q'),

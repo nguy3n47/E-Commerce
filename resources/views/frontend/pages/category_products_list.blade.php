@@ -80,9 +80,9 @@
                             <option>Cheapest</option>
                         </select>
                         <div class="btn-group">
-                            <a href="#" class="btn btn-outline-secondary" data-toggle="tooltip" title="List view">
+                            <a href="#" class="btn btn-outline-secondary"  title="List view">
                                 <i class="fa fa-bars"></i></a>
-                            <a href="#" class="btn  btn-outline-secondary active" data-toggle="tooltip"
+                            <a href="#" class="btn  btn-outline-secondary active"
                                 title="Grid view">
                                 <i class="fa fa-th"></i></a>
                         </div>
