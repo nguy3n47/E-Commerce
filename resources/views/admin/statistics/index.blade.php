@@ -143,7 +143,7 @@ $('#reservation').on('apply.daterangepicker', function(ev, picker) {
                     responsive: true,
                     title: {
                         display: true,
-                        text: 'Revenue statistics'
+                        text: 'Revenue Statistics'
                     }
                 }
             });

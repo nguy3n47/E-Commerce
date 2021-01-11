@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 10, 2021 at 10:03 AM
+-- Generation Time: Jan 11, 2021 at 05:57 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.13
 
@@ -420,8 +420,14 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `order_number`, `user_id`, `sub_total`, `quantity`, `payment_menthod`, `payment_status`, `status`, `fullname`, `email`, `phone`, `address`, `created_at`, `updated_at`) VALUES
-(1, '72919447542', 1, '41990000', 1, 'cod', 'unpaid', 'delivered', 'Nguyên', 'nguyenvux710@gmail.com', '0383188752', '135B KTX Trần Hưng Đạo, Phường Công Ông Lãnh, Q1, TP.HCM', '2021-01-09 15:06:44', '2021-01-10 04:49:05'),
-(2, '35329926383', 1, '39990000', 1, 'cod', 'unpaid', 'cancel', 'Nguyên', 'nguyenvux710@gmail.com', '0383188752', '135B KTX Trần Hưng Đạo, Phường Công Ông Lãnh, Q1, TP.HCM', '2021-01-09 15:33:05', '2021-01-09 15:35:44');
+(4, '41747871573', 2, '81980000', 2, 'cod', 'unpaid', 'cancel', 'Ca Chi', 'gefowo3311@izzum.com', '01230936793', '227 Nguyễn Văn Cừ, Quận 5, TP. HCM', '2021-01-10 12:12:24', '2021-01-10 12:37:10'),
+(5, '23154122075', 2, '29090000', 2, 'cod', 'unpaid', 'pending', 'Minh Nhat', 'gefowo3311@izzum.com', '01230936793', '227 Nguyễn Văn Cừ, Quận 5, TP. HCM', '2021-01-10 12:15:39', '2021-01-10 12:15:39'),
+(6, '74178534029', 2, '30990000', 1, 'cod', 'unpaid', 'delivered', 'Minh', 'gefowo3311@izzum.com', '01230936793', '227 Nguyễn Văn Cừ, Quận 5, TP. HCM', '2021-01-10 12:16:19', '2021-01-10 12:37:20'),
+(7, '62430129002', 2, '6990000', 1, 'cod', 'unpaid', 'process', 'Minh', 'gefowo3311@izzum.com', '01230936793', '227 Nguyễn Văn Cừ, Quận 5, TP. HCM', '2021-01-10 12:17:15', '2021-01-10 12:37:16'),
+(8, '29367712191', 2, '4792000', 1, 'cod', 'unpaid', 'pending', 'Minh Nhat', 'gefowo3311@izzum.com', '01230936793', '227 Nguyễn Văn Cừ, Quận 5, TP. HCM', '2021-01-10 12:19:15', '2021-01-10 12:19:15'),
+(9, '57853954538', 2, '26990000', 1, 'cod', 'unpaid', 'delivered', 'Minh Nhat', 'gefowo3311@izzum.com', '01230936793', '227 Nguyễn Văn Cừ, Quận 5, TP. HCM', '2021-01-10 12:19:43', '2021-01-10 12:37:05'),
+(10, '23513967385', 3, '21990000', 1, 'cod', 'unpaid', 'shipping', 'Nguyên', 'diyof52823@majorsww.com', '0383188752', '227 Nguyễn Văn Cừ, Quận 5, TP. HCM', '2021-01-10 12:29:55', '2021-01-10 12:37:00'),
+(11, '66101909765', 3, '163960000', 4, 'cod', 'unpaid', 'process', 'Nguyên', 'diyof52823@majorsww.com', '0383188752', '227 Nguyễn Văn Cừ, Quận 5, TP. HCM', '2021-01-10 12:31:13', '2021-01-10 12:36:55');
 
 -- --------------------------------------------------------
 
@@ -447,7 +453,19 @@ CREATE TABLE `order_details` (
 
 INSERT INTO `order_details` (`id`, `product_id`, `order_id`, `user_id`, `price`, `quantity`, `total`, `created_at`, `updated_at`) VALUES
 (1, 1, 1, 1, '41990000', 1, '41990000', '2021-01-09 15:06:44', '2021-01-09 15:06:44'),
-(2, 13, 2, 1, '39990000', 1, '39990000', '2021-01-09 15:33:05', '2021-01-09 15:33:05');
+(2, 13, 2, 1, '39990000', 1, '39990000', '2021-01-09 15:33:05', '2021-01-09 15:33:05'),
+(3, 50, 3, 1, '21990000', 1, '21990000', '2021-01-10 09:13:10', '2021-01-10 09:13:10'),
+(4, 1, 4, 2, '41990000', 1, '41990000', '2021-01-10 12:12:24', '2021-01-10 12:12:24'),
+(5, 13, 4, 2, '39990000', 1, '39990000', '2021-01-10 12:12:24', '2021-01-10 12:12:24'),
+(6, 40, 5, 2, '100000', 1, '100000', '2021-01-10 12:15:39', '2021-01-10 12:15:39'),
+(7, 14, 5, 2, '28990000', 1, '28990000', '2021-01-10 12:15:39', '2021-01-10 12:15:39'),
+(8, 25, 6, 2, '30990000', 1, '30990000', '2021-01-10 12:16:19', '2021-01-10 12:16:19'),
+(9, 42, 7, 2, '6990000', 1, '6990000', '2021-01-10 12:17:15', '2021-01-10 12:17:15'),
+(10, 47, 8, 2, '4792000', 1, '4792000', '2021-01-10 12:19:15', '2021-01-10 12:19:15'),
+(11, 7, 9, 2, '26990000', 1, '26990000', '2021-01-10 12:19:43', '2021-01-10 12:19:43'),
+(12, 50, 10, 3, '21990000', 1, '21990000', '2021-01-10 12:29:55', '2021-01-10 12:29:55'),
+(13, 1, 11, 3, '41990000', 2, '83980000', '2021-01-10 12:31:13', '2021-01-10 12:31:13'),
+(14, 13, 11, 3, '39990000', 2, '79980000', '2021-01-10 12:31:13', '2021-01-10 12:31:13');
 
 -- --------------------------------------------------------
 
@@ -488,20 +506,20 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`pro_id`, `pro_name`, `pro_slug`, `pro_sku`, `pro_quantity`, `pro_category_id`, `pro_price`, `pro_sale`, `pro_active`, `pro_description`, `pro_thumbnail`, `created_at`, `updated_at`) VALUES
-(1, 'Điện thoại iPhone 12 Pro Max 512GB', 'dien-thoai-iphone-12-pro-max-512gb', 'iiiiiiiii', 11, 1, 41990000, 0, 1, 'iPhone 12 Pro Max 512GB - đẳng cấp từ tên gọi đến từng chi tiết. Ngay từ khi chỉ là tin đồn thì chiếc smartphone này đã làm đứng ngồi không yên bao “fan cứng” nhà Apple, với những nâng cấp vô cùng nổi bật hứa hẹn sẽ mang đến những trải nghiệm tốt nhất về mọi mặt mà chưa một chiếc iPhone tiền nhiệm nào có được.', 'img/iphone-12-pro-max-xanh-duong-new-600x600-600x600.jpg', '2021-01-09 13:38:34', '2021-01-09 15:06:44'),
+(1, 'Điện thoại iPhone 12 Pro Max 512GB', 'dien-thoai-iphone-12-pro-max-512gb', 'iiiiiiiii', 9, 1, 41990000, 0, 1, 'iPhone 12 Pro Max 512GB - đẳng cấp từ tên gọi đến từng chi tiết. Ngay từ khi chỉ là tin đồn thì chiếc smartphone này đã làm đứng ngồi không yên bao “fan cứng” nhà Apple, với những nâng cấp vô cùng nổi bật hứa hẹn sẽ mang đến những trải nghiệm tốt nhất về mọi mặt mà chưa một chiếc iPhone tiền nhiệm nào có được.', 'img/iphone-12-pro-max-xanh-duong-new-600x600-600x600.jpg', '2021-01-09 13:38:34', '2021-01-10 12:37:10'),
 (2, 'Điện thoại Xiaomi Redmi 9 (4GB/64GB)', 'dien-thoai-xiaomi-redmi-9-4gb64gb', 'Iiiiiiiiiiiiii', 19, 1, 3490000, 0, 1, 'Nhanh như một cơn gió, sức hot của Redmi Note 9 Pro chưa có dấu hiệu hạ nhiệt thì Xiaomi Redmi 9 vừa bất ngờ ra mắt sớm. Thiết bị mang một thiết kế mới, thời trang và nhỏ gọn, phần cứng được nâng cấp cùng thời lượng pin ấn tượng, đặc biệt đi kèm một mức giá bán không thể nào hấp dẫn hơn.', 'img/xiaomi-redmi-9-tim-new-600x600-600x600.jpg', '2021-01-09 13:48:30', '2021-01-09 13:48:30'),
 (3, 'Điện thoại Samsung Galaxy M51', 'dien-thoai-samsung-galaxy-m51', 'iiiiiiiiiiiiii', 51, 1, 8990000, 0, 1, 'Samsung lại tiếp tục cho ra mắt chiếc smartphone mới thuộc thế hệ Galaxy M với tên gọi là Samsung Galaxy M51. Thiết kế mới này tuy nằm trong phân khúc tầm trung nhưng được Samsung nâng cấp và cải tiến với camera góc siêu rộng, dung lượng pin siêu khủng cùng vẻ ngoài sang trọng và thời thượng.', 'img/samsung-galaxy-m51-trang-new-600x600-600x600.jpg', '2021-01-09 13:52:52', '2021-01-09 13:52:52'),
 (4, 'Điện thoại Realme C15', 'dien-thoai-realme-c15', 'Iiiiiiiiiiiiii', 15, 1, 3990000, 0, 1, 'Realme vừa cho ra mắt sản phẩm mới nhất là Realme C15 với mức giá vô cùng phải chăng. Chiếc điện thoại thông minh này đi kèm 4 camera sau và dung lượng pin lên đến 6000 mAh sẵn sàng đồng hành cùng bạn trong mọi lúc.', 'img/realme-c15.jpg', '2021-01-09 13:58:04', '2021-01-09 13:58:04'),
 (5, 'Điện thoại Vivo Y51 (2020)', 'dien-thoai-vivo-y51-2020', 'Iiiiiiiiiiiiii', 20, 1, 5990000, 0, 1, 'Vivo đã mang chiếc điện thoại Vivo Y51 một lần nữa quay trở lại với người dùng trong một thiết kế hoàn toàn mới, nâng cấp từ công nghệ màn hình, cụm camera đến hệ điều hành với tên gọi Vivo Y51 (2020).', 'img/vivo-y51-bac-600x600-600x600.jpg', '2021-01-09 14:02:58', '2021-01-09 14:02:58'),
 (6, 'Điện thoại Samsung Galaxy Z Fold2 5G', 'dien-thoai-samsung-galaxy-z-fold2-5g', 'Iiiiiiiiiiiiii', 50, 1, 50000000, 0, 1, 'Samsung Galaxy Z Fold 2 là tên gọi chính thức của điện thoại màn hình gập cao cấp nhất của Samsung. Với nhiều nâng cấp tiên phong về thiết kế, hiệu năng và camera, hứa hẹn đây sẽ là một siêu phẩm thành công tiếp theo đến từ “ông trùm” sản xuất điện thoại lớn nhất thế giới.', 'img/samsung-galaxy-z-fold-2-den-600x600.jpg', '2021-01-09 14:09:27', '2021-01-09 14:09:27'),
-(7, 'Điện thoại Samsung Galaxy Note 20 Ultra 5G Trắng', 'dien-thoai-samsung-galaxy-note-20-ultra-5g-trang', 'Iiiiiiiiiiiiii', 26, 1, 26990000, 0, 1, 'Samsung Galaxy Note 20 Ultra 5G Trắng mẫu flagship hàng đầu của Samsung hoàn hảo về mọi mặt, từ thiết kế sang trọng đẳng cấp cho đến hiệu năng cực khủng ẩn chứa bên trong. Đặc biệt hơn cả là chiếc bút S Pen đầy “quyền năng” của dòng Note giờ đây cũng đã được nâng lên một tầm cao mới.', 'img/samsunggalaxynote20ultratrangnew-600x600-600x600.jpg', '2021-01-09 14:11:57', '2021-01-09 14:11:57'),
+(7, 'Điện thoại Samsung Galaxy Note 20 Ultra 5G Trắng', 'dien-thoai-samsung-galaxy-note-20-ultra-5g-trang', 'Iiiiiiiiiiiiii', 25, 1, 26990000, 0, 1, 'Samsung Galaxy Note 20 Ultra 5G Trắng mẫu flagship hàng đầu của Samsung hoàn hảo về mọi mặt, từ thiết kế sang trọng đẳng cấp cho đến hiệu năng cực khủng ẩn chứa bên trong. Đặc biệt hơn cả là chiếc bút S Pen đầy “quyền năng” của dòng Note giờ đây cũng đã được nâng lên một tầm cao mới.', 'img/samsunggalaxynote20ultratrangnew-600x600-600x600.jpg', '2021-01-09 14:11:57', '2021-01-10 12:19:43'),
 (8, 'Điện thoại iPhone 12 mini 128GB', 'dien-thoai-iphone-12-mini-128gb', 'Iiiiiiiiiiiiii', 23, 1, 23990000, 0, 1, 'Apple tiếp tục khẳng định vị thế của mình trên thị trường smartphone khi mới đây cho ra mắt mẫu iPhone 12 với nhiều điểm được tối ưu hơn, nâng cấp mạnh hơn. Trong đó, iPhone 12 mini 128 GB được ví như là phiên bản thu nhỏ hơn là bản rút gọn với cấu hình không khác gì mấy anh lớn có mức giá hấp dẫn hơn.', 'img/iphone-12-mini-128gb-(2).jpg', '2021-01-09 14:17:28', '2021-01-09 14:17:28'),
 (9, 'Điện thoại iPhone 11 256GB', 'dien-thoai-iphone-11-256gb', 'Iiiiiiiiiiiiii', 21, 1, 21990000, 0, 1, 'iPhone 11 256GB là chiếc máy có mức giá \"dễ chịu\" trong bộ 3 iPhone vừa được Apple giới thiệu và nếu bạn muốn được trải nghiệm những nâng cấp về camera mới hay hiệu năng hàng đầu mà lại không muốn bỏ ra quá nhiều tiền thì đây thực sự là lựa chọn hàng đầu dành cho bạn.', 'img/iphone-11-256gb-black-600x600.jpg', '2021-01-09 14:27:03', '2021-01-09 14:27:03'),
 (10, 'Điện thoại Samsung Galaxy Note 10+', 'dien-thoai-samsung-galaxy-note-10', 'Iiiiiiiiiiiiii', 16, 1, 16490000, 0, 1, 'Trông ngoại hình khá giống nhau, tuy nhiên Samsung Galaxy Note 10+ sở hữu khá nhiều điểm khác biệt so với Galaxy Note 10 và đây được xem là một trong những chiếc máy đáng mua nhất trong năm 2019, đặc biệt dành cho những người thích một chiếc máy màn hình lớn, camera chất lượng hàng đầu.', 'img/samsung-galaxy-note-10-plus-silver-new-600x600.jpg', '2021-01-09 14:46:41', '2021-01-09 14:46:41'),
 (11, 'Điện thoại Vivo X50 Pro', 'dien-thoai-vivo-x50-pro', 'Iiiiiiiiiiiiii', 17, 1, 17990000, 0, 1, 'Trong cuộc đua của các hãng điện thoại đang dần trở nên ngày càng khốc liệt, Vivo vừa mang tới một \"làn gió mới\" mang tên Vivo X50 Pro nổi bật với hệ thống camera chống rung độc đáo như trên một chiếc gimbal thực sự, lần đầu tiên được trang bị trên smartphone hiện đại.', 'img/vivo-x50-pro-14-600x600.jpg', '2021-01-09 14:54:07', '2021-01-09 14:54:07'),
 (12, 'Điện thoại Xiaomi Mi 10T Pro 5G', 'dien-thoai-xiaomi-mi-10t-pro-5g', 'Iiiiiiiiiiiiii', 14, 1, 12490000, 0, 1, 'Mi 10T Pro 5G mẫu smartphone cao cấp của Xiaomi trong năm 2020 cuối cùng cũng được trình làng với loạt những thông số gây “choáng ngợp”: màn hình tần số quét 144 Hz, vi xử lý Snapdragon 865 và cụm camera khủng 108 MP kèm theo đó là một mức giá dễ chịu cho người dùng.', 'img/xiaomi-mi-10t-pro-den-600x600.jpg', '2021-01-09 14:59:06', '2021-01-09 14:59:06'),
-(13, 'Laptop Apple MacBook Pro M1 2020 8GB/512GB', 'laptop-apple-macbook-pro-m1-2020-8gb512gb', 'Iiiiiiiiiiiiii', 3, 2, 39990000, 0, 1, 'Apple Macbook Pro M1 2020 (MYD92SA/A) với hiệu năng cực kỳ mạnh mẽ tích hợp chip Apple M1 lần đầu xuất hiện trên MAC đã xuất hiện trên thị trường laptop, con laptop này hứa hẹn sẽ mang đến cho bạn một sản phẩm “Pro” chưa từng thấy.', 'img/apple-macbook-pro-2020-myd92saa-600x600.jpg', '2021-01-09 15:31:50', '2021-01-09 15:35:44'),
-(14, 'Laptop Apple MacBook Air M1 2020 8GB/256GB', 'laptop-apple-macbook-air-m1-2020-8gb256gb', 'Iiiiiiiiiiiiii', 8, 2, 28990000, 0, 1, 'Laptop Apple MacBook Air M1 2020 (MGN93SA/A) có thiết kế nhỏ gọn thuận tiện mang theo bên mình, chip M1 cho cấu hình mạnh mẽ tốc độ xử lý nhanh sẽ là trợ thủ đắc lực cho bạn trong công việc.', 'img/apple-macbook-air-2020-mgn93saa-1-600x600.jpg', '2021-01-10 05:16:02', '2021-01-10 05:16:02'),
+(13, 'Laptop Apple MacBook Pro M1 2020 8GB/512GB', 'laptop-apple-macbook-pro-m1-2020-8gb512gb', 'Iiiiiiiiiiiiii', 1, 2, 39990000, 0, 1, 'Apple Macbook Pro M1 2020 (MYD92SA/A) với hiệu năng cực kỳ mạnh mẽ tích hợp chip Apple M1 lần đầu xuất hiện trên MAC đã xuất hiện trên thị trường laptop, con laptop này hứa hẹn sẽ mang đến cho bạn một sản phẩm “Pro” chưa từng thấy.', 'img/apple-macbook-pro-2020-myd92saa-600x600.jpg', '2021-01-09 15:31:50', '2021-01-10 12:37:10'),
+(14, 'Laptop Apple MacBook Air M1 2020 8GB/256GB', 'laptop-apple-macbook-air-m1-2020-8gb256gb', 'Iiiiiiiiiiiiii', 7, 2, 28990000, 0, 1, 'Laptop Apple MacBook Air M1 2020 (MGN93SA/A) có thiết kế nhỏ gọn thuận tiện mang theo bên mình, chip M1 cho cấu hình mạnh mẽ tốc độ xử lý nhanh sẽ là trợ thủ đắc lực cho bạn trong công việc.', 'img/apple-macbook-air-2020-mgn93saa-1-600x600.jpg', '2021-01-10 05:16:02', '2021-01-10 12:15:39'),
 (15, 'Laptop Asus Gaming Rog Strix G512 i7', 'laptop-asus-gaming-rog-strix-g512-i7', 'Iiiiiiiiiiiiii', 28, 2, 28490000, 0, 1, 'Laptop Asus Gaming Rog Strix G512 i7 (IAL001T) là chiếc laptop gaming có cấu hình mạnh mẽ và thiết kế hầm hố đậm chất gaming. Máy được trang bị chip Intel Core i7 thế hệ mới nhất cùng với màn hình cao cấp chuẩn gaming giúp bạn thỏa sức chiến những tựa game cực đỉnh.', 'img/asus-gaming-rog-strix-g512-i7-ial001t-272120-022128-225687-600x600.jpg', '2021-01-10 05:20:34', '2021-01-10 05:20:34'),
 (16, 'Laptop Dell Vostro 3590 i7', 'laptop-dell-vostro-3590-i7', 'Iiiiiiiiiiiiii', 35, 2, 20490000, 0, 1, 'Laptop Dell Vostro 3590 i7 (GRMGK2) là phiên bản laptop đồ họa kĩ thuật có thiết kế hiện đại, cấu hình khỏe với vi xử lí gen 10 và card đồ họa rời. Đây chính là chiếc laptop đáng cân nhắc đối với dân đồ họa hay sinh viên khối ngành kĩ thuật.', 'img/dell-vostro-3590-i7-grmgk2-220718-220718-600x600.jpg', '2021-01-10 05:31:45', '2021-01-10 05:31:45'),
 (17, 'Laptop Dell G5 15 5500 i7', 'laptop-dell-g5-15-5500-i7', 'Iiiiiiiiiiiiii', 34, 2, 34490000, 0, 1, 'Laptop Dell G5 15 5500 i7 (70228123) với cấu hình mạnh mẽ, thiết kế đẹp mắt, chiếc laptop Dell này sẽ đem lại trải nghiệm chơi game cực đã, làm việc mượt mà.', 'img/dell-g5-15-5500-i7-70228123-094621-024632-600x600.jpg', '2021-01-10 05:36:29', '2021-01-10 05:36:29'),
@@ -512,9 +530,9 @@ INSERT INTO `products` (`pro_id`, `pro_name`, `pro_slug`, `pro_sku`, `pro_quanti
 (22, 'Laptop MSI Gaming Leopard 10SDK GL65 i7', 'laptop-msi-gaming-leopard-10sdk-gl65-i7', 'Iiiiiiiiiiiiii', 13, 2, 32990000, 0, 1, 'Laptop MSI Gaming Leopard 10SDRK GL65 i7 (242VN) là chiếc laptop gaming với thiết kế chuẩn hiện đại, hiệu năng mạnh mẽ với CPU thế hệ mới mang lại sức mạnh chiến game đỉnh cao cho các game thủ lựa chọn lí tưởng trong tầm giá.', 'img/msi-gaming-leopard-10sdr-gl65-i7-242vn-225857-600x600.jpg', '2021-01-10 07:08:44', '2021-01-10 07:08:44'),
 (23, 'Laptop Huawei MateBook D 15 R5', 'laptop-huawei-matebook-d-15-r5', 'Iiiiiiiiiiiiii', 16, 2, 16290000, 0, 1, 'Trải nghiệm làm việc, giải trí mượt mà với laptop Huawei MateBook D 15 R5 (Boh-WAQ9R), cấu hình vượt trội, thiết kế mỏng nhẹ và màn hình tràn viền tuyệt hảo là những gì mà chiếc laptop doanh nhân cao cấp này đem đến.', 'img/huawei-matebook-d-15-r5-bohwaq9r-250520-020512-600x600.jpg', '2021-01-10 07:12:13', '2021-01-10 07:12:13'),
 (24, 'Laptop Asus VivoBook A412F i5', 'laptop-asus-vivobook-a412f-i5', 'Iiiiiiiiiiiiii', 16, 2, 16190000, 0, 1, 'Với thiết kế nhỏ gọn lý tưởng, Asus VivoBook A412F (EK739T) là mẫu laptop cho công việc và học tập có mức giá hợp lý, phù hợp với những bạn học sinh sinh viên đang tìm kiếm một thiết bị vừa để thiết kế đồ hoạ cơ bản lại còn giải trí chơi game nhẹ nhàng.', 'img/asus-vivobook-a412f-i510210u-8gb-32gb-512gb-win10-kg-218865-600x600.jpg', '2021-01-10 07:16:07', '2021-01-10 07:16:07'),
-(25, 'Máy tính bảng iPad Pro 12.9 inch Wifi Cellular 128GB (2020)', 'may-tinh-bang-ipad-pro-129-inch-wifi-cellular-128gb-2020', 'Iiiiiiiiiiiiii', 12, 3, 30990000, 0, 1, 'Sau bao ngày chờ đợi, chiếc máy tính bảng iPad Pro 12.9 inch Wifi Cellular 128GB (2020) đã được trình làng. Với thiết kế không mấy khác biệt so với người anh em iPad Pro 2018 nhưng được Apple nâng cấp hệ thống camera, cùng con chip A12Z giúp iPad Pro 12.9 (2020) mang đến hiệu năng ấn tượng cho người dùng những trải nghiệm tuyệt vời.', 'img/ipad-pro-12-9-inch-wifi-cellular-128gb-2020-bac-600x600-1-200x200.jpg', '2021-01-10 07:20:54', '2021-01-10 07:20:54'),
+(25, 'Máy tính bảng iPad Pro 12.9 inch Wifi Cellular 128GB (2020)', 'may-tinh-bang-ipad-pro-129-inch-wifi-cellular-128gb-2020', 'Iiiiiiiiiiiiii', 11, 3, 30990000, 0, 1, 'Sau bao ngày chờ đợi, chiếc máy tính bảng iPad Pro 12.9 inch Wifi Cellular 128GB (2020) đã được trình làng. Với thiết kế không mấy khác biệt so với người anh em iPad Pro 2018 nhưng được Apple nâng cấp hệ thống camera, cùng con chip A12Z giúp iPad Pro 12.9 (2020) mang đến hiệu năng ấn tượng cho người dùng những trải nghiệm tuyệt vời.', 'img/ipad-pro-12-9-inch-wifi-cellular-128gb-2020-bac-600x600-1-200x200.jpg', '2021-01-10 07:20:54', '2021-01-10 12:16:19'),
 (26, 'Máy tính bảng iPad Pro 11 inch Wifi Cellular 128GB (2020)', 'may-tinh-bang-ipad-pro-11-inch-wifi-cellular-128gb-2020', 'Iiiiiiiiiiiiii', 17, 3, 25490000, 0, 1, 'Đã 2 năm kể từ khi mẫu iPad Pro 2018 ra mắt, mới đây, mẫu iPad Pro mới nhất - iPad Pro 11 inch (2020) vừa được Apple trình làng với nhiều sự cải tiến đáng giá lẫn về tính năng và sức mạnh xử lý, hứa hẹn đây sẽ là mẫu máy tính bảng được săn đón nhiều nhất trong năm 2020.', 'img/ipad-pro-11-inch-wifi-cellular-128gb-2020-bac-600x600-1-600x600.jpg', '2021-01-10 07:25:38', '2021-01-10 07:25:38'),
-(27, 'Máy tính bảng iPad Air 4 Wifi Cellular 256GB (2020)', 'may-tinh-bang-ipad-air-4-wifi-cellular-256gb-2020', 'Iiiiiiiiiiiiii', 24, 3, 24990000, 0, 1, 'Chấn động giới công nghệ toàn cầu, khi một tablet lần đầu được tích hợp bên cạnh một trong những chipset hàng đầu 2020, iPad Air 4 Wifi Cellular 256GB 2020 sở hữu con chip A14 Bionic với hiệu năng vô cùng mạnh mẽ, kết nối 4G tiện dụng cùng bộ nhớ cực khủng lên đến 256 GB.', 'img/ipad-4-cellular-hong-new-600x600-600x600.jpg', '2021-01-10 07:47:44', '2021-01-10 07:47:44'),
+(27, 'Máy tính bảng iPad Air 4 Wifi Cellular 256GB (2020)', 'may-tinh-bang-ipad-air-4-wifi-cellular-256gb-2020', 'Iiiiiiiiiiiiii', 19, 3, 24990000, 0, 1, 'Chấn động giới công nghệ toàn cầu, khi một tablet lần đầu được tích hợp bên cạnh một trong những chipset hàng đầu 2020, iPad Air 4 Wifi Cellular 256GB 2020 sở hữu con chip A14 Bionic với hiệu năng vô cùng mạnh mẽ, kết nối 4G tiện dụng cùng bộ nhớ cực khủng lên đến 256 GB.', 'img/ipad-4-cellular-hong-new-600x600-600x600.jpg', '2021-01-10 07:47:44', '2021-01-10 14:38:27'),
 (28, 'Máy tính bảng Samsung Galaxy Tab A7 (2020)', 'may-tinh-bang-samsung-galaxy-tab-a7-2020', 'Iiiiiiiiiiiiii', 7, 3, 7190000, 0, 1, 'Samsung Galaxy Tab A7 (2020) là một chiếc máy tính bảng có thiết kế đẹp, cấu hình khá, nhiều tính năng tiện ích, một công cụ đắc lực hỗ trợ bạn trong công việc cũng như trong học tập hay giải trí.', 'img/samsung-galaxy-tab-a7-2020-xam-200x200.jpg', '2021-01-10 07:52:52', '2021-01-10 07:52:52'),
 (29, 'Máy tính bảng Samsung Galaxy Tab S6', 'may-tinh-bang-samsung-galaxy-tab-s6', 'Iiiiiiiiiiiiii', 16, 3, 16490000, 0, 1, 'Samsung Galaxy Tab S6 là chiếc máy tính bảng 2 trong 1, được thiết kế để giúp cho những người cần một sản phẩm đủ gọn gàng nhưng mạnh mẽ.', 'img/samsung-galaxy-tab-s6-600x600-1-600x600.jpg', '2021-01-10 07:55:14', '2021-01-10 07:55:14'),
 (30, 'Máy tính bảng Huawei MatePad T8', 'may-tinh-bang-huawei-matepad-t8', 'Iiiiiiiiiiiiii', 8, 3, 2990000, 0, 1, 'Huawei MatePad T8 là một trong những mẫu máy tính bảng giá rẻ của Huawei có thiết kế nguyên khối cùng một cấu hình cơ bản, đủ dùng cho các tác vụ hằng ngày của mọi người dùng.', 'img/huawei-matepad-t8-xanh-600x600.jpg', '2021-01-10 07:57:55', '2021-01-10 07:57:55'),
@@ -527,17 +545,17 @@ INSERT INTO `products` (`pro_id`, `pro_name`, `pro_slug`, `pro_sku`, `pro_quanti
 (37, 'Balo Laptop 15.6 inch kèm cổng USB Arctic Hunter B-00320', 'balo-laptop-156-inch-kem-cong-usb-arctic-hunter-b-00320', 'Iiiiiiiiiiiiii', 9, 4, 985000, 0, 1, 'Balo Laptop Arctic Hunter B-00320 thiết kế hiện đại, cứng cáp, có sức chứa lớn phù hợp khi đi công tác hay du lịch', 'img/balo-laptop-15-inch-cong-usb-arctic-hunter-b-00320-ava-600x600.jpg', '2021-01-10 08:18:02', '2021-01-10 08:18:02'),
 (38, 'Chuột Gaming Corsair M55 RGB Pro Đen', 'chuot-gaming-corsair-m55-rgb-pro-den', 'Iiiiiiiiiiiiii', 89, 4, 890000, 0, 1, 'Trọng lượng nhẹ chỉ 86 g, kiểu dáng thiết kế theo hình thái học tay cầm, cạnh bên cao su tăng độ bám chắc\r\nChuột máy tính mang đến sự thoải mái tốt nhất trên tay cầm, vừa vặn, chắc chắn, người dùng kiểm soát tốt mọi thao tác trên chuột, vỏ chuột làm từ nhựa nhám chống trơn trượt. Đây là sản phẩm chuột hợp với người thuận cả hai tay.', 'img/chuot-gaming-corsair-m55-rgb-pro-den-ava-600x600.jpg', '2021-01-10 08:21:43', '2021-01-10 08:21:43'),
 (39, 'Thẻ nhớ MicroSD 200 GB SanDisk Class 10', 'the-nho-microsd-200-gb-sandisk-class-10', 'Iiiiiiiiiiiiii', 20, 4, 2100000, 0, 1, 'Class 10 cho tốc độ ghi dữ liệu nhanh\r\nĐây là chỉ số có trên các thẻ nhớ đắt tiền bởi sự ưu việt của nó, giúp bạn vừa chụp vừa quay phim (với thiết bị có hỗ trợ tính năng), lưu trữ trực tiếp ảnh có dung lượng lớn với tốc độ nhanh,...', 'img/the-nho-microsd-200gb-class10uhs1-fix-600x600.jpg', '2021-01-10 08:26:30', '2021-01-10 08:26:30'),
-(40, 'Túi đựng AirPods Pro Nhựa cứng trong JM PD01', 'tui-dung-airpods-pro-nhua-cung-trong-jm-pd01', 'Iiiiiiiiiiiiii', 11, 4, 100000, 0, 1, 'Thiết kế đơn giản, đáng yêu và đẹp mắt, 2 màu sắc tùy chọn trắng họa tiết xanh hoặc trắng họa tiết hồng\r\nTúi đựng AirPods này sẽ dễ được sự chú ý của các bạn gái trẻ, kích thước nhỏ gọn rất tiện mang theo. Sản phẩm sử dụng cho AirPods Pro hoặc những thiết bị kích thước tương đương', 'img/tui-airpods-pro-nhua-cung-trong-jm-pd01-vang-2-org.jpg', '2021-01-10 08:30:29', '2021-01-10 08:30:29'),
+(40, 'Túi đựng AirPods Pro Nhựa cứng trong JM PD01', 'tui-dung-airpods-pro-nhua-cung-trong-jm-pd01', 'Iiiiiiiiiiiiii', 10, 4, 100000, 0, 1, 'Thiết kế đơn giản, đáng yêu và đẹp mắt, 2 màu sắc tùy chọn trắng họa tiết xanh hoặc trắng họa tiết hồng\r\nTúi đựng AirPods này sẽ dễ được sự chú ý của các bạn gái trẻ, kích thước nhỏ gọn rất tiện mang theo. Sản phẩm sử dụng cho AirPods Pro hoặc những thiết bị kích thước tương đương', 'img/tui-airpods-pro-nhua-cung-trong-jm-pd01-vang-2-org.jpg', '2021-01-10 08:30:29', '2021-01-10 12:15:39'),
 (41, 'Vòng tay thông minh Samsung Galaxy Fit2 đen', 'vong-tay-thong-minh-samsung-galaxy-fit2-den', 'Iiiiiiiiiiiiii', 75, 5, 750000, 0, 1, 'Vòng tay thông minh Samsung là phụ kiện nhỏ gọn, hỗ trợ nhiều tính năng hiện đại đi kèm với giá thành rẻ hơn nhiều so với một chiếc SmartWatch. Trong đó, Samsung Galaxy Fit 2 là dòng sản phẩm mới ra gần đây, được cập nhật thêm các tính năng hữu ích và cải tiến thời lượng pin tới 15 ngày.', 'img/samsung-galaxy-fit2-den-1-1-org.jpg', '2021-01-10 08:33:41', '2021-01-10 08:33:41'),
-(42, 'Samsung Galaxy Watch Active 2 44mm', 'samsung-galaxy-watch-active-2-44mm', 'Iiiiiiiiiiiiii', 69, 5, 6990000, 0, 1, 'Đồng hồ thông minh Samsung Galaxy Watch Active 2 44mm là phiên bản có sự cải tiến về công nghệ để mang đến những trải nghiệm tốt nhất cho người dùng với nhiều tính năng chăm sóc sức khỏe, nhận cuộc gọi trực tiếp cũng như nhiều tính năng tiện ích khác.', 'img/samsung-galaxy-watch-active-2-44-mm-day-da-den-2-1-org.jpg', '2021-01-10 08:36:04', '2021-01-10 08:36:04'),
+(42, 'Samsung Galaxy Watch Active 2 44mm', 'samsung-galaxy-watch-active-2-44mm', 'Iiiiiiiiiiiiii', 68, 5, 6990000, 0, 1, 'Đồng hồ thông minh Samsung Galaxy Watch Active 2 44mm là phiên bản có sự cải tiến về công nghệ để mang đến những trải nghiệm tốt nhất cho người dùng với nhiều tính năng chăm sóc sức khỏe, nhận cuộc gọi trực tiếp cũng như nhiều tính năng tiện ích khác.', 'img/samsung-galaxy-watch-active-2-44-mm-day-da-den-2-1-org.jpg', '2021-01-10 08:36:04', '2021-01-10 12:17:15'),
 (43, 'Đồng hồ thông minh Huami Amazfit GTS vàng', 'dong-ho-thong-minh-huami-amazfit-gts-vang', 'Iiiiiiiiiiiiii', 22, 5, 2093000, 0, 1, 'Đồng hồ thông minh Huami Amazfit GTS phiên bản màu vàng với thiết kế nhiều điểm giống với Apple Watch, màn hình 1.65 inch cùng độ phân giải là 348 x 442 pixels giúp hiển thị thông tin, hình ảnh rõ ràng và sắc nét. Đi kèm theo là dây đeo silicone 20mm mang lại cảm giác vô cùng mềm mại và dễ chịu khi đeo', 'img/huami-amazfit-gts-vang-ava-600x600.jpg', '2021-01-10 08:37:54', '2021-01-10 08:37:54'),
 (44, 'Đồng hồ thông minh Suunto 7 Dây silicone', 'dong-ho-thong-minh-suunto-7-day-silicone', 'Iiiiiiiiiiiiii', 7, 5, 11600000, 0, 1, 'Đồng hồ thông minh Suunto 7 Dây silicone phiên bản màu đen với mặt kính cường lực hình tròn, màn hình AMOLED 1.97 inch với độ phân giải 454 x 454 pixels cùng độ sáng lên tới 1000 nits, mức độ sáng này sẽ thay đổi dựa trên điều kiện ánh sáng của môi trường xung quanh, nhờ vậy có thể hiển thị tốt dưới ánh sáng mặt trời. Dây đeo làm từ silicone tạo cảm giác mềm mại và dễ chịu khi đeo.', 'img/suunto-7-day-silicon-den-2-org.jpg', '2021-01-10 08:40:28', '2021-01-10 08:40:28'),
 (45, 'Apple Watch S5 44mm viền nhôm dây cao su đen', 'apple-watch-s5-44mm-vien-nhom-day-cao-su-den', 'Iiiiiiiiiiiiii', 12, 5, 12990000, 0, 1, 'Apple Watch S5 44 mm là phiên bản nâng cấp nhẹ so với phiên bản Apple Watch S4 tiền nhiệm. Lần đầu tiên Apple Watch sẽ được trang bị màn hình OLED luôn bật, tính năng la bàn và khả năng cảnh báo khẩn cấp trên nhiều quốc gia hơn.', 'img/apple-watch-s5-44mm-vien-nhom-day-cao-su-5-org.jpg', '2021-01-10 08:43:39', '2021-01-10 08:44:33'),
 (46, 'Huawei Watch GT2 Pro 46mm dây silicone', 'huawei-watch-gt2-pro-46mm-day-silicone', 'Iiiiiiiiiiiiii', 8, 5, 8990000, 0, 1, 'Huawei Watch GT2 Pro 46mm dây silicone với thiết kế vỏ bằng titan, mặt đồng hồ làm bằng kính sapphire và mặt lưng bằng gốm tạo nên vẻ đẹp cao cấp, sang trọng. Sở hữu màn hình AMOLED 1.39 inch có độ phân giải 454 x 454 pixels, cho hình ảnh được hiển thị sắc nét, chi tiết hơn. Thiết kế dây đeo silicone mềm mai, không bị khó chịu khi dùng trong thời gian dài.', 'img/watch-gt2-pro-46mm-day-silicone-cont-1-org.jpg', '2021-01-10 08:49:30', '2021-01-10 08:49:30'),
-(47, 'Oppo Watch 41mm dây silicone hồng', 'oppo-watch-41mm-day-silicone-hong', 'Iiiiiiiiiiiiii', 14, 5, 4792000, 0, 1, 'Đồng hồ thông minh Oppo Watch màu hồng phiên bản 41mm trang bị màn hình AMOLED 1.6 inch cùng độ phân giải là 320 x 360 pixels, mật độ điểm ảnh 326ppi cho chất lượng hiển thị cực kì sắc nét. Dây đeo làm từ silicon với thiết kế mang lại cảm giác vô cùng mềm mại, không bị đau khi đeo lâu', 'img/oppo-watch-41mm-day-silicone-hong-1-org.jpg', '2021-01-10 08:51:42', '2021-01-10 08:51:42'),
+(47, 'Oppo Watch 41mm dây silicone hồng', 'oppo-watch-41mm-day-silicone-hong', 'Iiiiiiiiiiiiii', 13, 5, 4792000, 0, 1, 'Đồng hồ thông minh Oppo Watch màu hồng phiên bản 41mm trang bị màn hình AMOLED 1.6 inch cùng độ phân giải là 320 x 360 pixels, mật độ điểm ảnh 326ppi cho chất lượng hiển thị cực kì sắc nét. Dây đeo làm từ silicon với thiết kế mang lại cảm giác vô cùng mềm mại, không bị đau khi đeo lâu', 'img/oppo-watch-41mm-day-silicone-hong-1-org.jpg', '2021-01-10 08:51:42', '2021-01-10 12:19:15'),
 (48, 'Samsung Galaxy Watch 3 45mm titanium', 'samsung-galaxy-watch-3-45mm-titanium', 'Iiiiiiiiiiiiii', 14, 5, 14990000, 0, 1, 'Thiết kế sang trọng, chất liệu Titanium cao cấp\r\nĐồng hồ Samsung Galaxy Watch 3 45mm titanium được trang bị dây đeo thép không gỉ sang trọng, kết hợp cùng lớp màu Mystic Black độc quyền với nét đẹp huyền bí, tinh tế giúp cho mẫu Samsung Galaxy Watch 3 này trở nên cao cấp và đặc biệt hơn hẳn những phiên bản khác.', 'img/samsung-galaxy-watch-3-45mm-titanium-2-org.jpg', '2021-01-10 08:54:01', '2021-01-10 08:54:01'),
-(49, 'Đồng hồ thông minh Huami Amazfit T-Rex', 'dong-ho-thong-minh-huami-amazfit-t-rex', 'Iiiiiiiiiiiiii', 23, 5, 2309000, 0, 1, 'Đồng hồ thông minh Huami Amazfit T-Rex sở hữu màn hình 1.3 Inch cùng kích thước khá là hầm hố nhưng chỉ nặng 36g. Mặt kính cường lực cùng với khả năng chống chịu tốt ở mọi môi trường khắc nghiệt. Dây đeo silicone đem lại cho người dùng cảm giác êm ái, thoải mái khi đeo trong thời gian dài.', 'img/xiaomi-amazfit-t-rex-1-3-org.jpg', '2021-01-10 08:57:32', '2021-01-10 08:57:32'),
-(50, 'Apple Watch S6 LTE 44mm viền thép dây cao su', 'apple-watch-s6-lte-44mm-vien-thep-day-cao-su', 'Iiiiiiiiiiiiii', 1, 5, 21990000, 0, 1, 'Apple Watch S6 LTE mang đến những nâng cấp ấn tượng so với phiên bản Apple Watch S5. Nổi bật nhất là tính năng eSim cho phép bạn sử dụng các chức năng như gọi điện, nhắn tin,... mà không cần điện thoại\r\nThiết kế sang trọng, hiện đại\r\nApple Watch S6 LTE 44mm viền thép dây cao su vẫn giữ trọn vẹn nét tinh tế và sắc sảo trong thiết kế từ trước đến nay, sở hữu mặt đồng hồ sapphire cao cấp với kích thước 1.78 inch, viền nhôm được vát gọt công phu và dây đeo cao su co dãn, êm tay.', 'img/apple-watch-s6-lte-44mm-vien-thep-day-cao-su-den-cont-1-org.jpg', '2021-01-10 09:00:02', '2021-01-10 09:00:02');
+(49, 'Đồng hồ thông minh Huami Amazfit T-Rex', 'dong-ho-thong-minh-huami-amazfit-t-rex', 'Iiiiiiiiiiiiii', 22, 5, 2309000, 0, 1, 'Đồng hồ thông minh Huami Amazfit T-Rex sở hữu màn hình 1.3 Inch cùng kích thước khá là hầm hố nhưng chỉ nặng 36g. Mặt kính cường lực cùng với khả năng chống chịu tốt ở mọi môi trường khắc nghiệt. Dây đeo silicone đem lại cho người dùng cảm giác êm ái, thoải mái khi đeo trong thời gian dài.', 'img/xiaomi-amazfit-t-rex-1-3-org.jpg', '2021-01-10 08:57:32', '2021-01-11 09:27:00'),
+(50, 'Apple Watch S6 LTE 44mm viền thép dây cao su', 'apple-watch-s6-lte-44mm-vien-thep-day-cao-su', 'Iiiiiiiiiiiiii', 0, 5, 21990000, 0, 1, 'Apple Watch S6 LTE mang đến những nâng cấp ấn tượng so với phiên bản Apple Watch S5. Nổi bật nhất là tính năng eSim cho phép bạn sử dụng các chức năng như gọi điện, nhắn tin,... mà không cần điện thoại\r\nThiết kế sang trọng, hiện đại\r\nApple Watch S6 LTE 44mm viền thép dây cao su vẫn giữ trọn vẹn nét tinh tế và sắc sảo trong thiết kế từ trước đến nay, sở hữu mặt đồng hồ sapphire cao cấp với kích thước 1.78 inch, viền nhôm được vát gọt công phu và dây đeo cao su co dãn, êm tay.', 'img/apple-watch-s6-lte-44mm-vien-thep-day-cao-su-den-cont-1-org.jpg', '2021-01-10 09:00:02', '2021-01-10 12:29:55');
 
 -- --------------------------------------------------------
 
@@ -561,8 +579,7 @@ CREATE TABLE `product_reviews` (
 --
 
 INSERT INTO `product_reviews` (`id`, `user_id`, `product_id`, `rate`, `comment`, `status`, `created_at`, `updated_at`) VALUES
-(1, 1, 1, 0, 'Rất tuyệt :>', 'active', '2021-01-09 15:42:14', '2021-01-09 15:42:14'),
-(2, 1, 50, 0, '😮😮😮', 'active', '2021-01-10 09:01:46', '2021-01-10 09:01:46');
+(3, 3, 1, 0, 'Tuyệt vời', 'active', '2021-01-10 12:28:43', '2021-01-10 12:28:43');
 
 -- --------------------------------------------------------
 
@@ -592,7 +609,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `phone`, `status`, `avatar`, `address`, `fb_id`, `google_id`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Nguyên', 'nguyenvux710@gmail.com', NULL, '0383188752', 'active', 'img/34123114_235937487140188_8411538856163147776_n.jpg', '135B KTX Trần Hưng Đạo, Phường Công Ông Lãnh, Q1, TP.HCM', NULL, NULL, '$2y$10$4K7r7UuIAJrN.b7KkTU4qOJNZNeA56JryJThwnz/ySpqSfVmHtdGa', NULL, '2021-01-09 13:28:33', '2021-01-09 14:15:05');
+(2, 'Minh Nhat', 'gefowo3311@izzum.com', NULL, '01230936793', 'active', 'img/profile.jpg', '227 Nguyễn Văn Cừ, Quận 5, TP. HCM', NULL, NULL, '$2y$10$5ECsZIBk.ZmmUksy9lih4.tcfsx94P7/kT3Zf.eEt3IjKZtI2V8Tm', NULL, '2021-01-10 12:06:11', '2021-01-10 12:12:43'),
+(3, 'Nguyên', 'diyof52823@majorsww.com', NULL, '0383188752', 'active', 'img/34123114_235937487140188_8411538856163147776_n.jpg', '227 Nguyễn Văn Cừ, Quận 5, TP. HCM', NULL, NULL, '$2y$10$1otYbIbFoc8QF5mzGaUY..U2dCCN0OszNO/jZ9TCjSbKbkKOvhiRa', NULL, '2021-01-10 12:24:31', '2021-01-10 12:26:51');
 
 -- --------------------------------------------------------
 
@@ -613,11 +631,18 @@ CREATE TABLE `wishlists` (
 --
 
 INSERT INTO `wishlists` (`id`, `product_id`, `user_id`, `created_at`, `updated_at`) VALUES
-(5, 6, 1, '2021-01-09 15:13:12', '2021-01-09 15:13:12'),
-(7, 12, 1, '2021-01-09 15:13:31', '2021-01-09 15:13:31'),
-(8, 10, 1, '2021-01-09 15:13:35', '2021-01-09 15:13:35'),
-(9, 13, 1, '2021-01-09 15:33:40', '2021-01-09 15:33:40'),
-(13, 1, 1, '2021-01-09 15:53:44', '2021-01-09 15:53:44');
+(16, 1, 2, '2021-01-10 12:07:46', '2021-01-10 12:07:46'),
+(17, 2, 2, '2021-01-10 12:07:58', '2021-01-10 12:07:58'),
+(18, 3, 2, '2021-01-10 12:09:55', '2021-01-10 12:09:55'),
+(19, 11, 2, '2021-01-10 12:10:07', '2021-01-10 12:10:07'),
+(20, 17, 2, '2021-01-10 12:10:20', '2021-01-10 12:10:20'),
+(21, 49, 2, '2021-01-10 12:10:25', '2021-01-10 12:10:25'),
+(22, 45, 2, '2021-01-10 12:10:29', '2021-01-10 12:10:29'),
+(23, 16, 2, '2021-01-10 12:10:36', '2021-01-10 12:10:36'),
+(24, 42, 2, '2021-01-10 12:10:42', '2021-01-10 12:10:42'),
+(25, 25, 2, '2021-01-10 12:10:57', '2021-01-10 12:10:57'),
+(26, 26, 2, '2021-01-10 12:11:05', '2021-01-10 12:11:05'),
+(27, 44, 2, '2021-01-10 12:11:13', '2021-01-10 12:11:13');
 
 --
 -- Indexes for dumped tables
@@ -718,7 +743,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `images`
 --
 ALTER TABLE `images`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=273;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=281;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -730,37 +755,37 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `order_details`
 --
 ALTER TABLE `order_details`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `pro_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `pro_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT for table `product_reviews`
 --
 ALTER TABLE `product_reviews`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `wishlists`
 --
 ALTER TABLE `wishlists`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- Constraints for dumped tables
