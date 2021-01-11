@@ -29,7 +29,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '943ee1d10ddb8d19605059761bc40d0587b9ab08',
+    'reference' => '6391941b2523e2a10fe646f8d268edcaab4bbd82',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -477,7 +477,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '943ee1d10ddb8d19605059761bc40d0587b9ab08',
+      'reference' => '6391941b2523e2a10fe646f8d268edcaab4bbd82',
     ),
     'laravel/sail' => 
     array (
@@ -550,6 +550,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '159c3d2bf27568f9af87d6c3f4bb616a251eb12b',
+    ),
+    'mervick/emojionearea' => 
+    array (
+      'pretty_version' => 'v3.4.2',
+      'version' => '3.4.2.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '99129f789f2e7619ce553c038783a13f47cbc846',
     ),
     'mockery/mockery' => 
     array (

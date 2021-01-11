@@ -17,6 +17,7 @@
         "laravel/socialite": "^5.1",
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.1",
+        "mervick/emojionearea": "^3.0.0",
         "phpmailer/phpmailer": "^6.2"
     },
     "require-dev": {

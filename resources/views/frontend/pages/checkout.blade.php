@@ -23,7 +23,7 @@
                                                 class="border img-sm"></div>
                                         <figcaption class="info">
                                             <p>{{$item->name}}</p>
-                                            <span class="text-muted">{{$item->qty}}x = {{number_format($item->price * $item->qty, 0, '', '.')}} ₫</span>
+                                            <p class="text-muted">x{{$item->qty}} = {{number_format($item->price * $item->qty, 0, '', '.')}} ₫</p>
                                         </figcaption>
                                     </figure>
                                 </div> <!-- col.// -->

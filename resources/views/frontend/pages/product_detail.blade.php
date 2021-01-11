@@ -149,6 +149,11 @@
             </div>
             <div class="col">
                 <textarea type="text" class="form-control comment-content" id="content" placeholder="Comment" rows="3"></textarea>
+                <script type="text/javascript">
+                    $(document).ready(function() {
+                        $("#content").emojioneArea();
+                    });
+                </script>
             </div>
             <div class="col-0">
                 <button type="button" class="btn btn-outline-primary send-comment">Send</button>
@@ -160,10 +165,11 @@
 @endsection
 
 @push('styles')
-<link rel="stylesheet" href="{{asset('frontend/star-rating/starrr.css')}}">
+<link rel="stylesheet" href="{{asset('frontend/emojionearea.min.css')}}">
 @endpush
 @push('scripts')
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="{{asset('frontend/emojionearea.min.js')}}"></script>
 <script src="{{asset('frontend/star-rating/starrr.js')}}"></script>
 
 <script type="text/javascript">

@@ -35,6 +35,7 @@
                                                 class="border img-sm"></div>
                                         <figcaption class="info align-self-center">
                                             <a href="#" class="title">{{$row->name}}</a>
+                                            <p>{{number_format($row->price, 0, '', '.')}} ₫</p>
                                         </figcaption>
                                     </figure>
                                 </td>
