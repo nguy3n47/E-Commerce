@@ -17,3 +17,6 @@ VNUHCM - University Of Science
 -------------------------------------------------------------------
 <p> php artisan route:cache </p>
 <p> php artisan config:cache </p>
+
+-------------------------------------------------------------------
+host: https://eshop-aecc.great-site.net/
