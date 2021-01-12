@@ -52,8 +52,25 @@
                             <div class="col-md-4">
                                 <h6 class="text-muted">Payment</h6>
                                 <span class="text-success">
-                                    <i class="fab fa-lg fa fa-truck"></i>
-                                    COD
+                                @if($order[0]->payment_menthod == 'cod')
+                                <i class="fab fa-lg fa fa-truck"></i>
+                                   COD
+                                @elseif($order[0]->payment_menthod == 'visa')
+                                <i class="fab fa-lg fa-cc-visa"></i>
+                                    Visa
+                                @elseif($order[0]->payment_menthod == 'paypal')
+                                <i class="fab fa-lg fa-cc-paypal"></i>
+                                    PayPal
+                                @elseif($order[0]->payment_menthod == 'zalopay')
+                                <img src="https://laz-img-cdn.alicdn.com/tfs/TB10rN4lnM11u4jSZPxXXahcXXa-1024-1024.png" height="24">
+                                    ZaloPay
+                                @elseif($order[0]->payment_menthod == 'momo')
+                                <img src="https://laz-img-cdn.alicdn.com/tfs/O1CN0174CwSq2NjastWFX1u_!!19999999999999-2-tps.png" height="24">
+                                    MoMO
+                                @elseif($order[0]->payment_menthod == 'airpay')
+                                <img src="https://airpay.in.th/app/faq/image/logo-airpay-footer.png" height="24">
+                                    AirPay
+                                @endif
                                 </span>
                                 <p class="b">Total: {{number_format($order[0]->sub_total, 0, '', '.')}} ₫</p>
                             </div>

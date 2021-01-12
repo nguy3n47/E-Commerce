@@ -55,6 +55,7 @@
                                     <label>Address</label>
                                     <input name="address" required type="text" class="form-control" value="{{Auth::user()->address}}">
                                 </div>
+                                <input type="hidden" id="payment-method-db" name="payment-method" value="cod">
                             </div> <!-- row.// -->
                         </form>
                     </div> <!-- card-body.// -->
@@ -66,7 +67,7 @@
                             <img src="https://image.flaticon.com/icons/png/512/1981/1981845.png" class="float-right"
                                 height="24">
                             <label class="form-check" data-toggle="collapse" data-target="#pay_card_cod">
-                                <input class="form-check-input" name="payment-option" checked type="radio" value="option1">
+                                <input class="form-check-input" name="payment-option" data-name="COD" checked type="radio" value="cod">
                                 <h6 class="form-check-label"> COD </h6>
                             </label>
                         </header>
@@ -84,8 +85,7 @@
                             <img src="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/images/misc/payment-paypal.png" class="float-right"
                                 height="24">
                             <label class="form-check collapsed" data-toggle="collapse" data-target="#pay_paynet">
-                                <input class="form-check-input" name="payment-option" type="radio"
-                                    value="option2">
+                                <input class="form-check-input" name="payment-option" data-name="Paypal" type="radio" value="paypal">
                                 <h6 class="form-check-label">
                                     Paypal
                                 </h6>
@@ -108,7 +108,7 @@
                             <img src="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/images/misc/payment-card.png" class="float-right"
                                 height="24">
                             <label class="form-check" data-toggle="collapse" data-target="#pay_payme">
-                                <input class="form-check-input" name="payment-option" type="radio" value="option2">
+                                <input class="form-check-input" name="payment-option" type="radio" data-name="Credit Card" value="visa">
                                 <h6 class="form-check-label"> Credit Card </h6>
                             </label>
                         </header>
@@ -132,7 +132,7 @@
                             <img src="https://laz-img-cdn.alicdn.com/tfs/TB10rN4lnM11u4jSZPxXXahcXXa-1024-1024.png" class="float-right"
                                 height="24">
                             <label class="form-check" data-toggle="collapse" data-target="#pay_card_ZaloPay">
-                                <input class="form-check-input" name="payment-option" type="radio" value="option1">
+                                <input class="form-check-input" name="payment-option" data-name="ZaloPay" type="radio" value="zalopay">
                                 <h6 class="form-check-label"> ZaloPay </h6>
                             </label>
                         </header>
@@ -150,7 +150,7 @@
                             <img src="https://laz-img-cdn.alicdn.com/tfs/O1CN0174CwSq2NjastWFX1u_!!19999999999999-2-tps.png" class="float-right"
                                 height="24">
                             <label class="form-check" data-toggle="collapse" data-target="#pay_card_momo">
-                                <input class="form-check-input" name="payment-option" type="radio" value="option1">
+                                <input class="form-check-input" name="payment-option" type="radio" data-name="MoMo" value="momo">
                                 <h6 class="form-check-label"> MoMo </h6>
                             </label>
                         </header>
@@ -168,7 +168,7 @@
                             <img src="https://airpay.in.th/app/faq/image/logo-airpay-footer.png" class="float-right"
                                 height="24">
                             <label class="form-check" data-toggle="collapse" data-target="#pay_card_airpay">
-                                <input class="form-check-input" name="payment-option" type="radio" value="option1">
+                                <input class="form-check-input" name="payment-option" data-name="AirPay" type="radio" value="airpay">
                                 <h6 class="form-check-label"> AirPay </h6>
                             </label>
                         </header>
@@ -190,7 +190,7 @@
                         <h4 class="mb-3">Overview</h4>
                         <dl class="dlist-align">
                             <dt class="text-muted">Payment method:</dt>
-                            <dd>Cash</dd>
+                            <dd id="payment-method">COD</dd>
                         </dl>
                         <hr>
                         <dl class="dlist-align">
@@ -210,4 +210,12 @@
 @push('scripts')
 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
     crossorigin="anonymous"></script>
+<script>
+$(document).ready(function() {
+  $('input[type=radio][name="payment-option"]').on('change', function() {
+    document.getElementById("payment-method-db").value = $(this).val();
+    document.getElementById("payment-method").textContent = $(this).attr("data-name");
+  });
+});
+</script>
 @endpush

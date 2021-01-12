@@ -107,7 +107,7 @@ class CartController extends Controller
             'user_id' => Auth::user()->id,
             'sub_total' => Cart::subtotal(0,'',''),
             'quantity' => Cart::count(),
-            'payment_menthod' => 'cod',
+            'payment_menthod' => $request->input('payment-method'),
             'payment_status' => 'unpaid',
             'status' => 'pending',
             'fullname' => $request->name,

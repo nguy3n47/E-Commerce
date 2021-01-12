@@ -11,8 +11,6 @@
 <link href="{{asset('frontend/css/css-bootstrap.css')}}" rel="stylesheet" type="text/css" />
 <!-- Font awesome 5 -->
 <link href="{{asset('frontend/css/css-all.min.css')}}" type="text/css" rel="stylesheet" />
-
-<link rel="stylesheet" type="text/css" href="{{asset('frontend/css-star-rating/css/star-rating.css')}}" />
 <!-- custom style -->
 <link href="{{asset('frontend/css/css-ui.css')}}" rel="stylesheet" type="text/css" />
 <link href="{{asset('frontend/css/css-responsive.css')}}" rel="stylesheet" media="only screen and (max-width: 1200px)" />
